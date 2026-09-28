@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path d="M2 20C2 19.448 2.448 19 3 19L6 19C6.552 19 7 19.448 7 20C7 20.552 6.552 21 6 21L3 21C2.448 21 2 20.552 2 20Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M17 20C17 19.448 17.448 19 18 19L21 19C21.552 19 22 19.448 22 20C22 20.552 21.552 21 21 21L18 21C17.448 21 17 20.552 17 20Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M9.5 20C9.5 19.448 9.948 19 10.5 19L13.5 19C14.052 19 14.5 19.448 14.5 20C14.5 20.552 14.052 21 13.5 21L10.5 21C9.948 21 9.5 20.552 9.5 20Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M2 16C2 15.448 2.448 15 3 15L6 15C6.552 15 7 15.448 7 16C7 16.552 6.552 17 6 17L3 17C2.448 17 2 16.552 2 16Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M17 16C17 15.448 17.448 15 18 15L21 15C21.552 15 22 15.448 22 16C22 16.552 21.552 17 21 17L18 17C17.448 17 17 16.552 17 16Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M9.5 16C9.5 15.448 9.948 15 10.5 15L13.5 15C14.052 15 14.5 15.448 14.5 16C14.5 16.552 14.052 17 13.5 17L10.5 17C9.948 17 9.5 16.552 9.5 16Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M2 12C2 11.448 2.448 11 3 11L6 11C6.552 11 7 11.448 7 12C7 12.552 6.552 13 6 13L3 13C2.448 13 2 12.552 2 12Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M17 12C17 11.448 17.448 11 18 11L21 11C21.552 11 22 11.448 22 12C22 12.552 21.552 13 21 13L18 13C17.448 13 17 12.552 17 12Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M9.5 12C9.5 11.448 9.948 11 10.5 11L13.5 11C14.052 11 14.5 11.448 14.5 12C14.5 12.552 14.052 13 13.5 13L10.5 13C9.948 13 9.5 12.552 9.5 12Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M2 8C2 7.448 2.448 7 3 7L6 7C6.552 7 7 7.448 7 8C7 8.552 6.552 9 6 9L3 9C2.448 9 2 8.552 2 8Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M17 8C17 7.448 17.448 7 18 7L21 7C21.552 7 22 7.448 22 8C22 8.552 21.552 9 21 9L18 9C17.448 9 17 8.552 17 8Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M2 4C2 3.448 2.448 3 3 3L6 3C6.552 3 7 3.448 7 4C7 4.552 6.552 5 6 5L3 5C2.448 5 2 4.552 2 4Z" fill="currentColor" fill-rule="evenodd"/>
+</svg>

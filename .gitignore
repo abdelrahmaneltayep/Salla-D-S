@@ -1,0 +1,7 @@
+node_modules/
+.fig-out/
+figma/source/canvas.fig
+figma/source/images/
+figma/source/meta.json
+figma/source/thumbnail.png
+.DS_Store

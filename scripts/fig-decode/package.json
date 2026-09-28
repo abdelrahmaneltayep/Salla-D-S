@@ -1,0 +1,17 @@
+{
+  "name": "salla-ds-fig-decode",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Decode a Figma .fig (fig-kiwi) file and export every component (SYMBOL) as SVG. Used to extract icons/ from figma/source/Icons_DS_V.1.fig.",
+  "type": "module",
+  "scripts": {
+    "decode": "node decode.mjs ../../figma/source/canvas.fig ../../.fig-out",
+    "validate": "node validate.mjs ../../.fig-out"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.11.1",
+    "fzstd": "^0.1.1",
+    "kiwi-schema": "^0.5.0",
+    "sharp": "^0.35.5"
+  }
+}

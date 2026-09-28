@@ -1,0 +1,13 @@
+{
+  "name": "salla-design-system",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Salla merchant dashboard design system: tokens, icons, illustrations and component reference extracted from the Merchant - Storybook DS Figma library.",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:tokens && npm run build:inventory",
+    "build:tokens": "node scripts/build_tokens.mjs",
+    "build:inventory": "python3 scripts/build_inventory.py"
+  },
+  "license": "UNLICENSED"
+}

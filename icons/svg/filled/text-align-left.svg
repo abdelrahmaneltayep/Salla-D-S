@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path d="M2 3C2 2.448 2.448 2 3 2L21 2C21.552 2 22 2.448 22 3C22 3.552 21.552 4 21 4L3 4C2.448 4 2 3.552 2 3Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M2 9C2 8.448 2.448 8 3 8L11 8C11.552 8 12 8.448 12 9C12 9.552 11.552 10 11 10L3 10C2.448 10 2 9.552 2 9Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M2 15C2 14.448 2.448 14 3 14L21 14C21.552 14 22 14.448 22 15C22 15.552 21.552 16 21 16L3 16C2.448 16 2 15.552 2 15Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M2 21C2 20.448 2.448 20 3 20L11 20C11.552 20 12 20.448 12 21C12 21.552 11.552 22 11 22L3 22C2.448 22 2 21.552 2 21Z" fill="currentColor" fill-rule="evenodd"/>
+</svg>
