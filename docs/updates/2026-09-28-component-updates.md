@@ -34,6 +34,24 @@ The one new component set found in the library is **RadioText tabs** (published 
 | **Inputs** | `input/text-input`, `search-input`, `input-with-image`, `input-with-button`, `input-counter`, `amount-input`, `email-input`, `password-input` | [inputs.md](../components/inputs.md), gallery → Input | Shared anatomy: leading icon, placeholder, trailing helper ("وصف مساعد") and language switch `AR ▾`; states default, hover, pre-active (underline), active (blue border `#5196f3`), filled, disabled, each with an error twin (red border). Password adds hidden/visible and a requirements checklist. All map to `s-input` (`type`, slots `start`/`end`, `hasError`, description). |
 | **Select / Dropdown** | `select/dropdown-single`, `dropdown-multiple`, `basic-dropdown-single`, `basic-dropdown-multiple` | [drop-down-list.md](../components/drop-down-list.md), gallery → Select | Trigger states plus the open list: search field with a teal start-bar, options, the selected option in light mint with ✓, and an "أضف: خيار جديد" add-new row. Maps to `s-select` (`searchable`, `multiselect`, `addMissingItem`) and `s-dropdown`. |
 
+## Header — third pass (re-sent `Header` export, 1440 + 1200 variants)
+
+The header export was sent again (identical to `figma/exports/header/header.svg`, which carries both the
+1440 px and the 1200 px frame). `demo/index.html` now follows it pixel-for-pixel instead of the earlier
+approximation:
+
+| Element | Figma | Demo (`demo/index.html`) |
+|---|---|---|
+| Title bar | 92 px high, 64 px side gutters (1200 variant: 88 px, 24 px gutters) | `--hd-h` / `--hd-pad` custom properties, `@media (max-width: 1200px)` switches the variant |
+| Primary tabs | 40 px pills, radius 12, 8 px padding, 8 px gap; active = `#A4FFE5` pill with `#004956` bold text | `.hd-tab` / `.hd-tab.is-active` (was radius 4, 16 px padding) |
+| Tools cluster | 24 px icons on `#F4F4F4` at 16 px gaps: settings, bell, messages, apps grid, search; setup ring 38 px (white disc, `#EEEEEE` track, `#00AF6C` 2/7 arc + label) | `.hd-icons`, `.hd-ring` (SVG ring, `--ring-dash` drives the arc) |
+| Account | 48 px photo avatar with 1 px `#EEEEEE` border, name `#F8F8F8` 14 px over a 23 px "جديد" pill (`#DBFFF6` stroke), 16 px chevron | `.hd-user`, `assets/avatar.jpg` (cropped from the export) |
+| 1200 variant | name + tag hidden; search, apps and messages collapse into a "⋯" button between the avatar and settings | `.hd-collapse` / `.hd-more` |
+| Subcategory bar | 64 px white, 12 px vertical padding; 40 px underlined tabs (2 px `#004956`); help button 32 px **rounded square** (radius 12, `#A4FFE5` stroke); "مشمر" pill 98×32, radius 12, `#E6FFF9` fill, 1 px angular-gradient border (`#FFE895 → #FFAF83 → #E4BC8F → #2CF2C7 → #92F0FF`), sparkle in an 18 px gradient disc; 8 px gap between the two | `.hd-sub`, `.hd-help`, `.hd-moshammer` |
+
+Measured from the SVG path bounding boxes, verified headlessly at 1440 and 1200 px —
+logo, ring, avatar, active pill, help button and pill land within 2 px of the export.
+
 ## Files added
 
 ```

@@ -20,47 +20,59 @@
     .icon svg { width: 100%; height: 100%; }
     .icon--sm { width: 16px; height: 16px; }
 
-    /* ---- Header (Figma: Header / --device=desktop, node 15895:36794) ---- */
+    /* ---- Header (Figma: Header, node 15895:36794 — figma/exports/header/header.svg, 1440 + 1200 variants) ---- */
+    :root { --hd-pad: 64px; --hd-h: 92px; }
     .hd-top { background: var(--salla-background-primary-primary, #004956); color: var(--salla-text-gray-white, #fff);
-      display: flex; align-items: center; gap: var(--salla-spacing-sizes-3xl, 20px); padding: var(--salla-spacing-base, 16px) var(--salla-spacing-sizes-9xl, 56px); min-height: 92px; box-sizing: border-box; }
+      display: flex; align-items: center; gap: var(--salla-spacing-sizes-3xl, 20px); padding: 0 var(--hd-pad); height: var(--hd-h); box-sizing: border-box; }
     .hd-top .logo { width: 95.4px; height: 40px; flex: none; display: block; }
-    .hd-tabs { flex: 1; min-width: 0; display: flex; align-items: center; gap: var(--salla-spacing-2xs, 10px); overflow-x: auto; scrollbar-width: none; }
-    .hd-tab { display: flex; align-items: center; gap: var(--salla-spacing-5xs, 4px); padding: var(--salla-spacing-3xs, 8px) var(--salla-spacing-base, 16px); border-radius: var(--salla-radius-md, 4px);
+    /* primary tabs: 40px pills, radius 12, 8px gap, active = mint pill */
+    .hd-tabs { flex: 1; min-width: 0; display: flex; align-items: center; gap: var(--salla-spacing-sizes-sm, 8px); overflow: hidden; }
+    .hd-tab { display: flex; align-items: center; gap: var(--salla-spacing-5xs, 4px); height: 40px; padding: var(--salla-spacing-3xs, 8px); border-radius: 12px; box-sizing: border-box;
       color: var(--salla-text-gray-white, #fff); text-decoration: none; font-weight: 500; font-size: 16px; line-height: 24px; white-space: nowrap; }
     .hd-tab .icon { width: 24px; height: 24px; }
+    .hd-tab--all .icon { width: 20px; height: 20px; margin: 0 2px; }
     .hd-tab:hover { background: rgba(255,255,255,.08); }
     .hd-tab.is-active { background: var(--salla-background-secondary-seconadry, #a4ffe5); color: var(--salla-text-primary-primary, #004956); font-weight: 700; }
+    /* tools: setup ring, icon buttons, account */
     .hd-tools { display: flex; align-items: center; gap: var(--salla-spacing-sizes-2xl, 16px); flex: none; }
+    .hd-ring { position: relative; width: 38px; height: 38px; border-radius: 999px; background: #fff; flex: none; display: grid; place-items: center; }
+    .hd-ring svg { position: absolute; inset: 4px; width: 30px; height: 30px; transform: rotate(-90deg); }
+    .hd-ring circle { fill: none; stroke-width: 2.5; }
+    .hd-ring .track { stroke: var(--salla-border-default, #eee); }
+    .hd-ring .arc { stroke: var(--salla-text-status-success-primary, #00af6c); stroke-dasharray: var(--ring-dash, 24.2) 100; }
+    .hd-ring span { position: relative; font-size: 10px; line-height: 1; font-weight: 500; color: var(--salla-text-status-success-primary, #00af6c); }
     .hd-icons { display: flex; align-items: center; gap: var(--salla-spacing-sizes-2xl, 16px); }
-    .hd-icons a { position: relative; display: inline-flex; color: #fff; }
+    .hd-icons a { display: inline-flex; color: #f4f4f4; }
     .hd-icons .icon { width: 24px; height: 24px; }
-    .hd-icons .dot { position: absolute; top: 0; inset-inline-end: 0; width: 8px; height: 8px; border-radius: 999px; background: var(--salla-background-status-danger-primary, #f55157); border: 2px solid #004956; }
-    .hd-ring { width: 36px; height: 36px; border-radius: 999px; flex: none; display: grid; place-items: center; font-size: 10px; font-weight: 500; color: #004956;
-      background: conic-gradient(var(--salla-background-secondary-seconadry, #a4ffe5) calc(2 / 7 * 360deg), rgba(255,255,255,.18) 0); }
-    .hd-ring span { width: 30px; height: 30px; border-radius: 999px; background: #fff; display: grid; place-items: center; }
-    .hd-user { display: flex; align-items: center; gap: var(--salla-spacing-sizes-sm, 8px); padding: var(--salla-spacing-5xs, 4px) var(--salla-spacing-sizes-sm, 8px); border-radius: var(--salla-radius-sm, 8px); border: 1px solid transparent; cursor: pointer; }
-    .hd-user:hover { border-color: rgba(255,255,255,.35); }
-    .hd-user__text { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; }
-    .hd-user__name { font-size: 14px; line-height: normal; color: #f8f8f8; }
-    .hd-user__tag { display: inline-flex; align-items: center; min-height: 24px; max-height: 24px; padding: var(--salla-spacing-sizes-2xs, 4px) var(--salla-spacing-sizes-sm, 8px); border: 1px solid var(--salla-border-seconadry-hover, #dbfff6); border-radius: 140px; font-size: 12px; line-height: 16px; color: #fff; box-sizing: border-box; }
-    .hd-user .icon { width: 16px; height: 16px; }
-    .hd-user s-avatar { width: 48px; height: 48px; flex: none; overflow: hidden; border-radius: 999px; }
-    @media (max-width: 1500px) { .hd-top { gap: 16px; } .hd-tabs { gap: 6px; } .hd-tab { padding-left: 12px; padding-right: 12px; } }
+    .hd-icons .hd-more { display: none; }
+    .hd-user { display: flex; align-items: center; gap: var(--salla-spacing-sizes-sm, 8px); padding: 0 var(--salla-spacing-sizes-sm, 8px); cursor: pointer; border-radius: 12px; }
+    .hd-user__avatar { width: 48px; height: 48px; flex: none; border-radius: 999px; box-sizing: border-box; border: 1px solid var(--salla-border-default, #eee); background: #fff; object-fit: cover; display: block; }
+    .hd-user__text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--salla-spacing-sizes-sm, 8px); }
+    .hd-user__name { font-size: 14px; line-height: 17px; color: #f8f8f8; }
+    .hd-user__tag { display: inline-flex; align-items: center; height: 23px; padding: 0 var(--salla-spacing-sizes-sm, 8px); border: 1px solid var(--salla-border-seconadry-hover, #dbfff6); border-radius: 140px; font-size: 12px; line-height: 16px; color: #fff; box-sizing: border-box; }
+    .hd-user > .icon { width: 16px; height: 16px; color: #fff; }
 
-    /* Header Subcategory (node 18204:40931) */
-    .hd-sub { background: var(--salla-background-default-white, #fff); height: 64px; box-sizing: border-box; padding: var(--salla-spacing-xs, 12px) var(--salla-spacing-sizes-9xl, 56px);
+    /* Header Subcategory (node 18204:40931): 64px white bar, underlined tabs (right), help + مشمر (left) */
+    .hd-sub { background: var(--salla-background-default-white, #fff); height: 64px; box-sizing: border-box; padding: var(--salla-spacing-xs, 12px) var(--hd-pad);
       display: flex; align-items: center; gap: 24px; border-bottom: 1px solid var(--salla-border-default, #eee); }
     .hd-sub__tabs { flex: 1; min-width: 0; display: flex; align-items: center; gap: var(--salla-spacing-base, 16px); overflow-x: auto; scrollbar-width: none; }
-    .hd-sub__tab { padding: var(--salla-spacing-3xs, 8px) var(--salla-spacing-6xs, 2px); font-size: 16px; line-height: 24px; color: var(--salla-text-gray-light, #666); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; }
+    .hd-sub__tab { height: 40px; box-sizing: border-box; padding: var(--salla-spacing-3xs, 8px) var(--salla-spacing-6xs, 2px); font-size: 16px; line-height: 24px; font-weight: 500; color: var(--salla-text-gray-light, #666); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; }
     .hd-sub__tab.is-active { color: var(--salla-text-primary-link, #004956); font-weight: 700; border-bottom-color: var(--salla-border-primary-link, #004956); }
-    .hd-sub__btns { display: flex; align-items: center; gap: var(--salla-spacing-base, 16px); flex: none; }
-    .hd-help { width: 32px; height: 32px; border-radius: 999px; box-sizing: border-box; border: 1px solid var(--salla-border-seconadry, #a4ffe5); background: #fff; display: grid; place-items: center; color: var(--salla-text-primary-link, #004956); }
+    .hd-sub__btns { display: flex; align-items: center; gap: var(--salla-spacing-sizes-sm, 8px); flex: none; }
+    .hd-help { width: 32px; height: 32px; border-radius: 12px; box-sizing: border-box; border: 1px solid var(--salla-border-seconadry, #a4ffe5); background: #fff; display: grid; place-items: center; color: var(--salla-text-primary-link, #004956); }
     .hd-help .icon { width: 16px; height: 16px; }
-    .hd-moshammer { position: relative; display: inline-flex; align-items: center; gap: var(--salla-spacing-5xs, 4px); min-height: 32px; padding: 4px 6px 4px 10px; border-radius: 140px; background: var(--salla-background-secondary-lighter, #e6fff9); color: #333; font-size: 12px; font-weight: 500; text-decoration: none; isolation: isolate; }
-    .hd-moshammer::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: var(--moshammer-gradient, linear-gradient(90deg,#ffe894,#ffaf85 25%,#e4bd90 50%,#2cf2c7 75%,#94f1ff)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: -1; }
-    .hd-moshammer__spark { width: 18px; height: 18px; border-radius: 999px; display: grid; place-items: center; color: #004956; background: conic-gradient(from 90deg, #92efff, #ffe895 59deg, #ffae83 152deg, #e4bc8f 187deg, #2cf1c6 270deg, #92efff); }
+    .hd-moshammer { position: relative; display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 7px 8px; box-sizing: border-box; border-radius: 12px; background: var(--salla-background-secondary-lighter, #e6fff9); color: #333; font-size: 12px; line-height: 16px; font-weight: 500; text-decoration: none; isolation: isolate; }
+    .hd-moshammer::before { content: ""; position: absolute; inset: -1px; border-radius: 13px; padding: 1px; background: var(--moshammer-gradient, conic-gradient(from 200deg, #92f0ff, #ffe895 59deg, #ffaf83 152deg, #e4bc8f 187deg, #2cf2c7 270deg, #92f0ff 360deg)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: -1; }
+    .hd-moshammer__spark { width: 18px; height: 18px; border-radius: 999px; display: grid; place-items: center; color: #004956; background: conic-gradient(from 225deg, #92f0ff, #ffe895 59deg, #ffaf83 152deg, #e4bc8f 187deg, #2cf2c7 270deg, #92f0ff 360deg); }
     .hd-moshammer__spark .icon { width: 12px; height: 12px; }
     .hd-moshammer .chev { width: 16px; height: 16px; color: #004956; }
+
+    /* 1200 variant: 24px gutters, 88px bar, name/tag hidden, search + apps + messages collapse into "⋯" */
+    @media (max-width: 1200px) {
+      :root { --hd-pad: 24px; --hd-h: 88px; }
+      .hd-user__text, .hd-icons .hd-collapse { display: none; }
+      .hd-icons .hd-more { display: inline-flex; }
+    }
 
     /* Breadcrumb row (node 15913:38807) + Page Title row (node 18204:42660) */
     .hd-crumbs { display: flex; align-items: center; gap: var(--salla-spacing-3xs, 8px); padding: var(--salla-spacing-3xs, 8px) var(--salla-spacing-sizes-9xl, 56px); }
@@ -71,7 +83,7 @@
     .hd-title h1 { flex: 1; min-width: 0; margin: 0; padding: var(--salla-spacing-5xs, 4px) 0; font-size: 24px; line-height: 32px; font-weight: 700; color: var(--salla-text-primary-primary, #004956); }
     .hd-title__btns { display: flex; align-items: center; gap: var(--salla-spacing-xs, 12px); }
 
-    @media (max-width: 900px) { .hd-top, .hd-sub, .hd-crumbs, .hd-title, .page { padding-left: 16px; padding-right: 16px; } .hd-user__text, .hd-icons a:nth-child(n+3) { display: none; } }
+    @media (max-width: 900px) { :root { --hd-pad: 16px; } .hd-crumbs, .hd-title, .page { padding-left: 16px; padding-right: 16px; } .hd-ring { display: none; } }
 
     /* Page */
     .page { padding: 0 var(--salla-spacing-sizes-9xl, 56px) 96px; }
@@ -163,7 +175,7 @@
 </defs>
 </svg></a>
       <nav class="hd-tabs" aria-label="القائمة الرئيسية">
-        <a class="hd-tab" href="#"><span class="icon" data-icon="menu-01"></span>الكل</a>
+        <a class="hd-tab hd-tab--all" href="#"><span class="icon" data-icon="menu-01"></span>الكل</a>
         <a class="hd-tab" href="#"><span class="icon" data-icon="home-01"></span>الرئيسية</a>
         <a class="hd-tab is-active" href="#"><span class="icon" data-icon="delivery-box-02"></span>الطلبات</a>
         <a class="hd-tab" href="#"><span class="icon" data-icon="shirt-01"></span>المنتجات</a>
@@ -172,16 +184,17 @@
         <a class="hd-tab" href="#"><span class="icon" data-icon="pie-chart"></span>التقارير</a>
       </nav>
       <div class="hd-tools">
-        <span class="hd-ring" title="اكتمال إعداد المتجر 2/7"><span>2/7</span></span>
+        <span class="hd-ring" title="اكتمال إعداد المتجر 2/7" style="--ring-dash: 24.2"><svg viewBox="0 0 30 30" aria-hidden="true"><circle class="track" cx="15" cy="15" r="13.5"/><circle class="arc" cx="15" cy="15" r="13.5" pathLength="100"/></svg><span>2/7</span></span>
         <div class="hd-icons">
-          <a href="#" title="بحث"><span class="icon" data-icon="search-01"></span></a>
-          <a href="#" title="التطبيقات"><span class="icon" data-icon="dashboard-square-01"></span></a>
-          <a href="#" title="المحادثات"><span class="icon" data-icon="message-01"></span></a>
-          <a href="#" title="التنبيهات"><span class="icon" data-icon="notification-01"></span><i class="dot"></i></a>
+          <a class="hd-collapse" href="#" title="بحث"><span class="icon" data-icon="search-01"></span></a>
+          <a class="hd-collapse" href="#" title="التطبيقات"><span class="icon" data-icon="grid-view"></span></a>
+          <a class="hd-collapse" href="#" title="المحادثات"><span class="icon" data-icon="message-01"></span></a>
+          <a href="#" title="التنبيهات"><span class="icon" data-icon="notification-01"></span></a>
           <a href="#" title="الإعدادات"><span class="icon" data-icon="settings-01"></span></a>
+          <a class="hd-more" href="#" title="المزيد"><span class="icon" data-icon="more-horizontal"></span></a>
         </div>
         <div class="hd-user" role="button" tabindex="0" aria-label="حساب عبدالله">
-          <s-avatar label="عبدالله" size="md" initials="" layout="circular"></s-avatar>
+          <img class="hd-user__avatar" src="assets/avatar.jpg" alt="" width="48" height="48">
           <div class="hd-user__text">
             <span class="hd-user__name">عبدالله</span>
             <span class="hd-user__tag">جديد</span>

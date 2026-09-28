@@ -13,7 +13,7 @@ Both load the real Twilight runtime (`storybook/static/`), the Figma tokens and 
 
 `index.html` composes a full merchant-dashboard screen from the design system:
 
-- **Header**: a 1:1 build of the Figma **Header** component (`figma/exports/header/`, spec in `docs/specs/header.md`): the 92 px title bar (real Salla logo, primary tabs with the mint active pill, setup ring 2/7, action icons, avatar + name + "جديد" tag), the 64 px subcategory row (secondary tabs, "مشمر" gradient pill, help-centre button), the breadcrumb row and the page-title row with its buttons.
+- **Header**: a 1:1 build of the Figma **Header** component (`figma/exports/header/header.svg`, spec in `docs/specs/header.md`): the 92 px title bar with 64 px gutters (real Salla logo, 40 px primary-tab pills with the mint active pill, setup ring 2/7, action icons, 48 px photo avatar + name + "جديد" tag), the 64 px subcategory row (underlined secondary tabs, "مشمر" gradient pill, rounded-square help button), the breadcrumb row and the page-title row with its buttons. Below 1200 px it switches to the export's second frame: 88 px bar, 24 px gutters, name hidden, search / apps / messages folded into a "⋯" button.
 - **Body**: search bar (`s-input` + filter button), the three-column list ↔ detail layout from [docs/patterns.md](../docs/patterns.md) — status rail, grouped order list (`s-checkbox` rows, selected row tint), detail panel with action bar (`s-dropdown`, `s-button`), `s-alert-box`, order/customer card (`s-avatar`, `s-tag`), payment, shipping, products table and a footer with `s-toggle` and actions.
 - **Floating chips**: support bubble and activity-log button.
 
