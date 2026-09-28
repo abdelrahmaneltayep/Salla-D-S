@@ -6,6 +6,46 @@ Design-to-code specs: [header](../specs/header.md)
 
 ![Header](../images/header.png)
 
+### Figma exports (`figma/exports/header/`, updated 2026-09-28)
+
+**header-avatar**
+
+![header-avatar](../../figma/exports/header/header-avatar.png)
+
+**header-subcategory**
+
+![header-subcategory](../../figma/exports/header/header-subcategory.png)
+
+**header-title**
+
+![header-title](../../figma/exports/header/header-title.png)
+
+**header**
+
+![header](../../figma/exports/header/header.png)
+
+### Figma exports (`figma/exports/tabs/`, updated 2026-09-28)
+
+**header-primary-tabs**
+
+![header-primary-tabs](../../figma/exports/tabs/header-primary-tabs.png)
+
+**header-secondary-tabs**
+
+![header-secondary-tabs](../../figma/exports/tabs/header-secondary-tabs.png)
+
+**primary-tabs-list**
+
+![primary-tabs-list](../../figma/exports/tabs/primary-tabs-list.png)
+
+**radiotext-tabs**
+
+![radiotext-tabs](../../figma/exports/tabs/radiotext-tabs.png)
+
+**secondary-tabs-list**
+
+![secondary-tabs-list](../../figma/exports/tabs/secondary-tabs-list.png)
+
 ## header Avatar
 
 Node `15896:31776` · 2 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=15896-31776)

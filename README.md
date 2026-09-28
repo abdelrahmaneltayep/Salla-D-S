@@ -81,6 +81,12 @@ the icon set. Serve the repo root (`npx serve .`) and open `/demo/`. See [demo/R
 
 ![orders demo](docs/images/demo-orders.png)
 
+## Design updates
+
+Updated Figma exports are filed under `figma/exports/<component>/` and logged in
+[docs/updates/](docs/updates/2026-09-28-component-updates.md) with design ↔ code notes; they appear as
+reference cards in the component gallery and on the component pages.
+
 ## Screen layouts & UI patterns
 
 [docs/patterns.md](docs/patterns.md) documents how the system is composed in the live merchant

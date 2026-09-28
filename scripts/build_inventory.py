@@ -23,6 +23,7 @@ MAIN_FILE_KEY = "zuGhoKg2BaBIYUreKuSBGY"
 
 ICON_FRAMES = {"Icons/Filled", "Icons/Outline"}
 FLAG_FRAME = "Flag"
+EXPORTS = {'button': ['button'], 'status': ['tag'], 'bread-crumb': ['breadcrumb'], 'check-box': ['checkbox'], 'header': ['header', 'tabs'], 'table': ['table'], 'drop-down-list': ['calendar']}
 SPEC_LINKS = {'button': ['button-primary-lg'], 'check-box': ['checkbox'], 'radio-buttton': ['radio'], 'toggle': ['toggle'], 'status': ['status-badge'], 'alertbox': ['alertbox'], 'loader': ['loading-indicator'], 'avatar': ['avatar'], 'bread-crumb': ['breadcrumb'], 'header': ['header'], 'inputs': ['text-input', 'search-input', 'input-wrapper', 'upload-input'], 'side-menu': ['side-menu'], 'more-menu': ['more-menu'], 'drop-down-list': ['dropdown-list', 'list-item'], 'table': ['table-cell-header'], 'steps': ['steps']}
 
 
@@ -152,6 +153,13 @@ def main():
         img = f"{slug(sec['name'])}.png"
         if os.path.exists(os.path.join(ROOT, "docs", "images", img)):
             lines += [f"![{sec['name']}](../images/{img})", ""]
+        for d in EXPORTS.get(slug(sec['name']), []):
+            folder = os.path.join(ROOT, "figma", "exports", d)
+            pngs = sorted(f for f in os.listdir(folder) if f.endswith(".png")) if os.path.isdir(folder) else []
+            if pngs:
+                lines += [f"### Figma exports (`figma/exports/{d}/`, updated 2026-09-28)", ""]
+                for f in pngs:
+                    lines += [f"**{f[:-4]}**", "", f"![{f[:-4]}](../../figma/exports/{d}/{f})", ""]
         if sec.get("symbolCount"):
             lines.append(f"This frame holds **{sec['symbolCount']}** symbols. Names are listed in "
                          + ("`icons/figma-icon-names.json`." if sec["name"] in ICON_FRAMES else "`icons/flags.json`."))

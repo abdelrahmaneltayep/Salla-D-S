@@ -6,6 +6,56 @@ Design-to-code specs: [table-cell-header](../specs/table-cell-header.md)
 
 ![Table](../images/table.png)
 
+### Figma exports (`figma/exports/table/`, updated 2026-09-28)
+
+**desktop-default**
+
+![desktop-default](../../figma/exports/table/desktop-default.png)
+
+**desktop-filter-results**
+
+![desktop-filter-results](../../figma/exports/table/desktop-filter-results.png)
+
+**desktop-more-menu**
+
+![desktop-more-menu](../../figma/exports/table/desktop-more-menu.png)
+
+**desktop-no-results**
+
+![desktop-no-results](../../figma/exports/table/desktop-no-results.png)
+
+**desktop-scroll-down**
+
+![desktop-scroll-down](../../figma/exports/table/desktop-scroll-down.png)
+
+**desktop-selected**
+
+![desktop-selected](../../figma/exports/table/desktop-selected.png)
+
+**desktop-tabs**
+
+![desktop-tabs](../../figma/exports/table/desktop-tabs.png)
+
+**desktop-title**
+
+![desktop-title](../../figma/exports/table/desktop-title.png)
+
+**mobile-default**
+
+![mobile-default](../../figma/exports/table/mobile-default.png)
+
+**mobile-no-results**
+
+![mobile-no-results](../../figma/exports/table/mobile-no-results.png)
+
+**mobile-selected**
+
+![mobile-selected](../../figma/exports/table/mobile-selected.png)
+
+**table-states**
+
+![table-states](../../figma/exports/table/table-states.png)
+
 ## Table/Cell/Flag_with_text
 
 Node `21566:55897` · 3 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=21566-55897)

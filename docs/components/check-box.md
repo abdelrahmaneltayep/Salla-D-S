@@ -6,6 +6,12 @@ Design-to-code specs: [checkbox](../specs/checkbox.md)
 
 ![check Box](../images/check-box.png)
 
+### Figma exports (`figma/exports/checkbox/`, updated 2026-09-28)
+
+**checkboxfield**
+
+![checkboxfield](../../figma/exports/checkbox/checkboxfield.png)
+
 ## checkBox
 
 Node `12411:21809` · 18 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=12411-21809)

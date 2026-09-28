@@ -6,6 +6,12 @@ Design-to-code specs: [button-primary-lg](../specs/button-primary-lg.md)
 
 ![Button](../images/button.png)
 
+### Figma exports (`figma/exports/button/`, updated 2026-09-28)
+
+**button**
+
+![button](../../figma/exports/button/button.png)
+
 ## Button
 
 Node `14526:107536` · 441 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=14526-107536)

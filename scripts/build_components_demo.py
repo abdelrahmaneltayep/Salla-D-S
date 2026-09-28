@@ -18,6 +18,17 @@ comps = json.load(open(os.path.join(ROOT, "storybook", "components.json")))
 tokens = json.load(open(os.path.join(ROOT, "tokens", "tokens.flat.json")))
 logo = open(os.path.join(ROOT, "demo", "assets", "salla-logo.svg")).read().strip().replace("<svg ", '<svg class="logo" role="img" aria-label="سلة" ', 1)
 
+# Figma design references (exports under figma/exports/, updated 2026-09-28)
+FIGMA_REF = {
+    "Components/Button": [("button/button.png", "Button — كل الأنواع والحالات (Figma)")],
+    "Components/Tag": [("tag/tag.png", "Tag — 7 أنماط × filled / subtle")],
+    "Components/Breadcrumbs": [("breadcrumb/breadcrumb.png", "Breadcrumb — desktop + mobile، عربي/إنجليزي")],
+    "Components/Checkbox": [("checkbox/checkboxfield.png", "checkboxfield — default / disabled / info / tooltip")],
+    "Components/Tabs": [("tabs/radiotext-tabs.png", "RadioText tabs (chips) — 4 أنماط"), ("tabs/secondary-tabs-list.png", "Secondary Tabs List"), ("tabs/header-secondary-tabs.png", "Header Secondary Tabs — contained / plain"), ("tabs/primary-tabs-list.png", "Primary Tabs List — dashboard"), ("tabs/header-primary-tabs.png", "Header Primary Tabs — states")],
+    "Components/Calendar": [("calendar/calendar-time-date.png", "Calendar — تاريخ + وقت"), ("calendar/time.png", "Time input — states"), ("calendar/big-calendar-items.png", "Day cells"), ("calendar/date-item.png", "Date item"), ("calendar/time-item.png", "Time item")],
+    "Components/Table": [("table/desktop-default.png", "Table — Default"), ("table/desktop-tabs.png", "Table — Tabs"), ("table/desktop-title.png", "Table — Title"), ("table/desktop-filter-results.png", "Table — Filter results"), ("table/desktop-selected.png", "Table — Selected (bulk banner)"), ("table/desktop-more-menu.png", "Table — More menu"), ("table/desktop-no-results.png", "Table — No results"), ("table/desktop-scroll-down.png", "Table — Scroll (sticky header)"), ("table/mobile-default.png", "Table — Mobile"), ("table/mobile-selected.png", "Table — Mobile selected"), ("table/mobile-no-results.png", "Table — Mobile empty")],
+}
+
 # stories that need a note or trimming
 LIMIT = {"Components/Editor": 4, "Components/LingualField": 6, "Components/Maps": 1}
 NOTES = {
@@ -110,6 +121,10 @@ for c in comps:
         wide = " card--wide" if len(markup) > 2500 or "s-table" in markup or "s-editor" in markup or "s-calendar" in markup or "s-uploader" in markup or "s-tabs-group" in markup or "s-panel" in markup or "s-accordion" in markup or "s-maps" in markup or "s-lingual" in markup or "s-modal" in markup else ""
         cards.append(f'<article class="card{wide}" data-story="{H.escape(s["id"])}"><header><h4>{H.escape(s["name"])}</h4><code>{H.escape(s["id"])}</code></header><div class="card__body">{markup}</div>{args_html}</article>')
     note = f'<p class="note">{NOTES[c["title"]]}</p>' if c["title"] in NOTES else ""
+    refs = FIGMA_REF.get(c["title"])
+    if refs:
+        note += '<div class="figref"><h3>التصميم في Figma <span>figma/exports/ · 2026-09-28</span></h3><div class="figref__row">' + "".join(
+            f'<figure><a href="../figma/exports/{f}" target="_blank"><img loading="lazy" src="../figma/exports/{f}" alt="{H.escape(cap)}" /></a><figcaption>{H.escape(cap)}</figcaption></figure>' for f, cap in refs) + "</div></div>"
     desc = f'<p class="desc" dir="auto">{H.escape(c["description"])}</p>' if c.get("description") else ""
     sections.append(f'''<section class="comp" id="{sid}" data-title="{H.escape(title.lower())}">
   <div class="comp__head"><h2>{H.escape(title)}</h2><div class="tags">{tags}</div><a class="doclink" href="../docs/storybook/{c["slug"]}.md">docs/storybook/{c["slug"]}.md</a></div>
@@ -162,6 +177,11 @@ page = f'''<!doctype html>
     .card__body {{ padding: 16px; overflow-x: auto; min-height: 48px; }}
     .card__body > * {{ max-width: 100%; }}
     details.args {{ border-top: 1px solid var(--salla-border-default, #eee); padding: 6px 12px; }} details.args summary {{ font-size: 12px; color: #737373; cursor: pointer; }} details.args pre {{ direction: ltr; text-align: left; font-size: 11px; margin: 6px 0 0; white-space: pre-wrap; }}
+    .figref {{ margin: 8px 0 16px; padding: 12px; border-radius: 8px; background: var(--salla-background-default-neutrals-light, #fcfcfc); border: 1px dashed var(--salla-border-hover, #ddd); }}
+    .figref h3 {{ margin: 0 0 10px; font-size: 13px; color: #555; }} .figref h3 span {{ color: #737373; font-weight: 400; margin-inline-start: 8px; direction: ltr; unicode-bidi: embed; }}
+    .figref__row {{ display: flex; gap: 12px; overflow-x: auto; padding-bottom: 4px; }}
+    .figref figure {{ margin: 0; flex: none; width: 360px; max-width: 100%; }} .figref img {{ width: 100%; height: 200px; object-fit: contain; object-position: top; background: #fff; border: 1px solid var(--salla-border-default, #eee); border-radius: 6px; display: block; }}
+    .figref figcaption {{ font-size: 11px; color: #737373; margin-top: 4px; }}
     /* foundations */
     .fd h3 {{ font-size: 14px; margin: 18px 0 8px; color: #555; }}
     .sw-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 8px; }}

@@ -6,6 +6,12 @@ Design-to-code specs: [breadcrumb](../specs/breadcrumb.md)
 
 ![Bread crumb](../images/bread-crumb.png)
 
+### Figma exports (`figma/exports/breadcrumb/`, updated 2026-09-28)
+
+**breadcrumb**
+
+![breadcrumb](../../figma/exports/breadcrumb/breadcrumb.png)
+
 ## _breadcrumbItem *(internal, underscore-prefixed)*
 
 Node `15392:5075` · 20 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=15392-5075)

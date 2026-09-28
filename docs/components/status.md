@@ -6,6 +6,12 @@ Design-to-code specs: [status-badge](../specs/status-badge.md)
 
 ![Status](../images/status.png)
 
+### Figma exports (`figma/exports/tag/`, updated 2026-09-28)
+
+**tag**
+
+![tag](../../figma/exports/tag/tag.png)
+
 ## _Base Status Indicator *(internal, underscore-prefixed)*
 
 Node `15339:59259` · 30 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=15339-59259)
