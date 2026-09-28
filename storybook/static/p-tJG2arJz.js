@@ -1,0 +1,1 @@
+function r(r){if(r){if("string"==typeof r)try{return JSON.parse(r)}catch(r){return}return r}}export{r as p}

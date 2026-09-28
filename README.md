@@ -10,18 +10,18 @@ Sources of truth (this repo is a snapshot of them, dated 2026-09-28):
 |---|---|---|
 | Figma library **Merchant - Storybook DS** | file `zuGhoKg2BaBIYUreKuSBGY`, component page on branch `dnmyqzYKK9dUJjVHuIWMDS` (*Main Components (Full)*, node `27713:61`) | variables → tokens, component inventory, section screenshots, design-to-code specs |
 | Figma library **Icons DS_V.1** | `figma/source/Icons_DS_V.1.fig` (uploaded export) | 3,886 icons × 2 styles as SVG |
-| Storybook (Twilight web components) | <https://dashboard-ui-components.pages.dev/> | *not captured yet* — see [Storybook](#storybook) |
+| Storybook (Twilight web components) | offline build of <https://dashboard-ui-components.pages.dev/> (Storybook 8.6) in `storybook/static/` | 408 stories rendered → markup, screenshots, props tables, runtime tokens |
 
 ## Layout
 
 ```
-tokens/        tokens.json (DTCG), tokens.css (--salla-* custom properties), tokens.flat.json, tailwind.preset.cjs
+tokens/        tokens.css / tokens.json (--salla-*, from Figma variables), tailwind.preset.cjs, twilight-runtime.css (runtime vars of the s-* components)
 icons/         svg/outline/*.svg, svg/filled/*.svg, manifest.json, categories.json, flags.json, figma-icon-names.json
 illustrations/ png/ renders of the 20 empty-state illustrations (+ node ids to re-export as SVG)
-docs/          foundations.md, components/ (one page per Figma section), specs/ (design-to-code reference), images/
+docs/          foundations.md, twilight-runtime-tokens.md, component-map.md, components/ (Figma sections), storybook/ (Storybook components), specs/, images/
 figma/         variables.json (merged Figma variables), components.json (inventory), snapshots/ (raw dumps), source/ (.fig)
-storybook/     placeholder + sync script target
-scripts/       build_tokens.mjs, build_inventory.py, sync_storybook.mjs, fig-decode/ (the .fig → SVG decoder)
+storybook/     static/ (offline Storybook build), captures/ (rendered markup + screenshots per story), components.json (props API)
+scripts/       build_tokens.mjs, build_inventory.py, extract_storybook_tokens.mjs, capture_storybook.mjs, build_storybook_docs.py, fig-decode/
 ```
 
 ## Tokens
@@ -73,11 +73,25 @@ for the manifest, the coverage check against the Figma DS names (3,853 / 4,010 m
 
 20 empty-state illustrations (PNG renders + Figma node ids), see [illustrations/README.md](illustrations/README.md).
 
-## Storybook
+## Storybook (Twilight components)
 
-The Storybook host was blocked from the environment that assembled this repo, so no story markup is
-included yet. Run `node scripts/sync_storybook.mjs` from a machine that can reach it to capture the
-rendered HTML of every story into `storybook/`.
+`storybook/static/` is the complete static build of the public Storybook (Storybook 8.6,
+`@storybook/html`, Stencil web components `s-*`). Open it offline with any static server:
+
+```bash
+npx serve storybook/static      # or: python3 -m http.server -d storybook/static 8080
+```
+
+Everything in it was also rendered headlessly and captured:
+
+- `storybook/captures/stories/<component>/<story>.html` — the hydrated light-DOM markup of each of the 408 stories, and `.png` screenshots.
+- `storybook/components.json` — per component: `s-*` tags used, props (name, control, options, default, description from the story `argTypes`), and stories with their args.
+- [docs/storybook/](docs/storybook/README.md) — one page per component (38) with the props table and every story.
+- [docs/component-map.md](docs/component-map.md) — how the Figma sections map to Storybook components and tags.
+- `tokens/twilight-runtime.css` / `.json` and [docs/twilight-runtime-tokens.md](docs/twilight-runtime-tokens.md) — the runtime CSS custom properties (`--primary: 189 100% 17%` HSL triplets, light + dark) that the production components consume, pulled from the compiled `styles.css`.
+
+Re-capture with `node scripts/capture_storybook.mjs storybook/static storybook/captures` (needs Playwright + Chromium)
+followed by `python3 scripts/build_storybook_docs.py`.
 
 ## Regenerating
 

@@ -1,0 +1,1 @@
+const e=[["bold","italic","underline","strike"],[{direction:"rtl"},{align:[]},{list:"ordered"},{list:"bullet"}],[{header:1},{header:2},{header:3}],[{indent:"-1"},{indent:"+1"}],[{color:[]},{background:[]}],["image","video","link"],["clean"],["blockquote","code-block"]];export{e as d}

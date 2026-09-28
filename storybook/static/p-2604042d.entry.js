@@ -1,0 +1,1 @@
+import{r as a,h as e,a as r}from"./p-C8C-QXaJ.js";const s=class{constructor(e){a(this,e)}render(){return e(r,{key:"8862d423029bc1e00e50f61b4a69d0eaf7a7c5d1",class:"s-draggable-item"},e("slot",{key:"c1d8fd0a6c916633418aa5e772a25bdffd084b30"}))}};s.style=":host{display:block;border-radius:.375rem;padding:.5rem}";export{s as s_draggable_item}
