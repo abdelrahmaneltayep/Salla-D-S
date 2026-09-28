@@ -2,6 +2,8 @@
 
 Figma node `27737:13082` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27737-13082)
 
+Design-to-code specs: [avatar](../specs/avatar.md)
+
 ![Avatar](../images/avatar.png)
 
 ## Avatar

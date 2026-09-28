@@ -2,6 +2,8 @@
 
 Figma node `27716:13113` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27716-13113)
 
+Design-to-code specs: [radio](../specs/radio.md)
+
 ![radio Buttton](../images/radio-buttton.png)
 
 ## radio

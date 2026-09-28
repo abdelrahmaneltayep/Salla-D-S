@@ -2,6 +2,8 @@
 
 Figma node `27743:15948` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27743-15948)
 
+Design-to-code specs: [dropdown-list](../specs/dropdown-list.md), [list-item](../specs/list-item.md)
+
 ![Drop Down List](../images/drop-down-list.png)
 
 ## Drop Down List

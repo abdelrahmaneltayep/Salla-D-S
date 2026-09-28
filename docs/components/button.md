@@ -2,6 +2,8 @@
 
 Figma node `14526:107536` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=14526-107536)
 
+Design-to-code specs: [button-primary-lg](../specs/button-primary-lg.md)
+
 ![Button](../images/button.png)
 
 ## Button

@@ -2,6 +2,8 @@
 
 Figma node `27743:12073` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27743-12073)
 
+Design-to-code specs: [side-menu](../specs/side-menu.md)
+
 ![Side menu](../images/side-menu.png)
 
 ## Side menu

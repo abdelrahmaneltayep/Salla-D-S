@@ -2,6 +2,8 @@
 
 Figma node `27743:46455` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27743-46455)
 
+Design-to-code specs: [steps](../specs/steps.md)
+
 ![Steps](../images/steps.png)
 
 ## _Step base *(internal, underscore-prefixed)*

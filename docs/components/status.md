@@ -2,6 +2,8 @@
 
 Figma node `27716:13442` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27716-13442)
 
+Design-to-code specs: [status-badge](../specs/status-badge.md)
+
 ![Status](../images/status.png)
 
 ## _Base Status Indicator *(internal, underscore-prefixed)*

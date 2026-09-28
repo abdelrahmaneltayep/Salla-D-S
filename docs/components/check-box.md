@@ -2,6 +2,8 @@
 
 Figma node `27716:13114` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27716-13114)
 
+Design-to-code specs: [checkbox](../specs/checkbox.md)
+
 ![check Box](../images/check-box.png)
 
 ## checkBox

@@ -2,6 +2,8 @@
 
 Figma node `27716:13230` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27716-13230)
 
+Design-to-code specs: [toggle](../specs/toggle.md)
+
 ![Toggle](../images/toggle.png)
 
 ## Toggle

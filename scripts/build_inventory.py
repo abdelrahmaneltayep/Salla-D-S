@@ -23,6 +23,7 @@ MAIN_FILE_KEY = "zuGhoKg2BaBIYUreKuSBGY"
 
 ICON_FRAMES = {"Icons/Filled", "Icons/Outline"}
 FLAG_FRAME = "Flag"
+SPEC_LINKS = {'button': ['button-primary-lg'], 'check-box': ['checkbox'], 'radio-buttton': ['radio'], 'toggle': ['toggle'], 'status': ['status-badge'], 'alertbox': ['alertbox'], 'loader': ['loading-indicator'], 'avatar': ['avatar'], 'bread-crumb': ['breadcrumb'], 'header': ['header'], 'inputs': ['text-input', 'search-input', 'input-wrapper', 'upload-input'], 'side-menu': ['side-menu'], 'more-menu': ['more-menu'], 'drop-down-list': ['dropdown-list', 'list-item'], 'table': ['table-cell-header'], 'steps': ['steps']}
 
 
 def slug(s: str) -> str:
@@ -145,6 +146,9 @@ def main():
         index.append(f"| [{sec['name']}]({page}) | {n_sets} | {n_var} | [open]({sec['url']}) |")
         lines = [f"# {sec['name']}", "",
                  f"Figma node `{sec['id']}` · [open in Figma]({sec['url']})", ""]
+        specs = SPEC_LINKS.get(slug(sec['name']), [])
+        if specs:
+            lines += ["Design-to-code specs: " + ", ".join(f"[{x}](../specs/{x}.md)" for x in specs), ""]
         img = f"{slug(sec['name'])}.png"
         if os.path.exists(os.path.join(ROOT, "docs", "images", img)):
             lines += [f"![{sec['name']}](../images/{img})", ""]

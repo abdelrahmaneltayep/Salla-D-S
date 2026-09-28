@@ -2,6 +2,8 @@
 
 Figma node `27743:38351` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27743-38351)
 
+Design-to-code specs: [table-cell-header](../specs/table-cell-header.md)
+
 ![Table](../images/table.png)
 
 ## Table/Cell/Flag_with_text

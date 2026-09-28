@@ -2,6 +2,8 @@
 
 Figma node `27743:12927` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27743-12927)
 
+Design-to-code specs: [more-menu](../specs/more-menu.md)
+
 ![More Menu](../images/more-menu.png)
 
 ## _moreItems *(internal, underscore-prefixed)*

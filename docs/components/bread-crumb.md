@@ -2,6 +2,8 @@
 
 Figma node `27716:13116` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27716-13116)
 
+Design-to-code specs: [breadcrumb](../specs/breadcrumb.md)
+
 ![Bread crumb](../images/bread-crumb.png)
 
 ## _breadcrumbItem *(internal, underscore-prefixed)*

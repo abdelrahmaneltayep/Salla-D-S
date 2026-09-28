@@ -2,6 +2,8 @@
 
 Figma node `27716:13434` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27716-13434)
 
+Design-to-code specs: [loading-indicator](../specs/loading-indicator.md)
+
 ![Loader](../images/loader.png)
 
 ## _LoadingIndicator *(internal, underscore-prefixed)*

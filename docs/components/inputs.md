@@ -2,6 +2,8 @@
 
 Figma node `27737:28091` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27737-28091)
 
+Design-to-code specs: [text-input](../specs/text-input.md), [search-input](../specs/search-input.md), [input-wrapper](../specs/input-wrapper.md), [upload-input](../specs/upload-input.md)
+
 ![Inputs](../images/inputs.png)
 
 ## _TextInput *(internal, underscore-prefixed)*

@@ -2,6 +2,8 @@
 
 Figma node `27737:13435` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27737-13435)
 
+Design-to-code specs: [alertbox](../specs/alertbox.md)
+
 ![Alertbox](../images/alertbox.png)
 
 ## Alertbox

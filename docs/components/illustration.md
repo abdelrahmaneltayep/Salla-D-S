@@ -2,6 +2,8 @@
 
 Figma node `15366:7047` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=15366-7047)
 
+![Illustration](../images/illustration.png)
+
 ## Illustration
 
 Node `15366:7047` · 2 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=15366-7047)

@@ -2,6 +2,8 @@
 
 Figma node `27716:13115` · [open in Figma](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=27716-13115)
 
+Design-to-code specs: [header](../specs/header.md)
+
 ![Header](../images/header.png)
 
 ## header Avatar
