@@ -7,7 +7,8 @@
   "scripts": {
     "build": "npm run build:tokens && npm run build:inventory",
     "build:tokens": "node scripts/build_tokens.mjs",
-    "build:inventory": "python3 scripts/build_inventory.py"
+    "build:inventory": "python3 scripts/build_inventory.py",
+    "build:gallery": "python3 scripts/build_components_demo.py"
   },
   "license": "UNLICENSED"
 }

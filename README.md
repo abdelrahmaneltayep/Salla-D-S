@@ -20,7 +20,7 @@ icons/         svg/outline/*.svg, svg/filled/*.svg, manifest.json, categories.js
 illustrations/ png/ renders of the 20 empty-state illustrations (+ node ids to re-export as SVG)
 docs/          foundations.md, patterns.md, twilight-runtime-tokens.md, token-parity.md, component-map.md, components/ (Figma sections), storybook/ (Storybook components), specs/, images/
 figma/         variables.json (merged Figma variables), components.json (inventory), snapshots/ (raw dumps), source/ (.fig)
-demo/          index.html — full orders screen composed from the runtime components + tokens
+demo/          components.html — live gallery of all components; index.html — full orders screen
 fonts/         Ping AR + LT (OTF + WOFF2, 400/500/700/800) and pingarlt.css
 figma/exports/ header/ — SVG exports of the Header component set (desktop + mobile), logo.svg
 storybook/     static/ (offline Storybook build), captures/ (rendered markup + screenshots per story), components.json (props API)
@@ -67,7 +67,13 @@ screenshot. Highlights:
 [docs/specs/](docs/specs/README.md) holds the design-to-code reference (Tailwind-flavoured markup +
 token table) returned by Figma for one representative variant of each core component.
 
-## Screen demo
+## Demos
+
+[demo/components.html](demo/components.html) is a live gallery of **every component**: the 385 captured
+Storybook stories re-rendered with the production runtime, grouped per component with props tables, a
+foundations section (colors, type, spacing, radius, shadows, icons), search and an RTL/LTR toggle.
+
+![components gallery](docs/images/demo-components.png)
 
 [demo/index.html](demo/index.html) is a complete orders screen (app-shell header, secondary tabs, breadcrumb,
 search bar, status rail, order list and detail panel) built from the real `s-*` runtime, the Figma tokens and
