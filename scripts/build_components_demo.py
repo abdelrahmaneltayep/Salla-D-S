@@ -17,6 +17,11 @@ CAP = os.path.join(ROOT, "storybook", "captures")
 comps = json.load(open(os.path.join(ROOT, "storybook", "components.json")))
 tokens = json.load(open(os.path.join(ROOT, "tokens", "tokens.flat.json")))
 logo = open(os.path.join(ROOT, "demo", "assets", "salla-logo.svg")).read().strip().replace("<svg ", '<svg class="logo" role="img" aria-label="سلة" ', 1)
+# Header: reuse the Figma-accurate title bar from demo/index.html verbatim (styles in demo/header.css)
+_demo = open(os.path.join(ROOT, "demo", "index.html"), encoding="utf-8").read()
+hd_top = re.search(r'    <div class="hd-top">.*?\n    </div>\n', _demo, re.S).group(0)
+hd_top = hd_top.replace('class="hd-tab is-active"', 'class="hd-tab"').replace('class="hd-tab" href="#"><span class="icon" data-icon="home-01">', 'class="hd-tab is-active" href="#"><span class="icon" data-icon="home-01">')
+hd_top = hd_top.replace('<a href="#" aria-label="الرئيسية">', '<a href="../demo/index.html" aria-label="الرئيسية">')
 
 # Figma design references (exports under figma/exports/, updated 2026-09-28)
 FIGMA_REF = {
@@ -167,18 +172,18 @@ page = f'''<!doctype html>
   <link rel="stylesheet" href="../storybook/static/styles.css" />
   <script type="module" src="../storybook/static/admin-ui.esm.js"></script>
   <link rel="stylesheet" href="../tokens/tokens.css" />
+  <link rel="stylesheet" href="header.css" />
   <style>
     html {{ background: var(--salla-background-default-page, #f4f4f4); scroll-behavior: smooth; }}
     body {{ margin: 0; font-family: PingARLT, "PT Sans", system-ui, sans-serif; color: var(--salla-text-gray-dark, #333); font-size: 14px; }}
     .icon {{ display: inline-flex; width: 20px; height: 20px; vertical-align: middle; }} .icon svg {{ width: 100%; height: 100%; }}
-    .g-top {{ position: sticky; top: 0; z-index: 30; background: var(--salla-background-primary-primary, #004956); color: #fff; height: 64px; display: flex; align-items: center; gap: 20px; padding: 0 32px; }}
-    .g-top .logo {{ width: 76px; height: 32px; display: block; }}
-    .g-top h1 {{ font-size: 16px; font-weight: 500; margin: 0; flex: 1; }}
-    .g-top h1 span {{ opacity: .7; font-weight: 400; margin-inline-start: 8px; font-size: 13px; }}
-    .g-top a.lnk {{ color: #fff; text-decoration: none; font-size: 13px; opacity: .9; padding: 6px 10px; border: 1px solid rgba(255,255,255,.35); border-radius: 8px; }}
-    .g-top button {{ font: inherit; cursor: pointer; background: var(--salla-background-secondary-seconadry, #a4ffe5); color: #004956; border: 0; border-radius: 8px; padding: 6px 12px; font-weight: 500; }}
+    .hd-sub__tab.lnk {{ color: var(--salla-text-gray-light, #666); }}
+    .hd-toggle {{ font: inherit; cursor: pointer; height: 32px; padding: 0 12px; border-radius: 12px; border: 1px solid var(--salla-border-seconadry, #a4ffe5); background: #fff; color: #004956; font-size: 12px; font-weight: 500; }}
+    .g-title {{ display: flex; align-items: baseline; gap: 12px; padding: 16px var(--hd-pad, 64px) 0; }}
+    .g-title h1 {{ margin: 0; font-size: 24px; line-height: 32px; font-weight: 700; color: var(--salla-text-primary-primary, #004956); }}
+    .g-title span {{ color: var(--salla-text-gray-lighter, #737373); font-size: 13px; }}
     .g-wrap {{ display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 24px; padding: 24px 32px 96px; max-width: 1600px; margin: 0 auto; }}
-    .g-side {{ position: sticky; top: 80px; align-self: start; max-height: calc(100vh - 100px); overflow: auto; background: #fff; border-radius: 8px; padding: 8px; box-shadow: var(--salla-shadows-xs); }}
+    .g-side {{ position: sticky; top: 16px; align-self: start; max-height: calc(100vh - 32px); overflow: auto; background: #fff; border-radius: 8px; padding: 8px; box-shadow: var(--salla-shadows-xs); }}
     .g-side input {{ width: 100%; box-sizing: border-box; font: inherit; padding: 8px 10px; border: 1px solid var(--salla-border-default, #eee); border-radius: 8px; margin-bottom: 6px; }}
     .g-side a {{ display: flex; justify-content: space-between; padding: 7px 10px; border-radius: 6px; color: var(--salla-text-gray-light, #666); text-decoration: none; font-size: 13px; }}
     .g-side a span {{ color: var(--salla-text-gray-lighter, #737373); font-size: 12px; }}
@@ -216,16 +221,27 @@ page = f'''<!doctype html>
     .sp, .rd, .sh {{ display: flex; align-items: center; gap: 12px; padding: 4px 0; font-size: 12px; }} .sp__b {{ height: 16px; background: var(--salla-background-secondary-seconadry, #a4ffe5); border-radius: 2px; }} .sp__n {{ width: 170px; direction: ltr; text-align: right; color: #333; }} .sp__v {{ color: #737373; }}
     .rd__b {{ width: 48px; height: 32px; background: #fff; border: 2px solid var(--salla-border-primary, #004956); }} .sh__b {{ width: 64px; height: 40px; background: #fff; border-radius: 8px; margin: 8px 0; }}
     .ic-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }} .ic {{ display: flex; align-items: center; gap: 6px; font-size: 11px; color: #555; }} .ic .icon {{ width: 24px; height: 24px; color: #004956; }} .ic__n {{ direction: ltr; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }}
-    @media (max-width: 900px) {{ .g-wrap {{ grid-template-columns: 1fr; padding: 16px; }} .g-side {{ position: static; max-height: none; }} .g-top {{ padding: 0 16px; }} .g-top h1 span {{ display: none; }} }}
+    @media (max-width: 900px) {{ .g-wrap {{ grid-template-columns: 1fr; padding: 16px; }} .g-side {{ position: static; max-height: none; }} .g-title {{ padding: 16px 16px 0; }} .g-title span {{ display: none; }} }}
   </style>
 </head>
 <body>
-  <header class="g-top">
-    <a href="../demo/index.html" aria-label="سلة">{logo}</a>
-    <h1>معرض مكونات نظام التصميم <span>Twilight · {len(comps)} مكوّن · {total} قصة حيّة من Storybook</span></h1>
-    <a class="lnk" href="index.html">شاشة الطلبات</a>
-    <button type="button" id="dirToggle" title="تبديل اتجاه الصفحة">LTR ⇄ RTL</button>
+  <!-- Header: Figma "Header" component — title bar shared with demo/index.html, gallery subcategory row -->
+  <header>
+{hd_top}
+    <div class="hd-sub">
+      <nav class="hd-sub__tabs" aria-label="صفحات العرض">
+        <a class="hd-sub__tab is-active" href="#">معرض المكونات</a>
+        <a class="hd-sub__tab lnk" href="index.html">شاشة الطلبات</a>
+        <a class="hd-sub__tab lnk" href="../docs/components/">التوثيق</a>
+      </nav>
+      <div class="hd-sub__btns">
+        <button type="button" class="hd-toggle" id="dirToggle" title="تبديل اتجاه الصفحة">LTR ⇄ RTL</button>
+        <a class="hd-moshammer" href="#"><span class="hd-moshammer__spark"><span class="icon" data-icon="sparkles"></span></span> مشمر <span class="icon chev" data-icon="arrow-left-01"></span></a>
+        <a class="hd-help" href="#" title="مركز المساعدة"><span class="icon" data-icon="help-circle"></span></a>
+      </div>
+    </div>
   </header>
+  <div class="g-title"><h1>معرض مكونات نظام التصميم</h1><span>Twilight · {len(comps)} مكوّن · {total} قصة حيّة من Storybook</span></div>
   <div class="g-wrap">
     <aside class="g-side">
       <input id="filter" type="search" placeholder="ابحث عن مكوّن…" aria-label="بحث" />

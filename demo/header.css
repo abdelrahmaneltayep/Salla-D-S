@@ -1,0 +1,57 @@
+/* Salla DS — Header (Figma component "Header", node 15895:36794; export figma/exports/header/header.svg).
+   Shared by demo/index.html and demo/components.html. Requires tokens/tokens.css + the icon loader (data-icon). */
+/* ---- Header (Figma: Header, node 15895:36794 — figma/exports/header/header.svg, 1440 + 1200 variants) ---- */
+:root { --hd-pad: 64px; --hd-h: 92px; }
+.hd-top { background: var(--salla-background-primary-primary, #004956); color: var(--salla-text-gray-white, #fff);
+  display: flex; align-items: center; gap: var(--salla-spacing-sizes-3xl, 20px); padding: 0 var(--hd-pad); height: var(--hd-h); box-sizing: border-box; }
+.hd-top .logo { width: 95.4px; height: 40px; flex: none; display: block; }
+/* primary tabs: 40px pills, radius 12, 8px gap, active = mint pill */
+.hd-tabs { flex: 1; min-width: 0; display: flex; align-items: center; gap: var(--salla-spacing-sizes-sm, 8px); overflow: hidden; }
+.hd-tab { display: flex; align-items: center; gap: var(--salla-spacing-5xs, 4px); height: 40px; padding: var(--salla-spacing-3xs, 8px); border-radius: 12px; box-sizing: border-box;
+  color: var(--salla-text-gray-white, #fff); text-decoration: none; font-weight: 500; font-size: 16px; line-height: 24px; white-space: nowrap; }
+.hd-tab .icon { width: 24px; height: 24px; }
+.hd-tab--all .icon { width: 20px; height: 20px; margin: 0 2px; }
+.hd-tab:hover { background: rgba(255,255,255,.08); }
+.hd-tab.is-active { background: var(--salla-background-secondary-seconadry, #a4ffe5); color: var(--salla-text-primary-primary, #004956); font-weight: 700; }
+/* tools: setup ring, icon buttons, account */
+.hd-tools { display: flex; align-items: center; gap: var(--salla-spacing-sizes-2xl, 16px); flex: none; }
+.hd-ring { position: relative; width: 38px; height: 38px; border-radius: 999px; background: #fff; flex: none; display: grid; place-items: center; }
+.hd-ring svg { position: absolute; inset: 4px; width: 30px; height: 30px; transform: rotate(-90deg); }
+.hd-ring circle { fill: none; stroke-width: 2.5; }
+.hd-ring .track { stroke: var(--salla-border-default, #eee); }
+.hd-ring .arc { stroke: var(--salla-text-status-success-primary, #00af6c); stroke-dasharray: var(--ring-dash, 24.2) 100; }
+.hd-ring span { position: relative; font-size: 10px; line-height: 1; font-weight: 500; color: var(--salla-text-status-success-primary, #00af6c); }
+.hd-icons { display: flex; align-items: center; gap: var(--salla-spacing-sizes-2xl, 16px); }
+.hd-icons a { display: inline-flex; color: #f4f4f4; }
+.hd-icons .icon { width: 24px; height: 24px; }
+.hd-icons .hd-more { display: none; }
+.hd-user { display: flex; align-items: center; gap: var(--salla-spacing-sizes-sm, 8px); padding: 0 var(--salla-spacing-sizes-sm, 8px); cursor: pointer; border-radius: 12px; }
+.hd-user__avatar { width: 48px; height: 48px; flex: none; border-radius: 999px; box-sizing: border-box; border: 1px solid var(--salla-border-default, #eee); background: #fff; object-fit: cover; display: block; }
+.hd-user__text { display: flex; flex-direction: column; align-items: flex-start; gap: var(--salla-spacing-sizes-sm, 8px); }
+.hd-user__name { font-size: 14px; line-height: 17px; color: #f8f8f8; }
+.hd-user__tag { display: inline-flex; align-items: center; height: 23px; padding: 0 var(--salla-spacing-sizes-sm, 8px); border: 1px solid var(--salla-border-seconadry-hover, #dbfff6); border-radius: 140px; font-size: 12px; line-height: 16px; color: #fff; box-sizing: border-box; }
+.hd-user > .icon { width: 16px; height: 16px; color: #fff; }
+
+/* Header Subcategory (node 18204:40931): 64px white bar, underlined tabs (right), help + مشمر (left) */
+.hd-sub { background: var(--salla-background-default-white, #fff); height: 64px; box-sizing: border-box; padding: var(--salla-spacing-xs, 12px) var(--hd-pad);
+  display: flex; align-items: center; gap: 24px; border-bottom: 1px solid var(--salla-border-default, #eee); }
+.hd-sub__tabs { flex: 1; min-width: 0; display: flex; align-items: center; gap: var(--salla-spacing-base, 16px); overflow-x: auto; scrollbar-width: none; }
+.hd-sub__tab { height: 40px; box-sizing: border-box; padding: var(--salla-spacing-3xs, 8px) var(--salla-spacing-6xs, 2px); font-size: 16px; line-height: 24px; font-weight: 500; color: var(--salla-text-gray-light, #666); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; }
+.hd-sub__tab.is-active { color: var(--salla-text-primary-link, #004956); font-weight: 700; border-bottom-color: var(--salla-border-primary-link, #004956); }
+.hd-sub__btns { display: flex; align-items: center; gap: var(--salla-spacing-sizes-sm, 8px); flex: none; }
+.hd-help { width: 32px; height: 32px; border-radius: 12px; box-sizing: border-box; border: 1px solid var(--salla-border-seconadry, #a4ffe5); background: #fff; display: grid; place-items: center; color: var(--salla-text-primary-link, #004956); }
+.hd-help .icon { width: 16px; height: 16px; }
+.hd-moshammer { position: relative; display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 7px 8px; box-sizing: border-box; border-radius: 12px; background: var(--salla-background-secondary-lighter, #e6fff9); color: #333; font-size: 12px; line-height: 16px; font-weight: 500; text-decoration: none; isolation: isolate; }
+.hd-moshammer::before { content: ""; position: absolute; inset: -1px; border-radius: 13px; padding: 1px; background: var(--moshammer-gradient, conic-gradient(from 200deg, #92f0ff, #ffe895 59deg, #ffaf83 152deg, #e4bc8f 187deg, #2cf2c7 270deg, #92f0ff 360deg)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: -1; }
+.hd-moshammer__spark { width: 18px; height: 18px; border-radius: 999px; display: grid; place-items: center; color: #004956; background: conic-gradient(from 225deg, #92f0ff, #ffe895 59deg, #ffaf83 152deg, #e4bc8f 187deg, #2cf2c7 270deg, #92f0ff 360deg); }
+.hd-moshammer__spark .icon { width: 12px; height: 12px; }
+.hd-moshammer .chev { width: 16px; height: 16px; color: #004956; }
+
+/* 1200 variant: 24px gutters, 88px bar, name/tag hidden, search + apps + messages collapse into "⋯" */
+@media (max-width: 1200px) {
+  :root { --hd-pad: 24px; --hd-h: 88px; }
+  .hd-user__text, .hd-icons .hd-collapse { display: none; }
+  .hd-icons .hd-more { display: inline-flex; }
+}
+
+@media (max-width: 900px) { :root { --hd-pad: 16px; } .hd-ring { display: none; } }
