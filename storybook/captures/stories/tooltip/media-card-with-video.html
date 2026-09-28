@@ -1,0 +1,49 @@
+<!-- Components/Tooltip / Media Card With Video (components-tooltip--media-card-with-video) -->
+<style>
+    [id*="story--components-tooltip--"] {
+      height: 35vh !important;
+    }
+    </style>
+  
+  <div style="min-height: 30vh;" class="flex items-center justify-center">
+    <s-tooltip theme="white" width="400px" placement="bottom" toggle-action="click" layout="normal" class="s-tooltip s-tooltip--white ltr hydrated" data-toggle="click">
+      
+      <s-button slot="toggle" outlined="" class="s-btn s-btn--default default md outlined ltr hydrated" theme="default" target="_self">
+        <s-icon icon="hgi-stroke hgi-play-circle" class="hydrated"></s-icon>
+        Watch the cost price guide
+      </s-button>
+    
+      
+      
+  <article class="text-sm flex flex-col gap-3">
+    
+      <iframe class="w-full h-[170px] rounded-xl border-0" src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ" title="Cost price guide" sandbox="allow-scripts allow-same-origin allow-presentation" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" loading="lazy"></iframe>
+    
+    <h4 class="font-bold text-base">Setting the right cost price</h4>
+    <p class="text-dark-100">
+      To set an accurate cost price you have to add up every fixed and variable
+      expense tied to the product, otherwise you end up with hidden losses.
+    </p>
+    <ul class="flex flex-col gap-2">
+      <li class="flex items-start gap-2">
+        <span class="mt-[6px] size-2 shrink-0 rounded-full bg-success"></span>
+        <span><strong>Base purchase price:</strong> the amount you pay the supplier or the factory per unit.</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="mt-[6px] size-2 shrink-0 rounded-full bg-warning"></span>
+        <span><strong>Shipping and import:</strong> international shipping, customs and taxes, divided by the number of units.</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="mt-[6px] size-2 shrink-0 rounded-full bg-info"></span>
+        <span><strong>Packaging materials:</strong> the carton, the tape and the labels of a single unit.</span>
+      </li>
+    </ul>
+    <div class="flex flex-wrap items-center gap-2">
+      <s-tag size="sm" theme="white" outlined="" class="s-tag s-tag--white whitespace-nowrap outlined sm ltr hydrated">Products</s-tag>
+      <s-tag size="sm" theme="white" outlined="" class="s-tag s-tag--white whitespace-nowrap outlined sm ltr hydrated">Cost price</s-tag>
+      <s-tag size="sm" theme="white" outlined="" class="s-tag s-tag--white whitespace-nowrap outlined sm ltr hydrated">Cost calculation</s-tag>
+    </div>
+  </article>
+
+    </s-tooltip>
+  </div>

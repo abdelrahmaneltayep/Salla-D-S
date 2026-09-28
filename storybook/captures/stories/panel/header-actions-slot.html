@@ -1,0 +1,25 @@
+<!-- Components/Panel / Header Actions Slot (components-panel--header-actions-slot) -->
+<s-panel collapsed="" layout="relaxed" class="s-panel ltr hydrated">
+    
+    <s-panel-head data-collapsed="true" class="hydrated">
+      <div slot="title">Panel Title</div>
+      <div slot="actions">
+      <div class="flex gap-2">
+        <s-button size="sm" outlined="" class="s-btn s-btn--default default sm outlined ltr hydrated" theme="default" target="_self">
+          <i class="hgi-stroke hgi-add-01"></i>
+            Add New
+        </s-button>
+        <s-dropdown items="[{&quot;id&quot;:0,&quot;label&quot;:&quot;Option 1&quot;},{&quot;id&quot;:1,&quot;label&quot;:&quot;Option 2&quot;}]" layout="end" class="end ltr hydrated">
+        <s-button size="sm" outlined="" data-toggle="true" slot="dropdown-head" class="s-btn s-btn--default default sm outlined ltr hydrated" theme="default" target="_self">
+          <i class="hgi-stroke hgi-settings-01"></i>
+          Settings
+        </s-button>
+      </s-dropdown>        
+      </div>
+    </div>
+    </s-panel-head>
+    
+    <s-panel-body class="hydrated">
+      Panel content, you can add any content here inside this slot
+    </s-panel-body>
+  </s-panel>

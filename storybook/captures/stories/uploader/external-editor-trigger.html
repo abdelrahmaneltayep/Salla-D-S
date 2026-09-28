@@ -1,0 +1,11 @@
+<!-- Components/Uploader / External Editor Trigger (components-uploader--external-editor-trigger) -->
+<style>
+    [id*="story--components-uploader--"] {
+      height: 30vh !important;
+    }
+    </style>
+  
+    <div style="display:flex; flex-direction:column; gap:12px; max-width:420px;">
+      <s-button id="open-uploader-editor" theme="primary" class="s-btn s-btn--primary default md ltr hydrated" target="_self">Open Editor Externally</s-button>
+      <s-uploader id="external-trigger-uploader" layout="thumbnail" files-allowed="images" editable="" items="[{&quot;id&quot;:&quot;101&quot;,&quot;source&quot;:&quot;https://i.pravatar.cc/300?img=8&quot;,&quot;alt&quot;:&quot;Sample Image&quot;}]" class="s-uploader--selectable s-uploader--sortable thumbnail ltr hydrated"></s-uploader>
+    </div>

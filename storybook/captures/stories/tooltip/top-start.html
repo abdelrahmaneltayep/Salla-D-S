@@ -1,0 +1,19 @@
+<!-- Components/Tooltip / Top Start (components-tooltip--top-start) -->
+<style>
+    [id*="story--components-tooltip--"] {
+      height: 35vh !important;
+    }
+    </style>
+  
+  <div style="min-height: 30vh;" class="flex items-center justify-center">
+    <s-tooltip theme="default" width="300px" placement="top-start" toggle-action="hover" layout="normal" class="s-tooltip s-tooltip--default ltr hydrated" data-toggle="hover">
+      <s-button slot="toggle" theme="default" class="s-btn s-btn--default default md ltr hydrated" target="_self">Show Tooltip</s-button>
+      <h4 slot="title">Tooltip title</h4>
+      
+  <article>
+    <p>This is the tooltip content that provides helpful information to users.</p>
+    <s-tooltip-action class="hydrated" theme="default">Click here to learn more</s-tooltip-action>
+  </article>
+
+    </s-tooltip>
+  </div>

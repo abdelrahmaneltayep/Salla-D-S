@@ -1,0 +1,21 @@
+<!-- Components/Tooltip / Avatar Trigger (components-tooltip--avatar-trigger) -->
+<style>
+    [id*="story--components-tooltip--"] {
+      height: 35vh !important;
+    }
+    </style>
+  
+  <div style="min-height: 30vh;" class="flex items-center justify-center">
+    <s-tooltip theme="white" width="280px" placement="bottom-start" toggle-action="hover" layout="normal" class="s-tooltip s-tooltip--white ltr hydrated" data-toggle="hover">
+      
+      <s-avatar slot="toggle" url="https://i.pravatar.cc/100" size="sm" label="Sara Ahmed" desc="Store manager" class="s-avatar s-avatar--circular s-avatar--horizontal ltr sm hydrated"></s-avatar>
+    
+      <h4 slot="title">Sara Ahmed</h4>
+      
+      <article class="text-sm flex flex-col gap-2">
+        <p>Store manager, joined on 12 Jan 2024.</p>
+        <s-tooltip-action layout="btn" wide="" class="hydrated" theme="white">View profile</s-tooltip-action>
+      </article>
+    
+    </s-tooltip>
+  </div>

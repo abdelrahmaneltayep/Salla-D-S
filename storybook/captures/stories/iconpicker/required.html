@@ -1,0 +1,8 @@
+<!-- Components/IconPicker / Required (components-iconpicker--required) -->
+<form id="picker-required-form" onsubmit="event.preventDefault(); document.getElementById('picker-required-out').textContent = new FormData(this).get('category_icon') ?? '—';">
+      <div class="flex flex-col gap-3 items-start">
+        <s-icon-picker id="picker-required" name="category_icon" source="hugeicons" required="" class="s-icon-picker hydrated" style="--picker-min-width: 10rem; --picker-cell-size: 2.5rem; --picker-overlay-width: calc(2.5rem * 5 + 6rem); --picker-trigger-width: 0px;"></s-icon-picker>
+        <button type="submit" class="px-3 py-2 rounded bg-primary text-white text-sm">Submit</button>
+        <small>Submitted value: <code id="picker-required-out">—</code></small>
+      </div>
+    </form>

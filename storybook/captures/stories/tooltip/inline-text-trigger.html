@@ -1,0 +1,20 @@
+<!-- Components/Tooltip / Inline Text Trigger (components-tooltip--inline-text-trigger) -->
+<style>
+    [id*="story--components-tooltip--"] {
+      height: 35vh !important;
+    }
+    </style>
+  
+  <div style="min-height: 30vh;" class="flex items-center justify-center">
+    <s-tooltip theme="secondary" width="280px" placement="top" toggle-action="hover" layout="tight" class="s-tooltip s-tooltip--secondary ltr hydrated" data-toggle="hover">
+      
+      <span slot="toggle" class="text-sm text-dark-100 underline decoration-dashed underline-offset-4">
+        Shipping fees
+      </span>
+    
+      
+      
+      <p class="text-xs">Fees are calculated based on the destination city and the package weight.</p>
+    
+    </s-tooltip>
+  </div>

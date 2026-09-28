@@ -18,7 +18,7 @@ Sources of truth (this repo is a snapshot of them, dated 2026-09-28):
 tokens/        tokens.css / tokens.json (--salla-*, from Figma variables), tailwind.preset.cjs, twilight-runtime.css (runtime vars of the s-* components)
 icons/         svg/outline/*.svg, svg/filled/*.svg, manifest.json, categories.json, flags.json, figma-icon-names.json
 illustrations/ png/ renders of the 20 empty-state illustrations (+ node ids to re-export as SVG)
-docs/          foundations.md, twilight-runtime-tokens.md, component-map.md, components/ (Figma sections), storybook/ (Storybook components), specs/, images/
+docs/          foundations.md, patterns.md, twilight-runtime-tokens.md, token-parity.md, component-map.md, components/ (Figma sections), storybook/ (Storybook components), specs/, images/
 figma/         variables.json (merged Figma variables), components.json (inventory), snapshots/ (raw dumps), source/ (.fig)
 storybook/     static/ (offline Storybook build), captures/ (rendered markup + screenshots per story), components.json (props API)
 scripts/       build_tokens.mjs, build_inventory.py, extract_storybook_tokens.mjs, capture_storybook.mjs, build_storybook_docs.py, fig-decode/
@@ -62,6 +62,14 @@ screenshot. Highlights:
 
 [docs/specs/](docs/specs/README.md) holds the design-to-code reference (Tailwind-flavoured markup +
 token table) returned by Figma for one representative variant of each core component.
+
+## Screen layouts & UI patterns
+
+[docs/patterns.md](docs/patterns.md) documents how the system is composed in the live merchant
+dashboard (app shell, home widgets, list ↔ detail orders screen, product grid/table and editor,
+coupon wizard with live summary, shipping landing sections, settings tables, KPI cards, radio-card
+forms, empty states, promo modal), with frames from a walkthrough recording in `docs/images/patterns/`
+and a cheat-sheet mapping each pattern to Storybook components and tokens.
 
 ## Icons
 

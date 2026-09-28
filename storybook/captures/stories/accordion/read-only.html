@@ -1,0 +1,24 @@
+<!-- Components/Accordion / Read Only (components-accordion--read-only) -->
+<div class="space-y-4">
+      <s-accordion readonly="" class="hydrated">
+        <div slot="head">🔒 Readonly Accordion (Always Expanded)</div>
+        <div slot="body">
+          <p>This accordion is readonly and cannot be toggled. It stays expanded and shows content for informational purposes only.</p>
+          <p>Try clicking on the header - it won't collapse!</p>
+        </div>
+      </s-accordion>
+      
+      <s-accordion readonly="" class="hydrated">
+        <div slot="head">🔒 Readonly Accordion (Collapsed)</div>
+        <div slot="body">
+          <p>This content is hidden because the accordion is readonly and not expanded.</p>
+        </div>
+      </s-accordion>
+      
+      <s-accordion class="hydrated">
+        <div slot="head">✅ Interactive Accordion (Normal)</div>
+        <div slot="body">
+          <p>This is a normal accordion that can be toggled by clicking on the header.</p>
+        </div>
+      </s-accordion>
+    </div>

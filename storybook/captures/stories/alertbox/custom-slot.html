@@ -1,0 +1,12 @@
+<!-- Components/AlertBox / Custom Slot (components-alertbox--custom-slot) -->
+<s-alert-box theme="info" layout="default" class="s-alert-box s-alert-box--info default ltr hydrated">
+      <i slot="icon" class="hgi-stroke hgi-store-verified-02"></i>
+      <h4 slot="title">Custom Slot Title</h4>
+      <article slot="desc">
+        <p>This alert uses custom slot content and multiple action buttons.</p>
+      </article>
+      <div slot="action">
+        <s-alert-box-action slot="action" layout="btn" theme="info" href="https://example.com" target="_blank" class="hydrated">Preview</s-alert-box-action>
+        <s-alert-box-action slot="action" layout="outlined" theme="info" href="https://example.com" target="_blank" class="hydrated">Close</s-alert-box-action>
+      </div>
+    </s-alert-box>

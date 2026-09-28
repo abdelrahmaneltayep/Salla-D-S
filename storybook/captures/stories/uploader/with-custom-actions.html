@@ -1,0 +1,15 @@
+<!-- Components/Uploader / With Custom Actions (components-uploader--with-custom-actions) -->
+<style>
+    [id*="story--components-uploader--"] {
+      height: 30vh !important;
+    }
+    </style>
+  
+    <div style="display:flex; flex-wrap:wrap; gap:24px;">
+      <s-uploader layout="thumbnail" label="Browse or drag and drop files here" button-label="Submit" class="s-uploader--selectable s-uploader--sortable thumbnail ltr hydrated">
+        <s-button slot="actions" id="gallery-action" theme="white" outlined="" class="s-btn s-btn--white default md outlined ltr hydrated" target="_self">Choose</s-button>
+      </s-uploader>
+      <s-uploader layout="thumbnail" label="Browse or drag and drop files here" button-label="Submit" hide-browse-button="" class="s-uploader--selectable s-uploader--sortable thumbnail ltr hide-browse-button hydrated">
+        <s-button slot="actions" id="gallery-action-only" theme="white" outlined="" class="s-btn s-btn--white default md outlined ltr hydrated" target="_self">Choose from gallery</s-button>
+      </s-uploader>
+    </div>

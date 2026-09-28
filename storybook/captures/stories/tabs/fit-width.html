@@ -1,0 +1,38 @@
+<!-- Components/Tabs / Fit Width (components-tabs--fit-width) -->
+<div class="flex items-start flex-col gap-4">
+    <s-tabs-group id="tabs_group_narrow" name="Narrow Tabs Group" theme="default" class="s-tabs-group s-tabs-group--default ltr hydrated">
+      <div slot="head">
+        <s-tab-head value="tab_home" active="" class="s-tab-head s-tab-head--default active ltr hydrated">
+          <i class="hgi-stroke hgi-home-01"></i>
+          Home
+        </s-tab-head>
+
+        <s-tab-head value="tab_products" class="s-tab-head s-tab-head--default ltr hydrated">
+          <i class="hgi-stroke hgi-shirt-01"></i>
+          Products
+        </s-tab-head>
+
+        <s-tab-head value="tab_orders" class="s-tab-head s-tab-head--default ltr hydrated">
+          <i class="hgi-stroke hgi-archive-02"></i>
+          Orders
+        </s-tab-head>
+      </div>
+      <div slot="body">
+        <s-tab-body id="tab_home" active="" class="s-tab-body s-tab-body--default active ltr hydrated">
+          <article>
+            <p>Content for the Home tab.</p>
+          </article>
+        </s-tab-body>
+        <s-tab-body id="tab_products" class="s-tab-body s-tab-body--default ltr hydrated">
+          <article>
+            <p>Content for the Products tab.</p>
+          </article>
+        </s-tab-body>
+        <s-tab-body id="tab_orders" class="s-tab-body s-tab-body--default ltr hydrated">
+          <article>
+            <p>Content for the Orders tab.</p>
+          </article>
+        </s-tab-body>
+      </div>
+    </s-tabs-group>
+  </div>

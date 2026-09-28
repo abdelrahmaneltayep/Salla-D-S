@@ -1,0 +1,1363 @@
+# Design System/Colors
+
+Storybook title `Design System/Colors` · source `./src/design-system/colors.stories.ts`
+
+Salla design-system color tokens from @salla.sa/ui-merchant-styles. Use the Tailwind class names in application and component code.
+
+## Stories
+
+### Palette
+
+Story id `design-system-colors--palette`
+
+![Palette](../../storybook/captures/stories/design-system-colors/palette.png)
+
+<details><summary>Rendered markup</summary>
+
+```html
+<div class="">
+    <div class="flex flex-col gap-10 rounded-xl bg-gray-100 p-6 text-dark">
+      
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Primary</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--primary))]" style="background-color: hsl(var(--primary))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">primary</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-primary</code>
+      <code class="text-2xs text-dark-100">--primary</code>
+      <code class="text-2xs text-dark-100">hsl(189 100% 17%)</code>
+      <code class="text-2xs text-dark-100">#004A57</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--primary-force))]" style="background-color: hsl(var(--primary-force))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">primary-force</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-primary-force</code>
+      <code class="text-2xs text-dark-100">--primary-force</code>
+      <code class="text-2xs text-dark-100">hsl(189 100% 17%)</code>
+      <code class="text-2xs text-dark-100">#004A57</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--primary-100))]" style="background-color: hsl(var(--primary-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">primary-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-primary-100</code>
+      <code class="text-2xs text-dark-100">--primary-100</code>
+      <code class="text-2xs text-dark-100">hsl(187 40% 96%)</code>
+      <code class="text-2xs text-dark-100">#F1F8F9</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--primary-200))]" style="background-color: hsl(var(--primary-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">primary-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-primary-200</code>
+      <code class="text-2xs text-dark-100">--primary-200</code>
+      <code class="text-2xs text-dark-100">hsl(188 39% 70%)</code>
+      <code class="text-2xs text-dark-100">#95C8D0</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--primary-300))]" style="background-color: hsl(var(--primary-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">primary-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-primary-300</code>
+      <code class="text-2xs text-dark-100">--primary-300</code>
+      <code class="text-2xs text-dark-100">hsl(188 38% 54%)</code>
+      <code class="text-2xs text-dark-100">#5DAAB6</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--primary-400))]" style="background-color: hsl(var(--primary-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">primary-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-primary-400</code>
+      <code class="text-2xs text-dark-100">--primary-400</code>
+      <code class="text-2xs text-dark-100">hsl(189 50% 41%)</code>
+      <code class="text-2xs text-dark-100">#348D9D</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--primary-500))]" style="background-color: hsl(var(--primary-500))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">primary-500</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-primary-500</code>
+      <code class="text-2xs text-dark-100">--primary-500</code>
+      <code class="text-2xs text-dark-100">hsl(189 100% 18%)</code>
+      <code class="text-2xs text-dark-100">#004E5C</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--primary-600))]" style="background-color: hsl(var(--primary-600))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">primary-600</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-primary-600</code>
+      <code class="text-2xs text-dark-100">--primary-600</code>
+      <code class="text-2xs text-dark-100">hsl(189 100% 15%)</code>
+      <code class="text-2xs text-dark-100">#00414D</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--primary-700))]" style="background-color: hsl(var(--primary-700))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">primary-700</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-primary-700</code>
+      <code class="text-2xs text-dark-100">--primary-700</code>
+      <code class="text-2xs text-dark-100">hsl(191 76% 16%)</code>
+      <code class="text-2xs text-dark-100">#0A3C48</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Secondary</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--secondary))]" style="background-color: hsl(var(--secondary))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">secondary</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-secondary</code>
+      <code class="text-2xs text-dark-100">--secondary</code>
+      <code class="text-2xs text-dark-100">hsl(163 100% 82%)</code>
+      <code class="text-2xs text-dark-100">#A3FFE5</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--secondary-100))]" style="background-color: hsl(var(--secondary-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">secondary-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-secondary-100</code>
+      <code class="text-2xs text-dark-100">--secondary-100</code>
+      <code class="text-2xs text-dark-100">hsl(163 100% 97%)</code>
+      <code class="text-2xs text-dark-100">#F0FFFB</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--secondary-200))]" style="background-color: hsl(var(--secondary-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">secondary-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-secondary-200</code>
+      <code class="text-2xs text-dark-100">--secondary-200</code>
+      <code class="text-2xs text-dark-100">hsl(166 100% 95%)</code>
+      <code class="text-2xs text-dark-100">#E5FFF9</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--secondary-300))]" style="background-color: hsl(var(--secondary-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">secondary-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-secondary-300</code>
+      <code class="text-2xs text-dark-100">--secondary-300</code>
+      <code class="text-2xs text-dark-100">hsl(165 100% 93%)</code>
+      <code class="text-2xs text-dark-100">#DBFFF6</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--secondary-400))]" style="background-color: hsl(var(--secondary-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">secondary-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-secondary-400</code>
+      <code class="text-2xs text-dark-100">--secondary-400</code>
+      <code class="text-2xs text-dark-100">hsl(164 96% 72%)</code>
+      <code class="text-2xs text-dark-100">#73FCD8</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--secondary-500))]" style="background-color: hsl(var(--secondary-500))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">secondary-500</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-secondary-500</code>
+      <code class="text-2xs text-dark-100">--secondary-500</code>
+      <code class="text-2xs text-dark-100">hsl(164 89% 63%)</code>
+      <code class="text-2xs text-dark-100">#4DF5C8</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--secondary-600))]" style="background-color: hsl(var(--secondary-600))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">secondary-600</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-secondary-600</code>
+      <code class="text-2xs text-dark-100">--secondary-600</code>
+      <code class="text-2xs text-dark-100">hsl(164 83% 55%)</code>
+      <code class="text-2xs text-dark-100">#2DEBB9</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--secondary-700))]" style="background-color: hsl(var(--secondary-700))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">secondary-700</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-secondary-700</code>
+      <code class="text-2xs text-dark-100">--secondary-700</code>
+      <code class="text-2xs text-dark-100">hsl(163 78% 52%)</code>
+      <code class="text-2xs text-dark-100">#25E4AE</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Success</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--success))]" style="background-color: hsl(var(--success))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">success</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-success</code>
+      <code class="text-2xs text-dark-100">--success</code>
+      <code class="text-2xs text-dark-100">hsl(157 100% 34%)</code>
+      <code class="text-2xs text-dark-100">#00AD6B</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--success-100))]" style="background-color: hsl(var(--success-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">success-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-success-100</code>
+      <code class="text-2xs text-dark-100">--success-100</code>
+      <code class="text-2xs text-dark-100">hsl(155 60% 96%)</code>
+      <code class="text-2xs text-dark-100">#EFFBF6</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--success-200))]" style="background-color: hsl(var(--success-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">success-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-success-200</code>
+      <code class="text-2xs text-dark-100">--success-200</code>
+      <code class="text-2xs text-dark-100">hsl(157 63% 75%)</code>
+      <code class="text-2xs text-dark-100">#97E7C9</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--success-300))]" style="background-color: hsl(var(--success-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">success-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-success-300</code>
+      <code class="text-2xs text-dark-100">--success-300</code>
+      <code class="text-2xs text-dark-100">hsl(157 59% 69%)</code>
+      <code class="text-2xs text-dark-100">#81DFBB</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--success-400))]" style="background-color: hsl(var(--success-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">success-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-success-400</code>
+      <code class="text-2xs text-dark-100">--success-400</code>
+      <code class="text-2xs text-dark-100">hsl(157 56% 57%)</code>
+      <code class="text-2xs text-dark-100">#54CFA0</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--success-500))]" style="background-color: hsl(var(--success-500))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">success-500</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-success-500</code>
+      <code class="text-2xs text-dark-100">--success-500</code>
+      <code class="text-2xs text-dark-100">hsl(157 63% 46%)</code>
+      <code class="text-2xs text-dark-100">#2BBF87</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--success-600))]" style="background-color: hsl(var(--success-600))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">success-600</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-success-600</code>
+      <code class="text-2xs text-dark-100">--success-600</code>
+      <code class="text-2xs text-dark-100">hsl(157 100% 27%)</code>
+      <code class="text-2xs text-dark-100">#008A55</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--success-700))]" style="background-color: hsl(var(--success-700))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">success-700</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-success-700</code>
+      <code class="text-2xs text-dark-100">--success-700</code>
+      <code class="text-2xs text-dark-100">hsl(157 100% 21%)</code>
+      <code class="text-2xs text-dark-100">#006B42</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--success-800))]" style="background-color: hsl(var(--success-800))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">success-800</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-success-800</code>
+      <code class="text-2xs text-dark-100">--success-800</code>
+      <code class="text-2xs text-dark-100">hsl(157 100% 16%)</code>
+      <code class="text-2xs text-dark-100">#005232</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Info</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--info))]" style="background-color: hsl(var(--info))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">info</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-info</code>
+      <code class="text-2xs text-dark-100">--info</code>
+      <code class="text-2xs text-dark-100">hsl(214 87% 64%)</code>
+      <code class="text-2xs text-dark-100">#5399F3</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--info-100))]" style="background-color: hsl(var(--info-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">info-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-info-100</code>
+      <code class="text-2xs text-dark-100">--info-100</code>
+      <code class="text-2xs text-dark-100">hsl(217 90% 96%)</code>
+      <code class="text-2xs text-dark-100">#ECF3FE</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--info-200))]" style="background-color: hsl(var(--info-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">info-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-info-200</code>
+      <code class="text-2xs text-dark-100">--info-200</code>
+      <code class="text-2xs text-dark-100">hsl(214 86% 89%)</code>
+      <code class="text-2xs text-dark-100">#CBE0FB</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--info-300))]" style="background-color: hsl(var(--info-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">info-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-info-300</code>
+      <code class="text-2xs text-dark-100">--info-300</code>
+      <code class="text-2xs text-dark-100">hsl(214 87% 85%)</code>
+      <code class="text-2xs text-dark-100">#B7D4FA</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--info-400))]" style="background-color: hsl(var(--info-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">info-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-info-400</code>
+      <code class="text-2xs text-dark-100">--info-400</code>
+      <code class="text-2xs text-dark-100">hsl(215 87% 78%)</code>
+      <code class="text-2xs text-dark-100">#96BFF8</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--info-500))]" style="background-color: hsl(var(--info-500))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">info-500</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-info-500</code>
+      <code class="text-2xs text-dark-100">--info-500</code>
+      <code class="text-2xs text-dark-100">hsl(214 87% 71%)</code>
+      <code class="text-2xs text-dark-100">#75ACF5</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--info-600))]" style="background-color: hsl(var(--info-600))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">info-600</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-info-600</code>
+      <code class="text-2xs text-dark-100">--info-600</code>
+      <code class="text-2xs text-dark-100">hsl(215 55% 52%)</code>
+      <code class="text-2xs text-dark-100">#4179C8</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--info-700))]" style="background-color: hsl(var(--info-700))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">info-700</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-info-700</code>
+      <code class="text-2xs text-dark-100">--info-700</code>
+      <code class="text-2xs text-dark-100">hsl(214 52% 40%)</code>
+      <code class="text-2xs text-dark-100">#315F9B</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--info-800))]" style="background-color: hsl(var(--info-800))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">info-800</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-info-800</code>
+      <code class="text-2xs text-dark-100">--info-800</code>
+      <code class="text-2xs text-dark-100">hsl(215 57% 29%)</code>
+      <code class="text-2xs text-dark-100">#204374</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Warning</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--warning))]" style="background-color: hsl(var(--warning))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">warning</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-warning</code>
+      <code class="text-2xs text-dark-100">--warning</code>
+      <code class="text-2xs text-dark-100">hsl(34 100% 63%)</code>
+      <code class="text-2xs text-dark-100">#FFAD42</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--warning-100))]" style="background-color: hsl(var(--warning-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">warning-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-warning-100</code>
+      <code class="text-2xs text-dark-100">--warning-100</code>
+      <code class="text-2xs text-dark-100">hsl(33 100% 96%)</code>
+      <code class="text-2xs text-dark-100">#FFF6EB</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--warning-200))]" style="background-color: hsl(var(--warning-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">warning-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-warning-200</code>
+      <code class="text-2xs text-dark-100">--warning-200</code>
+      <code class="text-2xs text-dark-100">hsl(34 100% 89%)</code>
+      <code class="text-2xs text-dark-100">#FFE7C7</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--warning-300))]" style="background-color: hsl(var(--warning-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">warning-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-warning-300</code>
+      <code class="text-2xs text-dark-100">--warning-300</code>
+      <code class="text-2xs text-dark-100">hsl(34 100% 85%)</code>
+      <code class="text-2xs text-dark-100">#FFDEB3</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--warning-400))]" style="background-color: hsl(var(--warning-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">warning-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-warning-400</code>
+      <code class="text-2xs text-dark-100">--warning-400</code>
+      <code class="text-2xs text-dark-100">hsl(34 100% 78%)</code>
+      <code class="text-2xs text-dark-100">#FFCE8F</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--warning-500))]" style="background-color: hsl(var(--warning-500))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">warning-500</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-warning-500</code>
+      <code class="text-2xs text-dark-100">--warning-500</code>
+      <code class="text-2xs text-dark-100">hsl(34 100% 71%)</code>
+      <code class="text-2xs text-dark-100">#FFBF6B</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--warning-600))]" style="background-color: hsl(var(--warning-600))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">warning-600</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-warning-600</code>
+      <code class="text-2xs text-dark-100">--warning-600</code>
+      <code class="text-2xs text-dark-100">hsl(34 63% 52%)</code>
+      <code class="text-2xs text-dark-100">#D28F37</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--warning-700))]" style="background-color: hsl(var(--warning-700))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">warning-700</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-warning-700</code>
+      <code class="text-2xs text-dark-100">--warning-700</code>
+      <code class="text-2xs text-dark-100">hsl(34 60% 40%)</code>
+      <code class="text-2xs text-dark-100">#A36E29</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--warning-800))]" style="background-color: hsl(var(--warning-800))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">warning-800</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-warning-800</code>
+      <code class="text-2xs text-dark-100">--warning-800</code>
+      <code class="text-2xs text-dark-100">hsl(34 62% 35%)</code>
+      <code class="text-2xs text-dark-100">#916122</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Danger</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--danger))]" style="background-color: hsl(var(--danger))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">danger</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-danger</code>
+      <code class="text-2xs text-dark-100">--danger</code>
+      <code class="text-2xs text-dark-100">hsl(358 89% 64%)</code>
+      <code class="text-2xs text-dark-100">#F55157</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--danger-100))]" style="background-color: hsl(var(--danger-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">danger-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-danger-100</code>
+      <code class="text-2xs text-dark-100">--danger-100</code>
+      <code class="text-2xs text-dark-100">hsl(0 90% 96%)</code>
+      <code class="text-2xs text-dark-100">#FEECEC</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--danger-200))]" style="background-color: hsl(var(--danger-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">danger-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-danger-200</code>
+      <code class="text-2xs text-dark-100">--danger-200</code>
+      <code class="text-2xs text-dark-100">hsl(358 89% 89%)</code>
+      <code class="text-2xs text-dark-100">#FCCACC</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--danger-300))]" style="background-color: hsl(var(--danger-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">danger-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-danger-300</code>
+      <code class="text-2xs text-dark-100">--danger-300</code>
+      <code class="text-2xs text-dark-100">hsl(357 89% 85%)</code>
+      <code class="text-2xs text-dark-100">#FBB7BA</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--danger-400))]" style="background-color: hsl(var(--danger-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">danger-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-danger-400</code>
+      <code class="text-2xs text-dark-100">--danger-400</code>
+      <code class="text-2xs text-dark-100">hsl(358 89% 78%)</code>
+      <code class="text-2xs text-dark-100">#F99598</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--danger-500))]" style="background-color: hsl(var(--danger-500))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">danger-500</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-danger-500</code>
+      <code class="text-2xs text-dark-100">--danger-500</code>
+      <code class="text-2xs text-dark-100">hsl(358 89% 71%)</code>
+      <code class="text-2xs text-dark-100">#F77378</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--danger-600))]" style="background-color: hsl(var(--danger-600))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">danger-600</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-danger-600</code>
+      <code class="text-2xs text-dark-100">--danger-600</code>
+      <code class="text-2xs text-dark-100">hsl(358 56% 52%)</code>
+      <code class="text-2xs text-dark-100">#C94045</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--danger-700))]" style="background-color: hsl(var(--danger-700))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">danger-700</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-danger-700</code>
+      <code class="text-2xs text-dark-100">--danger-700</code>
+      <code class="text-2xs text-dark-100">hsl(358 53% 41%)</code>
+      <code class="text-2xs text-dark-100">#A03135</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--danger-800))]" style="background-color: hsl(var(--danger-800))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">danger-800</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-danger-800</code>
+      <code class="text-2xs text-dark-100">--danger-800</code>
+      <code class="text-2xs text-dark-100">hsl(1 61% 30%)</code>
+      <code class="text-2xs text-dark-100">#7B1F1E</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Gray</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gray))]" style="background-color: hsl(var(--gray))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gray</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gray</code>
+      <code class="text-2xs text-dark-100">--gray</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 73%)</code>
+      <code class="text-2xs text-dark-100">#BABABA</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gray-100))]" style="background-color: hsl(var(--gray-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gray-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gray-100</code>
+      <code class="text-2xs text-dark-100">--gray-100</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 99%)</code>
+      <code class="text-2xs text-dark-100">#FCFCFC</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gray-200))]" style="background-color: hsl(var(--gray-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gray-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gray-200</code>
+      <code class="text-2xs text-dark-100">--gray-200</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 97%)</code>
+      <code class="text-2xs text-dark-100">#F7F7F7</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gray-250))]" style="background-color: hsl(var(--gray-250))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gray-250</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gray-250</code>
+      <code class="text-2xs text-dark-100">--gray-250</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 96%)</code>
+      <code class="text-2xs text-dark-100">#F5F5F5</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gray-300))]" style="background-color: hsl(var(--gray-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gray-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gray-300</code>
+      <code class="text-2xs text-dark-100">--gray-300</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 96%)</code>
+      <code class="text-2xs text-dark-100">#F5F5F5</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gray-400))]" style="background-color: hsl(var(--gray-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gray-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gray-400</code>
+      <code class="text-2xs text-dark-100">--gray-400</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 93%)</code>
+      <code class="text-2xs text-dark-100">#EDEDED</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gray-500))]" style="background-color: hsl(var(--gray-500))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gray-500</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gray-500</code>
+      <code class="text-2xs text-dark-100">--gray-500</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 87%)</code>
+      <code class="text-2xs text-dark-100">#DEDEDE</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Dark</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--dark))]" style="background-color: hsl(var(--dark))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">dark</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-dark</code>
+      <code class="text-2xs text-dark-100">--dark</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 20%)</code>
+      <code class="text-2xs text-dark-100">#333333</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--dark-100))]" style="background-color: hsl(var(--dark-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">dark-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-dark-100</code>
+      <code class="text-2xs text-dark-100">--dark-100</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 45%)</code>
+      <code class="text-2xs text-dark-100">#737373</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--dark-200))]" style="background-color: hsl(var(--dark-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">dark-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-dark-200</code>
+      <code class="text-2xs text-dark-100">--dark-200</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 40%)</code>
+      <code class="text-2xs text-dark-100">#666666</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--dark-300))]" style="background-color: hsl(var(--dark-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">dark-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-dark-300</code>
+      <code class="text-2xs text-dark-100">--dark-300</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 33%)</code>
+      <code class="text-2xs text-dark-100">#545454</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--dark-400))]" style="background-color: hsl(var(--dark-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">dark-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-dark-400</code>
+      <code class="text-2xs text-dark-100">--dark-400</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 27%)</code>
+      <code class="text-2xs text-dark-100">#454545</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">White</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--white))]" style="background-color: hsl(var(--white))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">white</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-white</code>
+      <code class="text-2xs text-dark-100">--white</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 100%)</code>
+      <code class="text-2xs text-dark-100">#FFFFFF</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--white-100))]" style="background-color: hsl(var(--white-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">white-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-white-100</code>
+      <code class="text-2xs text-dark-100">--white-100</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 100%)</code>
+      <code class="text-2xs text-dark-100">#FFFFFF</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--white-200))]" style="background-color: hsl(var(--white-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">white-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-white-200</code>
+      <code class="text-2xs text-dark-100">--white-200</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 100%)</code>
+      <code class="text-2xs text-dark-100">#FFFFFF</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--white-300))]" style="background-color: hsl(var(--white-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">white-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-white-300</code>
+      <code class="text-2xs text-dark-100">--white-300</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 100%)</code>
+      <code class="text-2xs text-dark-100">#FFFFFF</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Black</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--black))]" style="background-color: hsl(var(--black))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">black</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-black</code>
+      <code class="text-2xs text-dark-100">--black</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 0%)</code>
+      <code class="text-2xs text-dark-100">#000000</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--black-force))]" style="background-color: hsl(var(--black-force))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">black-force</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-black-force</code>
+      <code class="text-2xs text-dark-100">--black-force</code>
+      <code class="text-2xs text-dark-100">hsl(0 0% 0%)</code>
+      <code class="text-2xs text-dark-100">#000000</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Mahally</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--mahally))]" style="background-color: hsl(var(--mahally))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">mahally</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-mahally</code>
+      <code class="text-2xs text-dark-100">--mahally</code>
+      <code class="text-2xs text-dark-100">hsl(11 100% 58%)</code>
+      <code class="text-2xs text-dark-100">#FF5029</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--mahally-100))]" style="background-color: hsl(var(--mahally-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">mahally-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-mahally-100</code>
+      <code class="text-2xs text-dark-100">--mahally-100</code>
+      <code class="text-2xs text-dark-100">hsl(11 100% 98%)</code>
+      <code class="text-2xs text-dark-100">#FFF7F5</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--mahally-200))]" style="background-color: hsl(var(--mahally-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">mahally-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-mahally-200</code>
+      <code class="text-2xs text-dark-100">--mahally-200</code>
+      <code class="text-2xs text-dark-100">hsl(11 100% 93%)</code>
+      <code class="text-2xs text-dark-100">#FFE2DB</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--mahally-300))]" style="background-color: hsl(var(--mahally-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">mahally-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-mahally-300</code>
+      <code class="text-2xs text-dark-100">--mahally-300</code>
+      <code class="text-2xs text-dark-100">hsl(11 100% 86%)</code>
+      <code class="text-2xs text-dark-100">#FFC5B8</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--mahally-400))]" style="background-color: hsl(var(--mahally-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">mahally-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-mahally-400</code>
+      <code class="text-2xs text-dark-100">--mahally-400</code>
+      <code class="text-2xs text-dark-100">hsl(11 100% 75%)</code>
+      <code class="text-2xs text-dark-100">#FF9780</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--mahally-500))]" style="background-color: hsl(var(--mahally-500))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">mahally-500</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-mahally-500</code>
+      <code class="text-2xs text-dark-100">--mahally-500</code>
+      <code class="text-2xs text-dark-100">hsl(11 100% 66%)</code>
+      <code class="text-2xs text-dark-100">#FF7152</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--mahally-600))]" style="background-color: hsl(var(--mahally-600))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">mahally-600</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-mahally-600</code>
+      <code class="text-2xs text-dark-100">--mahally-600</code>
+      <code class="text-2xs text-dark-100">hsl(11 73% 46%)</code>
+      <code class="text-2xs text-dark-100">#CB3F20</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--mahally-700))]" style="background-color: hsl(var(--mahally-700))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">mahally-700</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-mahally-700</code>
+      <code class="text-2xs text-dark-100">--mahally-700</code>
+      <code class="text-2xs text-dark-100">hsl(11 73% 35%)</code>
+      <code class="text-2xs text-dark-100">#9A3018</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Gold</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gold))]" style="background-color: hsl(var(--gold))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gold</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gold</code>
+      <code class="text-2xs text-dark-100">--gold</code>
+      <code class="text-2xs text-dark-100">hsl(47 100% 79%)</code>
+      <code class="text-2xs text-dark-100">#FFE894</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gold-100))]" style="background-color: hsl(var(--gold-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gold-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gold-100</code>
+      <code class="text-2xs text-dark-100">--gold-100</code>
+      <code class="text-2xs text-dark-100">hsl(49 100% 96%)</code>
+      <code class="text-2xs text-dark-100">#FFFBEB</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gold-200))]" style="background-color: hsl(var(--gold-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gold-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gold-200</code>
+      <code class="text-2xs text-dark-100">--gold-200</code>
+      <code class="text-2xs text-dark-100">hsl(46 100% 90%)</code>
+      <code class="text-2xs text-dark-100">#FFF3CC</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gold-300))]" style="background-color: hsl(var(--gold-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gold-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gold-300</code>
+      <code class="text-2xs text-dark-100">--gold-300</code>
+      <code class="text-2xs text-dark-100">hsl(47 59% 56%)</code>
+      <code class="text-2xs text-dark-100">#D1B44D</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--gold-400))]" style="background-color: hsl(var(--gold-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">gold-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-gold-400</code>
+      <code class="text-2xs text-dark-100">--gold-400</code>
+      <code class="text-2xs text-dark-100">hsl(47 100% 17%)</code>
+      <code class="text-2xs text-dark-100">#574400</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Orange</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--orange))]" style="background-color: hsl(var(--orange))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">orange</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-orange</code>
+      <code class="text-2xs text-dark-100">--orange</code>
+      <code class="text-2xs text-dark-100">hsl(21 100% 76%)</code>
+      <code class="text-2xs text-dark-100">#FFAF85</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--orange-100))]" style="background-color: hsl(var(--orange-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">orange-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-orange-100</code>
+      <code class="text-2xs text-dark-100">--orange-100</code>
+      <code class="text-2xs text-dark-100">hsl(21 81% 96%)</code>
+      <code class="text-2xs text-dark-100">#FDF2ED</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--orange-200))]" style="background-color: hsl(var(--orange-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">orange-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-orange-200</code>
+      <code class="text-2xs text-dark-100">--orange-200</code>
+      <code class="text-2xs text-dark-100">hsl(22 100% 88%)</code>
+      <code class="text-2xs text-dark-100">#FFD8C2</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--orange-300))]" style="background-color: hsl(var(--orange-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">orange-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-orange-300</code>
+      <code class="text-2xs text-dark-100">--orange-300</code>
+      <code class="text-2xs text-dark-100">hsl(21 85% 60%)</code>
+      <code class="text-2xs text-dark-100">#F07F42</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--orange-400))]" style="background-color: hsl(var(--orange-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">orange-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-orange-400</code>
+      <code class="text-2xs text-dark-100">--orange-400</code>
+      <code class="text-2xs text-dark-100">hsl(21 100% 27%)</code>
+      <code class="text-2xs text-dark-100">#8A3000</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Blue</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--blue))]" style="background-color: hsl(var(--blue))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">blue</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-blue</code>
+      <code class="text-2xs text-dark-100">--blue</code>
+      <code class="text-2xs text-dark-100">hsl(188 100% 79%)</code>
+      <code class="text-2xs text-dark-100">#94F1FF</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--blue-100))]" style="background-color: hsl(var(--blue-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">blue-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-blue-100</code>
+      <code class="text-2xs text-dark-100">--blue-100</code>
+      <code class="text-2xs text-dark-100">hsl(193 64% 96%)</code>
+      <code class="text-2xs text-dark-100">#EEF8FB</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--blue-200))]" style="background-color: hsl(var(--blue-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">blue-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-blue-200</code>
+      <code class="text-2xs text-dark-100">--blue-200</code>
+      <code class="text-2xs text-dark-100">hsl(195 100% 87%)</code>
+      <code class="text-2xs text-dark-100">#BDEEFF</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--blue-300))]" style="background-color: hsl(var(--blue-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">blue-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-blue-300</code>
+      <code class="text-2xs text-dark-100">--blue-300</code>
+      <code class="text-2xs text-dark-100">hsl(188 100% 41%)</code>
+      <code class="text-2xs text-dark-100">#00B5D1</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--blue-400))]" style="background-color: hsl(var(--blue-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">blue-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-blue-400</code>
+      <code class="text-2xs text-dark-100">--blue-400</code>
+      <code class="text-2xs text-dark-100">hsl(188 100% 21%)</code>
+      <code class="text-2xs text-dark-100">#005D6B</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-dark">Pink</h2>
+      <p class="text-sm text-dark-100">Tailwind classes backed by Salla CSS variables.</p>
+    </div>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--pink))]" style="background-color: hsl(var(--pink))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">pink</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-pink</code>
+      <code class="text-2xs text-dark-100">--pink</code>
+      <code class="text-2xs text-dark-100">hsl(348 100% 78%)</code>
+      <code class="text-2xs text-dark-100">#FF8FA5</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--pink-100))]" style="background-color: hsl(var(--pink-100))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">pink-100</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-pink-100</code>
+      <code class="text-2xs text-dark-100">--pink-100</code>
+      <code class="text-2xs text-dark-100">hsl(345 100% 96%)</code>
+      <code class="text-2xs text-dark-100">#FFEBF0</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--pink-200))]" style="background-color: hsl(var(--pink-200))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">pink-200</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-pink-200</code>
+      <code class="text-2xs text-dark-100">--pink-200</code>
+      <code class="text-2xs text-dark-100">hsl(348 100% 88%)</code>
+      <code class="text-2xs text-dark-100">#FFC2CE</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--pink-300))]" style="background-color: hsl(var(--pink-300))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">pink-300</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-pink-300</code>
+      <code class="text-2xs text-dark-100">--pink-300</code>
+      <code class="text-2xs text-dark-100">hsl(348 81% 63%)</code>
+      <code class="text-2xs text-dark-100">#ED5473</code>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-lg border border-gray-300 bg-white shadow-xs">
+    <div class="flex h-20 items-end p-3 bg-[hsl(var(--pink-400))]" style="background-color: hsl(var(--pink-400))">
+      <span class="rounded bg-white/80 px-2 py-1 text-2xs text-dark shadow-xs">pink-400</span>
+    </div>
+    <div class="flex flex-col gap-1 p-3">
+      <code class="text-xs text-dark">bg-pink-400</code>
+      <code class="text-2xs text-dark-100">--pink-400</code>
+      <code class="text-2xs text-dark-100">hsl(348 79% 32%)</code>
+      <code class="text-2xs text-dark-100">#92112B</code>
+    </div>
+  </div>
+
+    </div>
+  </section>
+
+    </div>
+  </div>
+```
+
+</details>

@@ -1,0 +1,10 @@
+<!-- Components/Uploader / With Server Config (components-uploader--with-server-config) -->
+<style>
+    [id*="story--components-uploader--"] {
+      height: 30vh !important;
+    }
+    </style>
+  
+  <s-uploader name="file" layout="drag-drop" label="Browse or drag and drop files here" placeholder="Choose a file..." button-label="Submit" files-allowed="all" multiple="" max="-1" file-size="2MB" auto-upload="" server="{&quot;instantUpload&quot;:true,&quot;url&quot;:&quot;/api/upload&quot;,&quot;headers&quot;:{&quot;Authorization&quot;:&quot;Bearer token123&quot;,&quot;X-Custom-Header&quot;:&quot;custom-value&quot;},&quot;upload&quot;:{&quot;url&quot;:&quot;/api/files/upload&quot;,&quot;additionalRequestData&quot;:{&quot;folder&quot;:&quot;documents&quot;,&quot;type&quot;:&quot;image&quot;}},&quot;edit&quot;:{&quot;url&quot;:&quot;/api/files/edit&quot;},&quot;remove&quot;:{&quot;url&quot;:&quot;/api/files/delete&quot;}}" selectable="" editable="" sortable="" items="[{&quot;source&quot;:&quot;https://i.pravatar.cc/300?img=1&quot;,&quot;alt&quot;:&quot;Sample Image&quot;}, {&quot;source&quot;:&quot;https://i.pravatar.cc/300?img=2&quot;,&quot;alt&quot;:&quot;Sample Image&quot;}]" class="s-uploader--selectable s-uploader--sortable drag-drop ltr hydrated">
+    <p slot="feedback">The suitable image size is 350X263 pixels</p>
+  </s-uploader>
