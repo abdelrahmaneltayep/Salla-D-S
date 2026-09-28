@@ -6,6 +6,28 @@ Design-to-code specs: [avatar](../specs/avatar.md)
 
 ![Avatar](../images/avatar.png)
 
+### Figma exports (`figma/exports/avatar/`, updated 2026-09-28)
+
+**avatar-placeholder-images**
+
+![avatar-placeholder-images](../../figma/exports/avatar/avatar-placeholder-images.png)
+
+**avatar-stack**
+
+![avatar-stack](../../figma/exports/avatar/avatar-stack.png)
+
+**avatar-with-text**
+
+![avatar-with-text](../../figma/exports/avatar/avatar-with-text.png)
+
+**avatar**
+
+![avatar](../../figma/exports/avatar/avatar.png)
+
+**bank-placeholder-images**
+
+![bank-placeholder-images](../../figma/exports/avatar/bank-placeholder-images.png)
+
 ## Avatar
 
 Node `15368:1123` · 60 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=15368-1123)

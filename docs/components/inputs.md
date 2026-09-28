@@ -6,6 +6,90 @@ Design-to-code specs: [text-input](../specs/text-input.md), [search-input](../sp
 
 ![Inputs](../images/inputs.png)
 
+### Figma exports (`figma/exports/input/`, updated 2026-09-28)
+
+**amount-input**
+
+![amount-input](../../figma/exports/input/amount-input.png)
+
+**email-input**
+
+![email-input](../../figma/exports/input/email-input.png)
+
+**input-counter**
+
+![input-counter](../../figma/exports/input/input-counter.png)
+
+**input-with-button**
+
+![input-with-button](../../figma/exports/input/input-with-button.png)
+
+**input-with-image**
+
+![input-with-image](../../figma/exports/input/input-with-image.png)
+
+**password-input**
+
+![password-input](../../figma/exports/input/password-input.png)
+
+**search-input**
+
+![search-input](../../figma/exports/input/search-input.png)
+
+**text-input**
+
+![text-input](../../figma/exports/input/text-input.png)
+
+### Figma exports (`figma/exports/textarea/`, updated 2026-09-28)
+
+**textarea**
+
+![textarea](../../figma/exports/textarea/textarea.png)
+
+### Figma exports (`figma/exports/tel-input/`, updated 2026-09-28)
+
+**phone-input**
+
+![phone-input](../../figma/exports/tel-input/phone-input.png)
+
+### Figma exports (`figma/exports/otp/`, updated 2026-09-28)
+
+**single-digit**
+
+![single-digit](../../figma/exports/otp/single-digit.png)
+
+### Figma exports (`figma/exports/qty/`, updated 2026-09-28)
+
+**counter**
+
+![counter](../../figma/exports/qty/counter.png)
+
+**quantity-hotreload**
+
+![quantity-hotreload](../../figma/exports/qty/quantity-hotreload.png)
+
+**quantity**
+
+![quantity](../../figma/exports/qty/quantity.png)
+
+### Figma exports (`figma/exports/select/`, updated 2026-09-28)
+
+**basic-dropdown-multiple**
+
+![basic-dropdown-multiple](../../figma/exports/select/basic-dropdown-multiple.png)
+
+**basic-dropdown-single**
+
+![basic-dropdown-single](../../figma/exports/select/basic-dropdown-single.png)
+
+**dropdown-multiple**
+
+![dropdown-multiple](../../figma/exports/select/dropdown-multiple.png)
+
+**dropdown-single**
+
+![dropdown-single](../../figma/exports/select/dropdown-single.png)
+
 ## _TextInput *(internal, underscore-prefixed)*
 
 Node `14805:10165` · 28 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=14805-10165)

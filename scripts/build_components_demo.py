@@ -26,8 +26,22 @@ FIGMA_REF = {
     "Components/Checkbox": [("checkbox/checkboxfield.png", "checkboxfield — default / disabled / info / tooltip")],
     "Components/Tabs": [("tabs/radiotext-tabs.png", "RadioText tabs (chips) — 4 أنماط"), ("tabs/secondary-tabs-list.png", "Secondary Tabs List"), ("tabs/header-secondary-tabs.png", "Header Secondary Tabs — contained / plain"), ("tabs/primary-tabs-list.png", "Primary Tabs List — dashboard"), ("tabs/header-primary-tabs.png", "Header Primary Tabs — states")],
     "Components/Calendar": [("calendar/calendar-time-date.png", "Calendar — تاريخ + وقت"), ("calendar/time.png", "Time input — states"), ("calendar/big-calendar-items.png", "Day cells"), ("calendar/date-item.png", "Date item"), ("calendar/time-item.png", "Time item")],
+    "Components/AlertBox": [("alertbox/alertbox.png", "Alertbox — 6 أنماط × inline / white × title on/off (Figma)")],
+    "Components/Avatar": [("avatar/avatar.png", "Avatar — sizes × circular/rectangular × image/fallback"), ("avatar/avatar-stack.png", "AvatarStack — overlapping / compact"), ("avatar/avatar-with-text.png", "AvatarWithText"), ("avatar/avatar-placeholder-images.png", "Placeholder images"), ("avatar/bank-placeholder-images.png", "Bank placeholder")],
+    "Components/Accordion": [("accordion/accordion.png", "Accordion"), ("accordion/accordion-header.png", "Accordion header — states"), ("accordion/accordion-icon.png", "Accordion icon")],
+    "Components/Qty": [("qty/quantity.png", "Quantity — states"), ("qty/counter.png", "Counter — compact / default"), ("qty/quantity-hotreload.png", "Quantity hot-reload")],
+    "Components/OTP": [("otp/single-digit.png", "Single digit — states")],
+    "Components/Telephone Input": [("tel-input/phone-input.png", "Phone input — states, AR/EN")],
+    "Components/Textarea": [("textarea/textarea.png", "Textarea — plain / rich text, states")],
+    "Components/Input": [("input/text-input.png", "Text input — 7 states × error, AR/EN"), ("input/search-input.png", "Search input"), ("input/input-with-image.png", "Input with image"), ("input/input-with-button.png", "Input with button"), ("input/input-counter.png", "Input counter"), ("input/amount-input.png", "Amount input"), ("input/email-input.png", "Email input"), ("input/password-input.png", "Password input — hidden / requirements")],
+    "Components/Select": [("select/dropdown-single.png", "Dropdown single — with search / add new"), ("select/dropdown-multiple.png", "Dropdown multiple"), ("select/basic-dropdown-single.png", "Basic dropdown single"), ("select/basic-dropdown-multiple.png", "Basic dropdown multiple")],
     "Components/Table": [("table/desktop-default.png", "Table — Default"), ("table/desktop-tabs.png", "Table — Tabs"), ("table/desktop-title.png", "Table — Title"), ("table/desktop-filter-results.png", "Table — Filter results"), ("table/desktop-selected.png", "Table — Selected (bulk banner)"), ("table/desktop-more-menu.png", "Table — More menu"), ("table/desktop-no-results.png", "Table — No results"), ("table/desktop-scroll-down.png", "Table — Scroll (sticky header)"), ("table/mobile-default.png", "Table — Mobile"), ("table/mobile-selected.png", "Table — Mobile selected"), ("table/mobile-no-results.png", "Table — Mobile empty")],
 }
+
+# Figma-only components (no Storybook story yet): title, slug, refs, note
+FIGMA_ONLY = [
+    ("Toast", "toast", [("toast/toast.png", "Toast — default / success / danger / warning / info, with action")], "لا يوجد له قصة في Storybook؛ الرن تايم يحمّل مكتبة toastify (<code>--toastify-*</code>) لعرض الإشعارات."),
+]
 
 # stories that need a note or trimming
 LIMIT = {"Components/Editor": 4, "Components/LingualField": 6, "Components/Maps": 1}
@@ -130,6 +144,16 @@ for c in comps:
   <div class="comp__head"><h2>{H.escape(title)}</h2><div class="tags">{tags}</div><a class="doclink" href="../docs/storybook/{c["slug"]}.md">docs/storybook/{c["slug"]}.md</a></div>
   {desc}{note}{props}
   <div class="grid">{"".join(cards)}</div>
+</section>''')
+
+for title, sl, refs, note in FIGMA_ONLY:
+    sid = "c-" + sl
+    nav.append(f'<a href="#{sid}" data-nav="{sid}">{H.escape(title)}<span>Figma</span></a>')
+    cards = "".join(f'<figure><a href="../figma/exports/{f}" target="_blank"><img loading="lazy" src="../figma/exports/{f}" alt="{H.escape(cap)}" /></a><figcaption>{H.escape(cap)}</figcaption></figure>' for f, cap in refs)
+    sections.append(f'''<section class="comp" id="{sid}" data-title="{H.escape(title.lower())} figma">
+  <div class="comp__head"><h2>{H.escape(title)}</h2><div class="tags"><code>Figma only</code></div><a class="doclink" href="../figma/exports/{sl}/">figma/exports/{sl}/</a></div>
+  <p class="note">{note}</p>
+  <div class="figref"><h3>التصميم في Figma <span>figma/exports/ · 2026-09-28</span></h3><div class="figref__row">{cards}</div></div>
 </section>''')
 
 page = f'''<!doctype html>

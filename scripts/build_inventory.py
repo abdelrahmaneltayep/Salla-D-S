@@ -23,7 +23,7 @@ MAIN_FILE_KEY = "zuGhoKg2BaBIYUreKuSBGY"
 
 ICON_FRAMES = {"Icons/Filled", "Icons/Outline"}
 FLAG_FRAME = "Flag"
-EXPORTS = {'button': ['button'], 'status': ['tag'], 'bread-crumb': ['breadcrumb'], 'check-box': ['checkbox'], 'header': ['header', 'tabs'], 'table': ['table'], 'drop-down-list': ['calendar']}
+EXPORTS = {'alertbox': ['alertbox'], 'avatar': ['avatar'], 'inputs': ['input', 'textarea', 'tel-input', 'otp', 'qty', 'select'], 'button': ['button'], 'status': ['tag'], 'bread-crumb': ['breadcrumb'], 'check-box': ['checkbox'], 'header': ['header', 'tabs'], 'table': ['table'], 'drop-down-list': ['calendar', 'select']}
 SPEC_LINKS = {'button': ['button-primary-lg'], 'check-box': ['checkbox'], 'radio-buttton': ['radio'], 'toggle': ['toggle'], 'status': ['status-badge'], 'alertbox': ['alertbox'], 'loader': ['loading-indicator'], 'avatar': ['avatar'], 'bread-crumb': ['breadcrumb'], 'header': ['header'], 'inputs': ['text-input', 'search-input', 'input-wrapper', 'upload-input'], 'side-menu': ['side-menu'], 'more-menu': ['more-menu'], 'drop-down-list': ['dropdown-list', 'list-item'], 'table': ['table-cell-header'], 'steps': ['steps']}
 
 

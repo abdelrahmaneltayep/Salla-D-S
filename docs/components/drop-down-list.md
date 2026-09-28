@@ -28,6 +28,24 @@ Design-to-code specs: [dropdown-list](../specs/dropdown-list.md), [list-item](..
 
 ![time](../../figma/exports/calendar/time.png)
 
+### Figma exports (`figma/exports/select/`, updated 2026-09-28)
+
+**basic-dropdown-multiple**
+
+![basic-dropdown-multiple](../../figma/exports/select/basic-dropdown-multiple.png)
+
+**basic-dropdown-single**
+
+![basic-dropdown-single](../../figma/exports/select/basic-dropdown-single.png)
+
+**dropdown-multiple**
+
+![dropdown-multiple](../../figma/exports/select/dropdown-multiple.png)
+
+**dropdown-single**
+
+![dropdown-single](../../figma/exports/select/dropdown-single.png)
+
 ## Drop Down List
 
 Node `14952:281457` · 34 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=14952-281457)

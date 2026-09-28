@@ -6,6 +6,12 @@ Design-to-code specs: [alertbox](../specs/alertbox.md)
 
 ![Alertbox](../images/alertbox.png)
 
+### Figma exports (`figma/exports/alertbox/`, updated 2026-09-28)
+
+**alertbox**
+
+![alertbox](../../figma/exports/alertbox/alertbox.png)
+
 ## Alertbox
 
 Node `15375:52054` · 64 variants · [open](https://www.figma.com/design/dnmyqzYKK9dUJjVHuIWMDS/?node-id=15375-52054)
