@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Salla DS demo — إدارة الطلبات</title>
+  <!-- Production fonts (PingARLT + Hugeicons font) -->
+  <link rel="stylesheet" href="https://cdn.salla.network/fonts/pingarlt.css?v=0.2" />
+  <link rel="stylesheet" href="https://cdn.salla.network/fonts/hugeicons-font.min.css" />
+  <!-- Twilight runtime: compiled Tailwind + component styles, and the s-* web components -->
+  <link rel="stylesheet" href="../storybook/static/styles.css" />
+  <script type="module" src="../storybook/static/admin-ui.esm.js"></script>
+  <!-- Design tokens from Figma (semantic names) -->
+  <link rel="stylesheet" href="../tokens/tokens.css" />
+  <style>
+    /* ---- Layout of the app shell, following docs/patterns.md ---- */
+    html { background: var(--salla-background-default-page, #f4f4f4); }
+    body { margin: 0; font-family: PingARLT, "PT Sans", system-ui, sans-serif; color: var(--salla-text-gray-dark, #333); font-size: 14px; }
+    .icon { display: inline-flex; width: 20px; height: 20px; vertical-align: middle; flex: none; }
+    .icon svg { width: 100%; height: 100%; }
+    .icon--sm { width: 16px; height: 16px; }
+
+    /* Top bar */
+    .topbar { height: var(--nav-height, 4.5rem); background: var(--salla-background-primary-primary, #004956); color: #fff; display: flex; align-items: center; padding: 0 24px; gap: 24px; }
+    .topbar__logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 20px; margin-inline-end: 8px; }
+    .topbar__nav { display: flex; align-items: center; gap: 4px; flex: 1; }
+    .topbar__item { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: var(--salla-radius-xl, 8px); color: #fff; text-decoration: none; font-weight: 500; font-size: 15px; }
+    .topbar__item:hover { background: rgba(255,255,255,.08); }
+    .topbar__item.is-active { background: var(--salla-background-secondary-seconadry, #a4ffe5); color: var(--salla-text-primary-primary, #004956); }
+    .topbar__tools { display: flex; align-items: center; gap: 18px; }
+    .topbar__tool { position: relative; display: inline-flex; color: #fff; opacity: .95; }
+    .topbar__tool .dot { position: absolute; top: -2px; inset-inline-end: -2px; width: 8px; height: 8px; border-radius: 999px; background: var(--salla-background-status-danger-primary, #f55157); border: 2px solid #004956; }
+    .d-ring { width: 32px; height: 32px; border-radius: 999px; background: conic-gradient(var(--salla-background-secondary-seconadry,#a4ffe5) 0 20%, rgba(255,255,255,.2) 20% 100%); display: grid; place-items: center; font-size: 11px; }
+    .d-ring span { width: 24px; height: 24px; border-radius: 999px; background: #004956; display: grid; place-items: center; }
+    .store { display: flex; align-items: center; gap: 10px; padding-inline-start: 16px; border-inline-start: 1px solid rgba(255,255,255,.15); }
+    .store__name { font-weight: 500; line-height: 1.2; }
+    .store__plan { display: inline-block; margin-top: 2px; font-size: 11px; padding: 1px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,.6); }
+
+    /* Secondary tabs */
+    .subnav { background: var(--salla-background-default-white, #fff); border-bottom: 1px solid var(--salla-border-default, #eee); padding: 0 24px; display: flex; align-items: center; gap: 24px; min-height: 56px; }
+    .subnav__tabs { display: flex; gap: 22px; flex: 1; }
+    .subnav__tab { padding: 18px 0 14px; color: var(--salla-text-gray-light, #666); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; }
+    .subnav__tab.is-active { color: var(--salla-text-primary-primary, #004956); font-weight: 500; border-bottom-color: var(--salla-border-primary, #004956); }
+    .subnav__actions { display: flex; align-items: center; gap: 8px; }
+
+    /* Page */
+    .page { padding: 20px 24px 96px; max-width: 1440px; margin: 0 auto; }
+    .searchbar { display: flex; gap: 8px; align-items: center; margin: 16px 0; }
+    .searchbar s-input { flex: 1; }
+
+    .layout { display: grid; grid-template-columns: 200px 340px 1fr; gap: 12px; align-items: start; }
+    .card { background: var(--salla-background-default-cards, #fff); border-radius: var(--salla-radius-xl, 8px); box-shadow: var(--salla-shadows-xs, 0 1px 2px rgba(18,18,23,.05)); }
+
+    /* Status rail */
+    .rail { padding: 6px 0; }
+    .rail__head { display: flex; justify-content: space-between; padding: 12px 16px; font-weight: 500; }
+    .rail__item { display: flex; justify-content: space-between; align-items: center; padding: 11px 16px; color: var(--salla-text-gray-light, #666); cursor: pointer; }
+    .rail__item:hover { background: var(--salla-background-default-neutrals-light, #fcfcfc); }
+    .rail__item.is-active { color: var(--salla-text-gray-dark, #333); font-weight: 500; }
+    .rail__label { display: flex; align-items: center; gap: 8px; }
+    .dot-status { width: 8px; height: 8px; border-radius: 999px; background: var(--c, #bbb); flex: none; }
+    .rail__count { color: var(--salla-text-gray-lighter, #737373); font-size: 13px; }
+    .rail__foot { padding: 12px; }
+
+    /* Orders list */
+    .list__toolbar { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--salla-border-default, #eee); }
+    .list__toolbar .spacer { flex: 1; }
+    .list__date { display: flex; align-items: center; gap: 6px; padding: 10px 16px 6px; color: var(--salla-text-gray-lighter, #737373); font-size: 12px; }
+    .order { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--salla-border-default, #eee); cursor: pointer; border-inline-start: 2px solid transparent; }
+    .order:hover { background: var(--salla-background-default-neutrals-light, #fcfcfc); }
+    .order.is-selected { background: var(--salla-background-secondary-lighter, #e6fff9); border-inline-start-color: var(--salla-border-primary, #004956); }
+    .order__id { font-size: 12px; color: var(--salla-text-gray-light, #666); display: flex; align-items: center; gap: 6px; }
+    .order__name { font-weight: 500; margin-top: 4px; }
+    .order__meta { text-align: left; font-size: 12px; color: var(--salla-text-gray-lighter, #737373); }
+    .order__amount { font-weight: 500; color: var(--salla-text-gray-dark, #333); margin-top: 6px; font-size: 13px; }
+
+    /* Detail */
+    .detail { display: flex; flex-direction: column; gap: 12px; }
+    .actionbar { display: flex; align-items: center; gap: 8px; padding: 10px 12px; }
+    .actionbar .spacer { flex: 1; }
+    .section { padding: 18px 20px; }
+    .section__title { display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: 16px; margin: 0 0 16px; }
+    .section__title .spacer { flex: 1; }
+    .customer { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+    .customer__contact { display: flex; gap: 10px; align-items: center; color: var(--salla-text-gray-lighter, #737373); margin-top: 4px; }
+    .customer__contact a { color: var(--salla-text-primary-link, #004956); text-decoration: underline; }
+    .kv { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 12px; }
+    .kv__k { font-size: 12px; color: var(--salla-text-gray-lighter, #737373); margin-bottom: 4px; }
+    .kv__v { font-size: 14px; color: var(--salla-text-gray-dark, #333); }
+    .kv__v a { color: var(--salla-text-primary-link, #004956); text-decoration: underline; }
+    .payment { display: flex; align-items: center; gap: 14px; }
+    .payment__logo { width: 44px; height: 44px; border-radius: 999px; background: var(--salla-background-status-info-lighter, #ecf3fe); display: grid; place-items: center; color: var(--salla-text-status-info-primary, #5196f3); font-weight: 700; }
+    .carrier { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .carrier__logo { width: 44px; height: 44px; border-radius: 8px; background: var(--salla-background-secondary-lighter, #e6fff9); display: grid; place-items: center; color: var(--salla-text-primary-primary, #004956); font-weight: 700; font-size: 12px; }
+    .products th, .products td { text-align: right; padding: 12px 8px; border-bottom: 1px solid var(--salla-border-default, #eee); font-size: 13px; }
+    .products th { color: var(--salla-text-gray-lighter, #737373); font-weight: 400; font-size: 12px; }
+    .products { width: 100%; border-collapse: collapse; }
+    .thumb { width: 40px; height: 40px; border-radius: 6px; background: var(--salla-background-default-neutrals, #f4f4f4); display: inline-grid; place-items: center; color: #bbb; vertical-align: middle; margin-inline-end: 10px; }
+    .totals { display: grid; grid-template-columns: 1fr auto; gap: 8px 40px; margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--salla-border-hover, #ddd); max-width: 320px; margin-inline-start: auto; }
+    .totals strong { font-size: 16px; }
+    .riyal { font-family: system-ui, sans-serif; font-size: .85em; margin-inline-end: 3px; }
+
+    /* Floating chips */
+    .float { position: fixed; bottom: 20px; left: 20px; display: flex; align-items: center; gap: 12px; z-index: 20; }
+    .float__chat { width: 48px; height: 48px; border-radius: 999px; background: #1fb89b; box-shadow: 0 4px 12px rgba(0,0,0,.15); display: grid; place-items: center; color: #fff; }
+
+    @media (max-width: 1100px) { .layout { grid-template-columns: 1fr; } .kv { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER: top bar ============ -->
+  <header class="topbar">
+    <a class="topbar__logo" href="#">
+      <span class="icon" style="width:34px;height:34px;color:#a4ffe5" data-icon="shopping-bag-03"></span>
+      <span>سلة</span>
+    </a>
+    <nav class="topbar__nav" aria-label="القائمة الرئيسية">
+      <a class="topbar__item" href="#"><span class="icon" data-icon="menu-01"></span>الكل</a>
+      <a class="topbar__item" href="#"><span class="icon" data-icon="home-01"></span>الرئيسية</a>
+      <a class="topbar__item is-active" href="#"><span class="icon" data-icon="delivery-box-02"></span>الطلبات</a>
+      <a class="topbar__item" href="#"><span class="icon" data-icon="shirt-01"></span>المنتجات</a>
+      <a class="topbar__item" href="#"><span class="icon" data-icon="marketing"></span>التسويق</a>
+      <a class="topbar__item" href="#"><span class="icon" data-icon="chart-breakout-square"></span>المتجر وقنوات البيع</a>
+      <a class="topbar__item" href="#"><span class="icon" data-icon="pie-chart"></span>التقارير</a>
+    </nav>
+    <div class="topbar__tools">
+      <span class="d-ring" title="اكتمال إعداد المتجر 1/5"><span>1/5</span></span>
+      <a class="topbar__tool" href="#" title="بحث"><span class="icon" data-icon="search-01"></span></a>
+      <a class="topbar__tool" href="#" title="التطبيقات"><span class="icon" data-icon="dashboard-square-01"></span></a>
+      <a class="topbar__tool" href="#" title="المحادثات"><span class="icon" data-icon="message-01"></span></a>
+      <a class="topbar__tool" href="#" title="التنبيهات"><span class="icon" data-icon="notification-01"></span><i class="dot"></i></a>
+      <a class="topbar__tool" href="#" title="الإعدادات"><span class="icon" data-icon="settings-01"></span></a>
+      <div class="store">
+        <s-avatar label="Shipping" size="sm" initials="" layout="circular"></s-avatar>
+        <div>
+          <div class="store__name">Shipping</div>
+          <span class="store__plan">برو</span>
+        </div>
+        <span class="icon icon--sm" data-icon="arrow-down-01"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HEADER: secondary tabs ============ -->
+  <div class="subnav">
+    <nav class="subnav__tabs" aria-label="أقسام الطلبات">
+      <a class="subnav__tab is-active" href="#">إدارة الطلبات</a>
+      <a class="subnav__tab" href="#">إعدادات الطلبات</a>
+      <a class="subnav__tab" href="#">حالات الطلب</a>
+      <a class="subnav__tab" href="#">تحديث حالة مجموعة طلبات</a>
+      <a class="subnav__tab" href="#">الإسناد التلقائي</a>
+      <a class="subnav__tab" href="#">تخصيص الفواتير</a>
+      <a class="subnav__tab" href="#">••• المزيد</a>
+    </nav>
+    <div class="subnav__actions">
+      <s-button theme="secondary" size="md"><span class="icon icon--sm" data-icon="add-01"></span> طلب جديد</s-button>
+      <s-button theme="secondary" size="md" outlined=""><span class="icon icon--sm" data-icon="sparkles"></span> مشمر <span class="icon icon--sm" data-icon="arrow-left-01"></span></s-button>
+    </div>
+  </div>
+
+  <!-- ============ BODY ============ -->
+  <main class="page">
+    <s-breadcrumbs items='[{"id":0,"label":"الرئيسية","route":"#"},{"id":1,"label":"الطلبات","route":"#"},{"id":2,"label":"طلب #604042998","route":"#"}]' max-visible-items="5"></s-breadcrumbs>
+
+    <div class="searchbar">
+      <s-input type="text" placeholder="ابحث برقم الطلب، اسم العميل، رقم الشحنة" size="md" wide="">
+        <span slot="start" class="icon icon--sm" style="color:#737373" data-icon="search-01"></span>
+      </s-input>
+      <s-button theme="white" outlined=""><span class="icon icon--sm" data-icon="filter-horizontal"></span> تصفية</s-button>
+    </div>
+
+    <div class="layout">
+      <!-- Status rail -->
+      <aside class="card rail" aria-label="حالات الطلبات">
+        <div class="rail__head"><span>كل الطلبات</span><span class="rail__count">342</span></div>
+        <div class="rail__item"><span class="rail__label"><i class="dot-status" style="--c:#f55157"></i>بانتظار الدفع</span><span class="rail__count">2</span></div>
+        <div class="rail__item is-active"><span class="rail__label"><i class="dot-status" style="--c:#5196f3"></i>بانتظار المراجعة</span><span class="rail__count">173</span></div>
+        <div class="rail__item"><span class="rail__label"><i class="dot-status" style="--c:#73d0e8"></i>قيد التنفيذ</span><span class="rail__count">11</span></div>
+        <div class="rail__item"><span class="rail__label"><i class="dot-status" style="--c:#4c6ef5"></i>تم التنفيذ</span><span class="rail__count">105</span></div>
+        <div class="rail__item"><span class="rail__label"><i class="dot-status" style="--c:#ffaf44"></i>جاري التوصيل</span><span class="rail__count">5</span></div>
+        <div class="rail__item"><span class="rail__label"><i class="dot-status" style="--c:#00af6c"></i>تم التوصيل</span><span class="rail__count">17</span></div>
+        <div class="rail__item"><span class="rail__label"><i class="dot-status" style="--c:#00af6c"></i>تم الشحن</span><span class="rail__count">7</span></div>
+        <div class="rail__item"><span class="rail__label"><i class="dot-status" style="--c:#bbbbbb"></i>ملغي</span><span class="rail__count">16</span></div>
+        <div class="rail__item"><span class="rail__label"><i class="dot-status" style="--c:#ed5472"></i>مسترجع</span><span class="rail__count">1</span></div>
+        <div class="rail__foot"><s-button theme="white" outlined="" wide="" size="sm"><span class="icon icon--sm" data-icon="edit-02"></span> تخصيص الحالات</s-button></div>
+      </aside>
+
+      <!-- Orders list -->
+      <section class="card" aria-label="قائمة الطلبات">
+        <div class="list__toolbar">
+          <s-checkbox></s-checkbox>
+          <span class="spacer"></span>
+          <s-button theme="white" outlined="" size="sm"><span class="icon icon--sm" data-icon="sorting-01"></span> ترتيب</s-button>
+          <s-button theme="white" outlined="" size="sm" layout="circular" title="تحديث"><span class="icon icon--sm" data-icon="refresh"></span></s-button>
+        </div>
+
+        <div class="list__date"><span class="icon icon--sm" data-icon="calendar-03"></span> الإثنين 28 سبتمبر 2026</div>
+        <div class="order is-selected">
+          <s-checkbox checked=""></s-checkbox>
+          <div>
+            <div class="order__id">#289836627 - <span>بانتظار المراجعة</span><i class="dot-status" style="--c:#5196f3"></i></div>
+            <div class="order__name">سلمان سلام</div>
+          </div>
+          <div class="order__meta"><div>منذ ساعة واحدة</div><div class="order__amount"><span class="riyal">﷼</span>35,814.49</div></div>
+        </div>
+        <div class="order">
+          <s-checkbox></s-checkbox>
+          <div>
+            <div class="order__id">#289736776 - <span>تم التوصيل</span><i class="dot-status" style="--c:#00af6c"></i></div>
+            <div class="order__name">Ahmed salla</div>
+          </div>
+          <div class="order__meta"><div>منذ 6 ساعات</div><div class="order__amount"><span class="riyal">﷼</span>71.00</div></div>
+        </div>
+
+        <div class="list__date"><span class="icon icon--sm" data-icon="calendar-03"></span> الإثنين 21 سبتمبر 2026</div>
+        <div class="order">
+          <s-checkbox></s-checkbox>
+          <div>
+            <div class="order__id">#287547985 - <span>بانتظار المراجعة</span><i class="dot-status" style="--c:#5196f3"></i></div>
+            <div class="order__name">Ahmed salla</div>
+          </div>
+          <div class="order__meta"><div>منذ 7 أيام</div><div class="order__amount"><span class="riyal">﷼</span>35.99</div></div>
+        </div>
+        <div class="order">
+          <s-checkbox></s-checkbox>
+          <div>
+            <div class="order__id">#287304434 - <span>بانتظار المراجعة</span><i class="dot-status" style="--c:#5196f3"></i></div>
+            <div class="order__name">test demo</div>
+          </div>
+          <div class="order__meta"><div>منذ 8 أيام</div><div class="order__amount"><span class="riyal">﷼</span>247.00</div></div>
+        </div>
+
+        <div class="list__date"><span class="icon icon--sm" data-icon="calendar-03"></span> الخميس 17 سبتمبر 2026</div>
+        <div class="order">
+          <s-checkbox></s-checkbox>
+          <div>
+            <div class="order__id">#286569777 - <span>تم التنفيذ</span><i class="dot-status" style="--c:#4c6ef5"></i></div>
+            <div class="order__name">a a</div>
+          </div>
+          <div class="order__meta"><div>منذ 11 يوم</div><div class="order__amount"><span class="riyal">﷼</span>23.99</div></div>
+        </div>
+        <div class="order">
+          <s-checkbox></s-checkbox>
+          <div>
+            <div class="order__id">#286574434 - <span>تم التنفيذ</span><i class="dot-status" style="--c:#4c6ef5"></i></div>
+            <div class="order__name">Ahmed salla</div>
+          </div>
+          <div class="order__meta"><div>منذ 11 يوم</div><div class="order__amount"><span class="riyal">﷼</span>36.99</div></div>
+        </div>
+      </section>
+
+      <!-- Detail panel -->
+      <section class="detail" aria-label="تفاصيل الطلب">
+        <div class="card actionbar">
+          <s-dropdown layout="start" items='[{"id":0,"label":"بانتظار المراجعة","value":"review"},{"id":1,"label":"قيد التنفيذ","value":"processing"},{"id":2,"label":"تم التنفيذ","value":"done"},{"id":3,"label":"جاري التوصيل","value":"shipping"},{"id":4,"label":"ملغي","value":"cancelled"}]'>
+            <s-button slot="dropdown-head" theme="white" outlined=""><i class="dot-status" style="--c:#5196f3"></i> بانتظار المراجعة <span class="icon icon--sm" data-icon="arrow-down-01"></span></s-button>
+          </s-dropdown>
+          <span class="spacer"></span>
+          <s-button theme="white" outlined=""><span class="icon icon--sm" data-icon="printer"></span> إصدار البوليصة</s-button>
+          <s-button theme="white" outlined="" layout="circular" title="طباعة"><span class="icon icon--sm" data-icon="printer"></span></s-button>
+          <s-dropdown layout="end" overlay-alignment="end" items='[{"id":0,"label":"طباعة فاتورة الطلب","value":"invoice","icon":"hgi-stroke hgi-printer"},{"id":1,"label":"إرسال الفاتورة للعميل","value":"send","icon":"hgi-stroke hgi-mail-01"},{"id":2,"label":"تثبيت المنتج","value":"pin"},{"id":3,"label":"حذف الطلب","value":"delete","icon":"hgi-stroke hgi-delete-02"}]'>
+            <s-button slot="dropdown-head" theme="white" outlined="" layout="circular" title="المزيد"><span class="icon icon--sm" data-icon="more-vertical"></span></s-button>
+          </s-dropdown>
+        </div>
+
+        <s-alert-box theme="info" layout="default" closable="">
+          <span slot="icon" class="icon" data-icon="information-circle"></span>
+          <h4 slot="title">هذا الطلب بانتظار مراجعتك</h4>
+          <article slot="desc"><p>راجع بيانات العميل وعنوان الشحن ثم غيّر الحالة إلى «قيد التنفيذ» لبدء التجهيز.</p></article>
+        </s-alert-box>
+
+        <div class="card section">
+          <h2 class="section__title">تفاصيل الطلب
+            <span class="spacer"></span>
+            <s-tag theme="secondary" size="sm" outlined="">+ وسم</s-tag>
+            <s-tag theme="default" size="sm" closable="">guest</s-tag>
+            <s-tag theme="default" size="sm" closable="">quest</s-tag>
+            <s-tag theme="secondary" size="sm" outlined="">+ الموظف</s-tag>
+          </h2>
+          <div class="customer">
+            <s-avatar label="سلمان سلام" size="md" initials="" layout="circular" status="success"></s-avatar>
+            <div>
+              <div style="font-weight:500;font-size:15px">سلمان سلام</div>
+              <div class="customer__contact">
+                <a href="#" dir="ltr">+967775284276</a>
+                <span class="icon icon--sm" data-icon="whatsapp"></span>
+                <span class="icon icon--sm" data-icon="call"></span>
+                <span class="icon icon--sm" data-icon="mail-01"></span>
+                <span class="icon icon--sm" data-icon="copy-01"></span>
+              </div>
+            </div>
+          </div>
+          <div class="kv">
+            <div><div class="kv__k">رقم الطلب</div><div class="kv__v"><a href="#">#289836627</a></div></div>
+            <div><div class="kv__k">تاريخ الطلب</div><div class="kv__v">الإثنين 28 سبتمبر 2026 | 10:00 م</div></div>
+            <div><div class="kv__k">قناة الطلب</div><div class="kv__v">متصفح جوال</div></div>
+            <div><div class="kv__k">مصدر الطلب</div><div class="kv__v"><a href="#">شراء كضيف</a></div></div>
+            <div><div class="kv__k">السوق</div><div class="kv__v">متجر Saudi Arabia</div></div>
+            <div><div class="kv__k">رقم السلة</div><div class="kv__v">3162074926628397826</div></div>
+          </div>
+        </div>
+
+        <div class="card section payment">
+          <div class="payment__logo">ر</div>
+          <div>
+            <div style="font-weight:500">تم تحويل المبلغ <s-tag theme="success" size="sm">مدفوع</s-tag></div>
+            <div style="color:#737373;font-size:13px;margin-top:2px">مصرف الراجحي، تحويل بنكي</div>
+          </div>
+        </div>
+
+        <div class="card section">
+          <h2 class="section__title">تفاصيل الشحن <span class="spacer"></span><s-tag theme="warning" size="sm" layout="status">قيد الانتظار</s-tag></h2>
+          <div class="carrier">
+            <div class="carrier__logo">سبل</div>
+            <div><div style="font-weight:500">سبل - شحن اقتصادي</div><div style="color:#737373;font-size:12px">التكلفة <span class="riyal">﷼</span>12.17</div></div>
+          </div>
+          <div class="kv" style="grid-template-columns:repeat(6,1fr)">
+            <div><div class="kv__k">الدولة</div><div class="kv__v">السعودية</div></div>
+            <div><div class="kv__k">المدينة</div><div class="kv__v">Taif</div></div>
+            <div><div class="kv__k">الحي</div><div class="kv__v">الشفا</div></div>
+            <div><div class="kv__k">الشارع</div><div class="kv__v">الشفا الدائري، 3599</div></div>
+            <div><div class="kv__k">الرمز البريدي</div><div class="kv__v">26764</div></div>
+            <div><div class="kv__k">رقم إضافي</div><div class="kv__v">6849</div></div>
+          </div>
+          <div class="kv" style="margin-top:16px;grid-template-columns:1fr 1fr">
+            <div><div class="kv__k">وصف المبنى</div><div class="kv__v">الشفا الدائري، 3599، حي الشفا، الطائف، MQ، SA — <a href="#">موقع العميل على الخريطة</a></div></div>
+            <div><div class="kv__k">نوع الشحنة</div><div class="kv__v">بوليصة شحن</div></div>
+          </div>
+        </div>
+
+        <div class="card section">
+          <h2 class="section__title">منتجات الطلب <span class="spacer"></span><s-tag theme="default" size="sm">3 منتجات</s-tag></h2>
+          <table class="products">
+            <thead><tr><th>المنتج</th><th>الكمية</th><th>الوزن</th><th>السعر</th><th>الإجمالي</th></tr></thead>
+            <tbody>
+              <tr><td><span class="thumb">▣</span>قميص قطني كلاسيكي — <span style="color:#737373">SKU-1042</span></td><td>2</td><td>0.4 كجم</td><td><span class="riyal">﷼</span>149.00</td><td><span class="riyal">﷼</span>298.00</td></tr>
+              <tr><td><span class="thumb">▣</span>حذاء رياضي نايك — <span style="color:#737373">SKU-2187</span></td><td>1</td><td>1.1 كجم</td><td><span class="riyal">﷼</span>320.00</td><td><span class="riyal">﷼</span>320.00</td></tr>
+              <tr><td><span class="thumb">▣</span>ساعة ذكية برو — <span style="color:#737373">SKU-3305</span></td><td>41</td><td>0.2 كجم</td><td><span class="riyal">﷼</span>850.00</td><td><span class="riyal">﷼</span>34,850.00</td></tr>
+            </tbody>
+          </table>
+          <div class="totals">
+            <span style="color:#737373">المجموع الفرعي</span><span><span class="riyal">﷼</span>35,468.00</span>
+            <span style="color:#737373">الشحن</span><span><span class="riyal">﷼</span>12.17</span>
+            <span style="color:#737373">الضريبة (15%)</span><span><span class="riyal">﷼</span>334.32</span>
+            <strong>الإجمالي</strong><strong><span class="riyal">﷼</span>35,814.49</strong>
+          </div>
+        </div>
+
+        <div class="card section" style="display:flex;align-items:center;gap:16px">
+          <s-toggle label="إشعار العميل بتحديث الحالة" desc="يرسل رسالة SMS وبريد إلكتروني عند كل تغيير" checked="" size="md"></s-toggle>
+          <span class="spacer" style="flex:1"></span>
+          <s-button theme="white" outlined="">إلغاء</s-button>
+          <s-button theme="secondary">حفظ التغييرات</s-button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Floating chips -->
+  <div class="float">
+    <span class="float__chat" title="الدعم"><span class="icon" data-icon="bubble-chat"></span></span>
+    <s-button theme="white" shadow=""><span class="icon icon--sm" data-icon="add-circle"></span> سجل العمليات</s-button>
+  </div>
+
+  <script>
+    // Inline the repo's SVG icons (icons/svg/outline) so they recolor with currentColor.
+    const ICON_BASE = document.currentScript.dataset.iconBase || '../icons/svg/outline/';
+    const cache = new Map();
+    document.querySelectorAll('[data-icon]').forEach(async (el) => {
+      const name = el.dataset.icon;
+      if (!cache.has(name)) cache.set(name, fetch(ICON_BASE + name + '.svg').then(r => r.ok ? r.text() : '').catch(() => ''));
+      const svg = await cache.get(name);
+      if (svg) el.innerHTML = svg.replace(/<\?xml[^>]*>/, '');
+    });
+  </script>
+</body>
+</html>

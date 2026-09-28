@@ -172,8 +172,8 @@ module.exports = {
                 "full": "9999px",
                 "md": "4px",
                 "3xl": "16px",
-                "xl": "140px",
-                "sm": "8px"
+                "xl": "8px",
+                "sm": "2px"
           },
           "fontSize": {
                 "2xl": "24px",

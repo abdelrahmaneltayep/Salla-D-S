@@ -20,6 +20,7 @@ icons/         svg/outline/*.svg, svg/filled/*.svg, manifest.json, categories.js
 illustrations/ png/ renders of the 20 empty-state illustrations (+ node ids to re-export as SVG)
 docs/          foundations.md, patterns.md, twilight-runtime-tokens.md, token-parity.md, component-map.md, components/ (Figma sections), storybook/ (Storybook components), specs/, images/
 figma/         variables.json (merged Figma variables), components.json (inventory), snapshots/ (raw dumps), source/ (.fig)
+demo/          index.html — full orders screen composed from the runtime components + tokens
 storybook/     static/ (offline Storybook build), captures/ (rendered markup + screenshots per story), components.json (props API)
 scripts/       build_tokens.mjs, build_inventory.py, extract_storybook_tokens.mjs, capture_storybook.mjs, build_storybook_docs.py, fig-decode/
 ```
@@ -62,6 +63,14 @@ screenshot. Highlights:
 
 [docs/specs/](docs/specs/README.md) holds the design-to-code reference (Tailwind-flavoured markup +
 token table) returned by Figma for one representative variant of each core component.
+
+## Screen demo
+
+[demo/index.html](demo/index.html) is a complete orders screen (app-shell header, secondary tabs, breadcrumb,
+search bar, status rail, order list and detail panel) built from the real `s-*` runtime, the Figma tokens and
+the icon set. Serve the repo root (`npx serve .`) and open `/demo/`. See [demo/README.md](demo/README.md).
+
+![orders demo](docs/images/demo-orders.png)
 
 ## Screen layouts & UI patterns
 

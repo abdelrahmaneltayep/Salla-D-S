@@ -218,9 +218,7 @@ Each row shows the Figma variable name, the generated CSS custom property and th
 | `Radius/Sizes/md` | `--salla-radius-sizes-md` | `4px` |
 | `Radius/Sizes/xl` | `--salla-radius-sizes-xl` | `8px` |
 | `radius/sm` | `--salla-radius-sm` | `2px` |
-| `Radius/sm` | `--salla-radius-sm` | `8px` |
 | `radius/xl` | `--salla-radius-xl` | `8px` |
-| `Radius/xl` | `--salla-radius-xl` | `140px` |
 
 ## Typography — scale
 
@@ -254,18 +252,14 @@ Each row shows the Figma variable name, the generated CSS custom property and th
 | `Bold/$text-sm` | `--salla-bold-text-sm` | `700 14px/20px "Ping AR + LT"` |
 | `Bold/$text-xl` | `--salla-bold-text-xl` | `700 20px/28px "Ping AR + LT"` |
 | `Bold/$text-xs` | `--salla-bold-text-xs` | `700 12px/16px "Ping AR + LT"` |
-| `Bold/Bold` | `--salla-bold-bold` | `700 18px/100px "Ping AR + LT"` |
 | `Medium/$text-base` | `--salla-medium-text-base` | `500 16px/24px "Ping AR + LT"` |
 | `Medium/$text-lg` | `--salla-medium-text-lg` | `500 18px/28px "Ping AR + LT"` |
 | `Medium/$text-sm` | `--salla-medium-text-sm` | `500 14px/20px "Ping AR + LT"` |
 | `Medium/$text-xs` | `--salla-medium-text-xs` | `500 12px/16px "Ping AR + LT"` |
-| `Medium/text-sm` | `--salla-medium-text-sm` | `500 14px/100px "Ping AR + LT"` |
 | `Regular/$text-base` | `--salla-regular-text-base` | `400 16px/24px "Ping AR + LT"` |
 | `Regular/$text-sm` | `--salla-regular-text-sm` | `400 14px/20px "Ping AR + LT"` |
 | `Regular/$text-xs` | `--salla-regular-text-xs` | `400 12px/16px "Ping AR + LT"` |
 | `Regular/$text-xxs` | `--salla-regular-text-xxs` | `400 10px/12px "Ping AR + LT"` |
-| `Regular/Regular` | `--salla-regular-regular` | `400 14px/100px "Ping AR + LT"` |
-| `Regular/text-sm` | `--salla-regular-text-sm` | `400 14px/100px "Ping AR + LT"` |
 
 ## Shadows
 
@@ -313,5 +307,5 @@ Each row shows the Figma variable name, the generated CSS custom property and th
 
 ## Legacy collections
 
-Variables from older collections (`01- Primary`, `06 - Dark`, `07- Light Theme`, `Spacing - *`, `Radius-*`, map markers…) are kept under `legacy` in `tokens/tokens.json` and emitted as CSS variables for completeness, but new work should use the semantic names above.
+Variables from older collections (`01- Primary`, `06 - Dark`, `07- Light Theme`, `Spacing - *`, `Radius-*`, the capitalised `Radius/xl`=140 and `Radius/sm`, map markers…) are kept under `legacy` in `tokens/tokens.json` and emitted as `--salla-legacy-*` CSS variables so they never shadow the semantic `--salla-*` names above.
 

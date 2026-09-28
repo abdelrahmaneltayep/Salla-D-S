@@ -35,7 +35,7 @@ const kebab = (s) =>
     .toLowerCase();
 
 /** Legacy / duplicated collections that we keep but flag as deprecated. */
-const LEGACY = [/^0\d-? ?/, /^Spacing ?- ?/, /^Spacing-/, /^Radius ?- ?/, /^Radius-/, /^Component Heading$/, /^White$/, /^fl-purple$/, /^Map Marker/, /^UI Colors/, /^fill$/, /^border$/];
+const LEGACY = [/^(Medium|Regular|Bold)\/(text-[a-z0-9]+|Regular|Medium|Bold)$/, /^Radius\/[a-z0-9]+$/, /^Spacing\/[a-z0-9]+$/, /^Radius-[a-z]$/, /^0\d-? ?/, /^Spacing ?- ?/, /^Spacing-/, /^Radius ?- ?/, /^Radius-/, /^Component Heading$/, /^White$/, /^fl-purple$/, /^Map Marker/, /^UI Colors/, /^fill$/, /^border$/];
 const isLegacy = (name) => LEGACY.some((re) => re.test(name));
 
 function resolve(v, depth = 0) {
@@ -91,11 +91,14 @@ function setNested(pathParts, token) {
   cur[pathParts.at(-1)] = token;
 }
 
+const usedCss = new Set();
 const entries = Object.entries(raw).sort(([a], [b]) => a.localeCompare(b));
 for (const [name, value] of entries) {
   const parts = name.split("/").map((s) => s.trim());
   const legacy = isLegacy(name);
-  const cssName = `--salla-${kebab(name)}`;
+  let cssName = legacy ? `--salla-legacy-${kebab(name)}` : `--salla-${kebab(name)}`;
+  for (let i = 2; usedCss.has(cssName); i++) cssName = cssName.replace(/(-\d+)?$/, `-${i}`); // legacy collections repeat names
+  usedCss.add(cssName);
   let token;
 
   if (value.startsWith("Font(")) {
@@ -163,7 +166,7 @@ table("Radius", (n, v) => isNumber(v) && /^radius\//i.test(n));
 table("Typography — scale", (n, v) => /^Typography\//.test(n) || /^typography\/line-height/.test(n));
 table("Typography — text styles", (n, v) => v.startsWith("Font("));
 table("Shadows", (n, v) => v.startsWith("Effect(") || /^shadow\//.test(n));
-md.push("## Legacy collections", "", "Variables from older collections (`01- Primary`, `06 - Dark`, `07- Light Theme`, `Spacing - *`, `Radius-*`, map markers…) are kept under `legacy` in `tokens/tokens.json` and emitted as CSS variables for completeness, but new work should use the semantic names above.", "");
+md.push("## Legacy collections", "", "Variables from older collections (`01- Primary`, `06 - Dark`, `07- Light Theme`, `Spacing - *`, `Radius-*`, the capitalised `Radius/xl`=140 and `Radius/sm`, map markers…) are kept under `legacy` in `tokens/tokens.json` and emitted as `--salla-legacy-*` CSS variables so they never shadow the semantic `--salla-*` names above.", "");
 fs.mkdirSync(path.join(ROOT, "docs"), { recursive: true });
 fs.writeFileSync(path.join(ROOT, "docs", "foundations.md"), md.join("\n") + "\n");
 
