@@ -220,6 +220,10 @@ Each row shows the Figma variable name, the generated CSS custom property and th
 | `radius/sm` | `--salla-radius-sm` | `2px` |
 | `radius/xl` | `--salla-radius-xl` | `8px` |
 
+## Typeface
+
+All text styles use **Ping AR + LT** (runtime name `PingARLT`), shipped in [`fonts/`](../fonts/README.md) as OTF + WOFF2 in Regular 400, Medium 500, Bold 700 and Heavy 800, with `fonts/pingarlt.css` declaring both family names.
+
 ## Typography — scale
 
 | Figma variable | CSS variable | Value |

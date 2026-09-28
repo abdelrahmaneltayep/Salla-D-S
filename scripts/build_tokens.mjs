@@ -163,6 +163,7 @@ table("Colors — borders", (n, v) => isColor(v) && /^border\/(?!primary|seconad
 table("Colors — other palettes", (n, v) => isColor(v) && /^(color\/|gray\/|white\/|fill$|Base)/.test(n), swatch);
 table("Spacing", (n, v) => isNumber(v) && /^spacing\//i.test(n));
 table("Radius", (n, v) => isNumber(v) && /^radius\//i.test(n));
+md.push("## Typeface", "", "All text styles use **Ping AR + LT** (runtime name `PingARLT`), shipped in [`fonts/`](../fonts/README.md) as OTF + WOFF2 in Regular 400, Medium 500, Bold 700 and Heavy 800, with `fonts/pingarlt.css` declaring both family names.", "");
 table("Typography — scale", (n, v) => /^Typography\//.test(n) || /^typography\/line-height/.test(n));
 table("Typography — text styles", (n, v) => v.startsWith("Font("));
 table("Shadows", (n, v) => v.startsWith("Effect(") || /^shadow\//.test(n));

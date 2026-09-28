@@ -21,6 +21,8 @@ illustrations/ png/ renders of the 20 empty-state illustrations (+ node ids to r
 docs/          foundations.md, patterns.md, twilight-runtime-tokens.md, token-parity.md, component-map.md, components/ (Figma sections), storybook/ (Storybook components), specs/, images/
 figma/         variables.json (merged Figma variables), components.json (inventory), snapshots/ (raw dumps), source/ (.fig)
 demo/          index.html — full orders screen composed from the runtime components + tokens
+fonts/         Ping AR + LT (OTF + WOFF2, 400/500/700/800) and pingarlt.css
+figma/exports/ header/ — SVG exports of the Header component set (desktop + mobile), logo.svg
 storybook/     static/ (offline Storybook build), captures/ (rendered markup + screenshots per story), components.json (props API)
 scripts/       build_tokens.mjs, build_inventory.py, extract_storybook_tokens.mjs, capture_storybook.mjs, build_storybook_docs.py, fig-decode/
 ```
@@ -36,7 +38,8 @@ section of the component page (300 variables). `scripts/build_tokens.mjs` turns 
 
 Key values: primary `#004956`, secondary (mint) `#a4ffe5`, danger `#f55157`, success `#00af6c`,
 info `#5196f3`, warning `#ffaf44`, font **Ping AR + LT** (400/500/700), text sizes 10/12/14/16/18/20/24,
-radius 2/4/8/9999, spacing 2–56 px. Full tables: [docs/foundations.md](docs/foundations.md).
+radius 2/4/8/9999, spacing 2–56 px. Full tables: [docs/foundations.md](docs/foundations.md). The typeface itself
+ships in [`fonts/`](fonts/README.md) (`fonts/pingarlt.css`).
 
 Note the Figma names are kept verbatim, typos included (`seconadry`, `Descreptive`), because the
 reference code from Figma references them as CSS variables. Two collections overlap

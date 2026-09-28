@@ -2,7 +2,7 @@
 
 `index.html` composes a full merchant-dashboard screen from the design system:
 
-- **Header**: top bar (logo, primary nav with the active mint pill, tools cluster, setup ring, store switcher), secondary tab row with the section CTA (`s-button theme="secondary"`), breadcrumb (`s-breadcrumbs`).
+- **Header**: a 1:1 build of the Figma **Header** component (`figma/exports/header/`, spec in `docs/specs/header.md`): the 92 px title bar (real Salla logo, primary tabs with the mint active pill, setup ring 2/7, action icons, avatar + name + "جديد" tag), the 64 px subcategory row (secondary tabs, "مشمر" gradient pill, help-centre button), the breadcrumb row and the page-title row with its buttons.
 - **Body**: search bar (`s-input` + filter button), the three-column list ↔ detail layout from [docs/patterns.md](../docs/patterns.md) — status rail, grouped order list (`s-checkbox` rows, selected row tint), detail panel with action bar (`s-dropdown`, `s-button`), `s-alert-box`, order/customer card (`s-avatar`, `s-tag`), payment, shipping, products table and a footer with `s-toggle` and actions.
 - **Floating chips**: support bubble and activity-log button.
 
@@ -17,8 +17,9 @@ npx serve .            # from the repository root, then open http://localhost:30
 # or: python3 -m http.server 8080  →  http://localhost:8080/demo/
 ```
 
-Fonts (PingARLT, Hugeicons font) load from `cdn.salla.network` as in production; the checkbox tick,
-alert close ✕ and dropdown chevrons inside the components use that icon font.
+The typeface loads from `fonts/pingarlt.css` (Ping AR + LT, in the repo). The Hugeicons icon font still
+loads from `cdn.salla.network`; the checkbox tick, alert close ✕ and dropdown chevrons inside the
+components use it.
 
 ## Adapting
 

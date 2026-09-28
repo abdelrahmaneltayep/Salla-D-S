@@ -1,0 +1,12 @@
+/* Ping AR + LT — the Salla dashboard typeface (Regular 400, Medium 500, Bold 700, Heavy 800).
+   Registered under both names used across the system:
+   "PingARLT"      → the runtime stylesheet (--font-main) and Tailwind font-sans
+   "Ping AR + LT"  → the Figma variable Typography/Family/Font (tokens/tokens.css text styles) */
+@font-face { font-family: "PingARLT"; font-weight: 400; font-style: normal; font-display: swap; src: url("PingARLT/PingARLT-Regular.woff2") format("woff2"), url("PingARLT/PingAR+LT-Regular.otf") format("opentype"); }
+@font-face { font-family: "PingARLT"; font-weight: 500; font-style: normal; font-display: swap; src: url("PingARLT/PingARLT-Medium.woff2") format("woff2"), url("PingARLT/PingAR+LT-Medium.otf") format("opentype"); }
+@font-face { font-family: "PingARLT"; font-weight: 700; font-style: normal; font-display: swap; src: url("PingARLT/PingARLT-Bold.woff2") format("woff2"), url("PingARLT/PingAR+LT-Bold.otf") format("opentype"); }
+@font-face { font-family: "PingARLT"; font-weight: 800; font-style: normal; font-display: swap; src: url("PingARLT/PingARLT-Heavy.woff2") format("woff2"), url("PingARLT/PingAR+LT-Heavy.otf") format("opentype"); }
+@font-face { font-family: "Ping AR + LT"; font-weight: 400; font-style: normal; font-display: swap; src: url("PingARLT/PingARLT-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Ping AR + LT"; font-weight: 500; font-style: normal; font-display: swap; src: url("PingARLT/PingARLT-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Ping AR + LT"; font-weight: 700; font-style: normal; font-display: swap; src: url("PingARLT/PingARLT-Bold.woff2") format("woff2"); }
+@font-face { font-family: "Ping AR + LT"; font-weight: 800; font-style: normal; font-display: swap; src: url("PingARLT/PingARLT-Heavy.woff2") format("woff2"); }
