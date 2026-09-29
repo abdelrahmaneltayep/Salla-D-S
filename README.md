@@ -23,6 +23,7 @@ figma/         variables.json (merged Figma variables), components.json (invento
 demo/          components.html — live gallery of all components; index.html — full orders screen
 fonts/         Ping AR + LT (OTF + WOFF2, 400/500/700/800) and pingarlt.css
 figma/exports/ header/ — SVG exports of the Header component set (desktop + mobile), logo.svg
+skills/        salla-design-system/ — drop-in prototype template + header spec for the salla-design-system Claude skill
 storybook/     static/ (offline Storybook build), captures/ (rendered markup + screenshots per story), components.json (props API)
 scripts/       build_tokens.mjs, build_inventory.py, extract_storybook_tokens.mjs, capture_storybook.mjs, build_storybook_docs.py, fig-decode/
 ```

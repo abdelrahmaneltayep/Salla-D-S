@@ -55,7 +55,9 @@ logo, ring, avatar, active pill, help button and pill land within 2 px of the ex
 The header styles now live in **`demo/header.css`** (shared), and the component gallery
 (`demo/components.html`, built by `scripts/build_components_demo.py`) reuses the title-bar markup from
 `demo/index.html` verbatim, with its own subcategory row (معرض المكونات / شاشة الطلبات / التوثيق, the
-LTR ⇄ RTL toggle, مشمر, help). Both pages therefore render the same Figma header.
+LTR ⇄ RTL toggle, مشمر, help). Both pages therefore render the same Figma header. The same header is packaged for the
+`salla-design-system` Claude skill in `skills/salla-design-system/` (self-contained `prototype-template.html`
+with an inline icon sprite, plus `references/header.md`; install steps in its README).
 
 ## Files added
 
