@@ -5,3 +5,5 @@ figma/source/images/
 figma/source/meta.json
 figma/source/thumbnail.png
 .DS_Store
+# Local secrets written by `elevenlabs onboard`
+/.env.local
