@@ -206,6 +206,7 @@ The cloud workspace was reset and the kit was rebuilt from this session's histor
 - `brand.css`: regenerated with `build_css.js` from today's `@fontsource` packages (`npm i @fontsource/{aref-ruqaa,reem-kufi,amiri,ibm-plex-sans-arabic,nunito-sans,cormorant-garamond}` in the folder above the kit), 418,722 bytes vs 418,757 originally.
 - `templates/endcard.html`: rebuilt from a delivered endcard frame (Aref Ruqaa wordmark on the terracotta square, Cormorant MENNATULLAH, gold rule, handle, zellige band).
 - `audio/sfx/*`: regenerated with ElevenLabs Sound Effects from the original prompts (`REGENERATE_SFX.sh`); new takes, same recipe.
-- `assets/paper/layered_torn_page.png`: **replacement** paper generated with gpt-image-2 (the creator's original `r4.webp` photo was lost). Swap the original back in if it turns up.
+- `assets/paper/layered_torn_page.png`: **replacement** paper (gpt-image-2 sheet `layered_torn_page_clean.png` + procedural warm tea-stains and darker edges to match the Ash-Shifa' scrolls). The creator's original `r4.webp` was lost; swap it back in if it turns up.
+- Storyboard style reference restored as `examples/storyboard_video/style_reference*.jpg` (frames from the Ash-Shifa' storyboard video). Wire **one** into each gpt-image-2 node as a style reference (~502 credits/image vs ~267 without); 3 references cost ~927/image.
 - `endcard.html`, `verse_html.js`, `badge.html`, `title_html.js` originals were not recoverable; only `endcard.html` is rebuilt.
 - Tools live beside the kit: `tools/` (build_v8.py etc.). Layout expected by build_v8.py: `<root>/tools`, `<root>/manosh/Manosh`, `<root>/kit2/sfx` (scroll sounds).
