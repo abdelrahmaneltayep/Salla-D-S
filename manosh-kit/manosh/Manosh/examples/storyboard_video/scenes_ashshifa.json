@@ -1,0 +1,62 @@
+[
+ {
+  "start": 0,
+  "end": 9.0,
+  "img": "S01.png"
+ },
+ {
+  "start": 9.0,
+  "end": 15.9,
+  "img": "S02.png"
+ },
+ {
+  "start": 15.9,
+  "end": 24.2,
+  "img": "S03.png"
+ },
+ {
+  "start": 24.2,
+  "end": 30.3,
+  "img": "S04.png"
+ },
+ {
+  "start": 30.3,
+  "end": 43.7,
+  "img": "S05.png"
+ },
+ {
+  "start": 43.7,
+  "end": 54.1,
+  "img": "S06.png"
+ },
+ {
+  "start": 54.1,
+  "end": 68.4,
+  "img": "S07.png"
+ },
+ {
+  "start": 68.4,
+  "end": 78.85,
+  "img": "S08.png"
+ },
+ {
+  "start": 78.85,
+  "end": 90.7,
+  "img": "S09.png"
+ },
+ {
+  "start": 90.7,
+  "end": 100.6,
+  "img": "S10.png"
+ },
+ {
+  "start": 100.6,
+  "end": 110.7,
+  "img": "S11.png"
+ },
+ {
+  "start": 110.7,
+  "end": 124.0,
+  "img": "S12.png"
+ }
+]

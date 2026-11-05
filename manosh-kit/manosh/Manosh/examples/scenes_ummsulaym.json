@@ -1,0 +1,26 @@
+[
+ {
+  "start": 0.6,
+  "end": 7.4,
+  "img": "p1.png",
+  "label": "Armed with faith"
+ },
+ {
+  "start": 28.9,
+  "end": 47.9,
+  "img": "p2.png",
+  "label": "Her mahr: Islam"
+ },
+ {
+  "start": 55.8,
+  "end": 65.5,
+  "img": "p3.png",
+  "label": "Patience in loss"
+ },
+ {
+  "start": 82.3,
+  "end": 98.4,
+  "img": "p4.png",
+  "label": "Battle of Hunayn"
+ }
+]

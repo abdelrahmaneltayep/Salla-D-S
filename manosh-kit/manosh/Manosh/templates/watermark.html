@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="brand.css">
+<style>
+  body{width:1080px;height:1920px;position:relative;}
+  .wm{
+    position:absolute;top:1645px;left:50%;transform:translateX(-50%);
+    display:flex;align-items:center;gap:14px;opacity:.90;
+  }
+  .star{position:relative;width:30px;height:30px;flex:none;
+    filter:drop-shadow(0 2px 4px rgba(0,0,0,.45));}
+  .star::before,.star::after{content:'';position:absolute;inset:0;background:var(--gold);}
+  .star::after{transform:rotate(45deg);}
+  .handle{font-family:'Nunito Sans';font-weight:700;color:var(--cream);
+    font-size:30px;letter-spacing:2px;line-height:1;
+    text-shadow:0 2px 6px rgba(0,0,0,.55);}
+</style></head>
+<body>
+  <div class="wm">
+    <span class="star"></span>
+    <span class="handle">@MENNATULLAH</span>
+  </div>
+</body></html>

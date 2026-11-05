@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<!-- [RESTORED 2026-11-05] Rebuilt from the delivered Ash-Shifa' endcard frame (original file not recoverable). -->
+<link rel="stylesheet" href="brand.css">
+<style>
+  body{width:1080px;height:1920px;position:relative;background:var(--cream);overflow:hidden;}
+  .mark{position:absolute;left:0;right:0;top:700px;height:220px;}
+  .sq{position:absolute;left:475px;top:47px;width:130px;height:130px;border-radius:24px;background:var(--terracotta);opacity:.92;}
+  .ar{position:absolute;left:0;right:0;top:0;text-align:center;font-family:'Aref Ruqaa';font-weight:700;
+      font-size:152px;line-height:1;color:var(--burgundy);direction:rtl;margin-top:22px;}
+  .latin{position:absolute;left:0;right:0;top:922px;text-align:center;font-family:'Cormorant Garamond';font-weight:600;
+      font-size:44px;letter-spacing:.33em;padding-left:.33em;color:var(--gold);line-height:1;}
+  .rule{position:absolute;left:480px;top:1006px;width:120px;height:2px;background:var(--gold);opacity:.8;}
+  .handle{position:absolute;left:0;right:0;top:1061px;text-align:center;font-family:'Nunito Sans';font-weight:700;
+      font-size:33px;letter-spacing:.6px;color:var(--terracotta);line-height:1;}
+  .band{position:absolute;left:0;right:0;bottom:0;height:150px;background:var(--burgundy);}
+  .st{position:absolute;top:44px;width:62px;height:62px;}
+  .st::before,.st::after{content:'';position:absolute;inset:9px;background:var(--c);}
+  .st::after{transform:rotate(45deg);}
+</style></head>
+<body>
+  <div class="mark"><div class="sq"></div><div class="ar">منّة الله</div></div>
+  <div class="latin">MENNATULLAH</div>
+  <div class="rule"></div>
+  <div class="handle">@MENNATULLAH</div>
+  <div class="band" id="band"></div>
+  <script>
+    const cs=['var(--gold)','var(--cream)','var(--blush)','var(--teal)'];
+    for(let i=0;i<12;i++){const d=document.createElement('div');d.className='st';d.style.left=(14+i*90)+'px';d.style.setProperty('--c',cs[i%4]);document.getElementById('band').appendChild(d);}
+  </script>
+</body></html>
