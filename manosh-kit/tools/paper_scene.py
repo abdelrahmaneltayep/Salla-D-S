@@ -3,7 +3,7 @@
 # Usage: python3 paper_scene.py <paper_scan> <drawing.png|blank> <out.png> [flip: none|h|v|hv] [tint]   ('blank' = paper back)
 # [darken] multiplies the paper (e.g. 0.9 = a little darker beige). A red wax seal on the paper is kept on top of the ink.
 # tint: sepia (default) | soft (light colour) | wash (watercolour) | select (only gold + burgundy in colour)
-#       | kit (tritone: burgundy -> terracotta -> cream) | illum (dark ink + gold-leaf accents, like a manuscript)
+#       | orig (original colours of the drawing, 2026-11-05) | kit (tritone: burgundy -> terracotta -> cream) | illum (dark ink + gold-leaf accents, like a manuscript)
 import sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageOps
@@ -60,6 +60,7 @@ def hue_mask(x):                                 # gold and burgundy/red areas o
 if tint == "sepia":  d = .3 * d + .7 * sep
 elif tint == "soft": d = sat(.6 * d + .4 * sep, 1.3)
 elif tint == "wash": d = sat(.9 * d + .1 * sep, 1.55)
+elif tint == "orig": d = sat(d, 1.2)                 # original colours (storyboard art style), as generated
 elif tint == "kit":                              # gradient map in the Manosh palette
     stops = np.array([[.18, .07, .11], [.30, .13, .19], [.79, .49, .35], [.95, .93, .87], [1, 1, 1]], np.float32)
     pos = np.array([0, .22, .55, .85, 1], np.float32)
@@ -75,9 +76,12 @@ elif tint == "select":
     gold, red = hue_mask(d)
     m = np.asarray(Image.fromarray(((gold | red) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(2.5)), np.float32)[..., None] / 255
     d = sep * (1 - m) + sat(d, 1.5) * m
-d = (np.clip(d / np.percentile(d, 97, axis=(0, 1)), 0, 1) if tint == "sepia"
-     else np.clip(d / np.percentile(d, 88, axis=(0, 1)), 0, 1)) ** 1.35   # drawing paper -> pure white, ink contrast kept
-if tint != "sepia":   # grey (hue-neutral) hatching so it takes the paper's own colour; keep colour only where the drawing has it
+if tint == "orig":                               # keep the warm sky/sand washes: only near-white paper -> white
+    d = np.clip(d / np.percentile(d, 99.5, axis=(0, 1)), 0, 1) ** 1.15
+else:
+    d = (np.clip(d / np.percentile(d, 97, axis=(0, 1)), 0, 1) if tint == "sepia"
+         else np.clip(d / np.percentile(d, 88, axis=(0, 1)), 0, 1)) ** 1.35   # drawing paper -> pure white, ink contrast kept
+if tint not in ("sepia", "orig"):   # grey (hue-neutral) hatching so it takes the paper's own colour; keep colour only where the drawing has it
     lumd = (d @ np.array([.3, .59, .11], np.float32))[..., None]
     chroma = np.clip((d.max(-1) - d.min(-1))[..., None] * 5 - .15, 0, 1)
     d = lumd * (1 - chroma) + d * chroma
