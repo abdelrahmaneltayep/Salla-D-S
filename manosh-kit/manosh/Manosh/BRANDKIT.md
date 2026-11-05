@@ -75,10 +75,10 @@ colours** (no tritone recolour, no paper overlay on full-frame art). Reference: 
 |---------|------|
 | Look | classic film-storyboard **pencil sketch**: graphite lines + soft **burgundy & gold watercolour washes** on warm cream paper; light, airy, sun-washed |
 | Generator | ElevenLabs image, `gpt-image-2`; set **aspect_ratio 9:16, resolution 2K** for full-frame (default is 16:9 — always change it) |
-| **Islamic rules** | all figures **faceless** (smooth blank face); the Prophet ﷺ is **never drawn**; modest dress |
+| **Islamic rules** | all figures **faceless** (smooth blank face); the Prophet ﷺ is **never drawn**; modest dress; **every woman in a proper hijab — no hair visible at all** (hairline, temples, ears, neck covered). Zoom-check every head before building |
 | History | 7th-century setting — **no domes, no minarets**; the early Masjid = mud-brick walls + palm-trunk pillars + palm-frond roof |
 | Composition | main action in the **upper two-thirds**; lower third calmer, lighter paper for captions |
-| Prompt core | `Vertical 9:16 portrait composition, one single full-frame illustration, no borders, no text. Classic film storyboard pencil sketch, graphite lines with soft burgundy and gold watercolor wash accents on warm cream paper. 7th-century Arabia/Madinah… All people faceless (no eyes, nose or mouth, smooth blank face area), modestly dressed. No domes, no minarets. Main action in the upper two-thirds; the lower third calmer, lighter paper for captions.` |
+| Prompt core | `Vertical 9:16 portrait composition, one single full-frame illustration, no borders, no text. Classic film storyboard pencil sketch, graphite lines with soft burgundy and gold watercolor wash accents on warm cream paper. 7th-century Arabia/Madinah… HIJAB RULE: every woman wears a proper Islamic hijab, a fitted underscarf with the hijab wrapped snugly around the face, completely covering ALL hair including the hairline at the forehead and temples, the ears and the neck, the khimar falling over the chest; absolutely no hair visible on any woman. All people faceless (no eyes, nose or mouth, smooth blank face area), modestly dressed. No domes, no minarets. Main action in the upper two-thirds; the lower third calmer, lighter paper for captions.` (say *cream hijab*, never *headscarf*) |
 | Cost | ~267 credits per 9:16 2K image; generate **1 variation per scene** — always pass `generations_count: 1` (deterministic nodes such as Voice Isolator default to 4 takes) |
 | Look check (2026-11-05) | The approved look is the **light, airy** one: sun-washed cream paper, soft burgundy & gold washes, clear graphite lines (e.g. the Umm Kulthum storyboard video). **No style-reference image** by default. A darker "Ash-Shifa'-style" variant (dense hatching, aged stained paper) is possible with `examples/storyboard_video/style_reference.jpg` wired in as a reference (~502 credits/image), only when asked |
 
@@ -109,7 +109,7 @@ each on screen while Menna narrates that part. The talking parts in between stay
 | Element | Spec |
 |---------|------|
 | Illustration | Per the **Storyboard art style** above — the **same look as the storyboard video** (one 2×2 sheet, 4 panels, crop each, or a 16:9 crop of a storyboard scene) |
-| **Islamic rule** | All figures **faceless**. The Prophet ﷺ is **never drawn** — scenes show only the companion's own moments |
+| **Islamic rule** | All figures **faceless**. The Prophet ﷺ is **never drawn** — scenes show only the companion's own moments. Every woman in a **proper hijab, no hair visible** (same HIJAB RULE sentence in the sheet prompt) |
 | Colour | **Original colours** of the storyboard art (burgundy, gold, ochre, sunset) blended into the paper — `paper_scene.py … orig` (updated 2026-11-05; replaces the earlier Kit tritone `… kit`) |
 | Paper | **Layered torn page** (`assets/paper/layered_torn_page.png`, aged with warm tea-stains and darker edges) recoloured to **`#C2AE98`** (a little darker than the wall), darken 0.97; flip it per scene (none / hv / h / v) so edges don't repeat |
 | Frame / title / shadow / shine | **None** |
