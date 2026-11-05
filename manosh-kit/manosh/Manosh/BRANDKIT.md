@@ -2,7 +2,7 @@
 
 Snapshot of the Mennatullah (منّة الله) visual identity as shipped in the
 "Duaa When Suffering Pain Or Hardship" video (Mannon-layout Manosh look).
-Updated 2026-10-29 (storyboard art style locked; storyboard video + carousel added; Drive delivery step; storyboard scrolls added; word-chip hook with typing sound, no bounce; no zoom cuts). The card generators in `templates/` are the source of truth
+Updated 2026-11-05 (scrolls now show the storyboard art in its ORIGINAL colours, same look as the storyboard video; kit restored after a workspace reset). Earlier, 2026-10-29: storyboard art style locked; storyboard video + carousel added; Drive delivery step; storyboard scrolls added; word-chip hook with typing sound, no bounce; no zoom cuts). The card generators in `templates/` are the source of truth
 for this look; the older Deliverable-#15 generators still live under `scripts/`.
 
 **Applying the kit** = brand cards/subtitles/motion (below) **plus** the
@@ -79,7 +79,8 @@ colours** (no tritone recolour, no paper overlay on full-frame art). Reference: 
 | History | 7th-century setting — **no domes, no minarets**; the early Masjid = mud-brick walls + palm-trunk pillars + palm-frond roof |
 | Composition | main action in the **upper two-thirds**; lower third calmer, lighter paper for captions |
 | Prompt core | `Vertical 9:16 portrait composition, one single full-frame illustration, no borders, no text. Classic film storyboard pencil sketch, graphite lines with soft burgundy and gold watercolor wash accents on warm cream paper. 7th-century Arabia/Madinah… All people faceless (no eyes, nose or mouth, smooth blank face area), modestly dressed. No domes, no minarets. Main action in the upper two-thirds; the lower third calmer, lighter paper for captions.` |
-| Cost | ~267 credits per 9:16 2K image; generate **1 variation per scene** |
+| Cost | ~267 credits per 9:16 2K image; generate **1 variation per scene** — always pass `generations_count: 1` (deterministic nodes such as Voice Isolator default to 4 takes) |
+| Look check (2026-11-05) | The approved look is the **light, airy** one: sun-washed cream paper, soft burgundy & gold washes, clear graphite lines (e.g. the Umm Kulthum storyboard video). **No style-reference image** by default. A darker "Ash-Shifa'-style" variant (dense hatching, aged stained paper) is possible with `examples/storyboard_video/style_reference.jpg` wired in as a reference (~502 credits/image), only when asked |
 
 (The Storyboard **scrolls** below keep their paper/scroll treatment; the art inside them follows this style.)
 
@@ -107,10 +108,10 @@ each on screen while Menna narrates that part. The talking parts in between stay
 
 | Element | Spec |
 |---------|------|
-| Illustration | Per the **Storyboard art style** above (one 2×2 sheet, 4 panels, crop each, or single 16:9 images) |
+| Illustration | Per the **Storyboard art style** above — the **same look as the storyboard video** (one 2×2 sheet, 4 panels, crop each, or a 16:9 crop of a storyboard scene) |
 | **Islamic rule** | All figures **faceless**. The Prophet ﷺ is **never drawn** — scenes show only the companion's own moments |
-| Colour | **Kit tritone** — whole drawing mapped burgundy `#4C2130` → terracotta `#C97C5A` → cream (`paper_scene.py … kit`) |
-| Paper | **Layered torn page** (`assets/paper/layered_torn_page.webp`) recoloured to **`#C2AE98`** (a little darker than the wall), darken 0.97; flip it per scene (none / hv / h / v) so edges don't repeat |
+| Colour | **Original colours** of the storyboard art (burgundy, gold, ochre, sunset) blended into the paper — `paper_scene.py … orig` (updated 2026-11-05; replaces the earlier Kit tritone `… kit`) |
+| Paper | **Layered torn page** (`assets/paper/layered_torn_page.png`, aged with warm tea-stains and darker edges) recoloured to **`#C2AE98`** (a little darker than the wall), darken 0.97; flip it per scene (none / hv / h / v) so edges don't repeat |
 | Frame / title / shadow / shine | **None** |
 | Position / size | top centre, 760×471 at x=160, y=36 (1080×1920 space) — above her head |
 | Open | scroll **unrolls from the LEFT** (roll travels left → right), 1.2 s |
@@ -183,7 +184,7 @@ Never add music under the voice.
 4. ffmpeg: source scaled to 2160×3840 @ 60 (steady, no zoom) `[base][chips]overlay=0:0:eof_action=pass`,
    then pill subtitles (`subtitle_html.js`) for the rest of the video, watermark, smoothup endcard → HEVC 4K60 with `mix.wav`.
 6. *(Story videos, optional)* storyboard scrolls: pick 3–5 moments → generate the 2×2 pencil sheet (faceless, no Prophet ﷺ)
-   → `paper_scene.py` (kit tritone, paper `#C2AE98`) for pN/bN → `story_panels.js … 2 60 rollL` per scene →
+   → `paper_scene.py … orig 0.97 C2AE98` (original colours, paper `#C2AE98`) for pN/bN → `story_panels.js … 2 60 rollL` per scene →
    overlay above the chips at each scene's start; mix the scroll sounds into `mix.wav`.
 
 ## Delivery (every video)
@@ -207,6 +208,6 @@ The cloud workspace was reset and the kit was rebuilt from this session's histor
 - `templates/endcard.html`: rebuilt from a delivered endcard frame (Aref Ruqaa wordmark on the terracotta square, Cormorant MENNATULLAH, gold rule, handle, zellige band).
 - `audio/sfx/*`: regenerated with ElevenLabs Sound Effects from the original prompts (`REGENERATE_SFX.sh`); new takes, same recipe.
 - `assets/paper/layered_torn_page.png`: **replacement** paper (gpt-image-2 sheet `layered_torn_page_clean.png` + procedural warm tea-stains and darker edges to match the Ash-Shifa' scrolls). The creator's original `r4.webp` was lost; swap it back in if it turns up.
-- Storyboard style reference restored as `examples/storyboard_video/style_reference*.jpg` (frames from the Ash-Shifa' storyboard video). Wire **one** into each gpt-image-2 node as a style reference (~502 credits/image vs ~267 without); 3 references cost ~927/image.
+- Storyboard style reference restored as `examples/storyboard_video/style_reference*.jpg` (frames from the Ash-Shifa' storyboard video). Optional, for the darker variant only: wire **one** into the gpt-image-2 node (~502 credits/image vs ~267 without; 3 references ~927/image). The default light look uses none.
 - `endcard.html`, `verse_html.js`, `badge.html`, `title_html.js` originals were not recoverable; only `endcard.html` is rebuilt.
 - Tools live beside the kit: `tools/` (build_v8.py etc.). Layout expected by build_v8.py: `<root>/tools`, `<root>/manosh/Manosh`, `<root>/kit2/sfx` (scroll sounds).
