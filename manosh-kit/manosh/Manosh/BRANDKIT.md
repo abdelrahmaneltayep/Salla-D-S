@@ -2,7 +2,7 @@
 
 Snapshot of the Mennatullah (منّة الله) visual identity as shipped in the
 "Duaa When Suffering Pain Or Hardship" video (Mannon-layout Manosh look).
-Updated 2026-11-05 (scrolls now show the storyboard art in its ORIGINAL colours, same look as the storyboard video; kit restored after a workspace reset). Earlier, 2026-10-29: storyboard art style locked; storyboard video + carousel added; Drive delivery step; storyboard scrolls added; word-chip hook with typing sound, no bounce; no zoom cuts). The card generators in `templates/` are the source of truth
+Updated 2026-11-06 (NEW: cinematic storyboard video — hybrid Kling 2.5 animation, see **Cinematic storyboard video**; hijab rule added to the storyboard art). 2026-11-05: scrolls now show the storyboard art in its ORIGINAL colours, same look as the storyboard video; kit restored after a workspace reset). Earlier, 2026-10-29: storyboard art style locked; storyboard video + carousel added; Drive delivery step; storyboard scrolls added; word-chip hook with typing sound, no bounce; no zoom cuts). The card generators in `templates/` are the source of truth
 for this look; the older Deliverable-#15 generators still live under `scripts/`.
 
 **Applying the kit** = brand cards/subtitles/motion (below) **plus** the
@@ -95,6 +95,26 @@ A second version of a story video: her footage is replaced by **full-frame verti
 | Overlays | same as the main video: typing hook chips, pill subtitles, endcard — via `build_v8`-style compose with `src` = storyboard base |
 | Watermark | **`templates/watermark_dark.html`** (burgundy handle) — the cream one disappears on the light art |
 | Delivery | 1080p preview + 4K60 master, same as the main video |
+
+## Cinematic storyboard video — hybrid animation (LOCKED 2026-11-06)
+The storyboard video can be made to feel like a **real film**: the key moments are **animated with AI** (characters walk,
+gesture and act; cloaks and dust move; the camera dollies), the rest of the scenes get **cinematic camera moves** — all in
+the same pencil-and-watercolour storyboard look. First made for Safiyya bint Abdul-Muttalib (IMG_6052).
+
+| Element | Spec |
+|---------|------|
+| Approach | **Hybrid**: animate the **6–9 key moments** (hook, the main action beats, the ending); every other scene is a still with a camera move. Fully animating a 3-min story would cost ~77k credits — more than a month of the plan |
+| Model | **Kling 2.5 Turbo** (`kling-2.5-turbo`) — chosen 2026-11-06 over Runway Gen-4 Turbo (Runway barely moved the characters and smeared the crowd). Image-to-video from the scene's 9:16 storyboard image (`connect_from` the image node → `start_frame`) |
+| Settings | `aspect_ratio: 9:16`, `duration_secs: 5`, `cfg_scale: 0.5`; **1 generation per clip** (`generations_count: 1`). Output 1080×1920, 24 fps, ~5 s |
+| Cost | **~2,121 credits per 5-s clip** (10-s = double). Hybrid 3-min video ≈ 9 clips ≈ 19k credits; a 1-min story ≈ 5–6 clips ≈ 11–13k. Runway Gen-4 Turbo is ~1,515/clip (720p) if credits are tight |
+| Prompt core | `Hand-drawn pencil and watercolor storyboard animation on warm cream paper, visible graphite lines with a subtle hand-drawn line boil, cinematic.` + **one clear action** (who moves, how, what the wind/dust/light does) + **one camera move** (slow push-in / tracking / arc / crane / pan) + `Faces stay smooth blank faceless shapes; her hijab keeps fully covering her hair.` |
+| Negative prompt | `face, eyes, nose, mouth, facial features, visible hair, hair strands, blood, gore, text, letters, watermark, photorealistic, 3D render, color photo` (+ `weapon, sword, fighting, red stains` for conflict scenes) |
+| Islamic rules in motion | Same as the art: faceless, hijab fully covering, **the Prophet ﷺ never drawn or animated**. Violence is never shown: show the *before* (she grips the pole and strides to the gate) and the *after* (the enemies retreat) — no strike, no blood, no fallen body |
+| QC (every clip) | Contact-sheet 5–6 frames, then zoom on every head at 2–3 timestamps: no face appearing when a character turns, no hair slipping from a hijab. Watch for red watercolour on walls near a conflict — run `tools/tone_down_red.py` on the PNG/clip. A clip that breaks a rule is regenerated (costs again) — never shipped |
+| Assembly | `storyboard/storyboard_hybrid.py <scenes.json> <img_dir> <out.mp4>` — scenes.json entries: stills `{"start","end","img","move"}` with `move` ∈ push / pull / left / right / up / down (ease-in-out, cycles if omitted); animated `{"start","end","img","video","lead"}`. A clip is slowed ≤1.25× with motion interpolation to 30 fps; `lead` = seconds of the still (a gentle pull-out that lands exactly on the clip's first frame) **before** the clip starts, so the action lands on the line that describes it; after the clip, its last frame holds with a slow push-in. 0.6 s cross-dissolves |
+| Timing | Re-cut scenes so each clip starts on its line (e.g. *"She carried a kind of a stick"* → the pole clip; *"Once the disbelievers see this"* → the retreat clip) |
+| Overlays / delivery | Unchanged: build_v8 compose with `src` = the hybrid base (typing hook, pill subtitles, `watermark_dark`, endcard), 1080p preview ≤30 MiB (two-pass), 4K60 on request. Voice only — no music |
+| Workflow | 1) storyboard images as usual → 2) pick the key moments → 3) (new video type or model) **test 2 clips first** → 4) generate the rest (one run, `generations_count: 1`) → 5) QC → 6) `storyboard_hybrid.py` → 7) build |
 
 ## Instagram carousel (2026-10-29)
 `node carousel/carousel.js <slides.json> <img_dir> <out_dir>` → 1080×1350 (4:5) PNGs, one per slide.
