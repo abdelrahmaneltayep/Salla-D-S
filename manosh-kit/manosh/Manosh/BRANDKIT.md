@@ -9,6 +9,13 @@ for this look; the older Deliverable-#15 generators still live under `scripts/`.
 mandatory audio pass (**Audio treatment** section). "Apply Manosh brand kit"
 always includes removing the background noise from the voice track.
 
+**"Apply Manosh brand kit" = 3 deliverables (LOCKED 2026-11-06, the user's standing instruction):**
+1. **Main video** — Menna's footage with the full kit (ElevenLabs voice clean-up, typing hook, pill subtitles, storyboard scrolls above her, watermark, endcard), 1080p preview ≤30 MiB.
+2. **Cinematic storyboard video** — the hybrid animated storyboard (see **Cinematic storyboard video**), Menna's voice.
+3. **Instagram carousel** — 7 slides + `caption.txt` (folder + zip).
+
+The **regular (non-animated) storyboard video** is made **only when the user asks for it**. Video captions (Instagram/TikTok) and the 4K60 master also only on request.
+
 ## Color palette
 Defined in `build_css.js` `:root` and compiled into `brand.css`.
 
