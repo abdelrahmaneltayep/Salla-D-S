@@ -14,7 +14,7 @@ const img = s => s.img ? `<img class="pap" src="file://${path.resolve(imgDir, s.
 const total = slides.length;
 const body = (s, i) => {
   const dots = `<div class="dots">${slides.map((_, j) => `<i class="${j === i ? 'on' : ''}"></i>`).join('')}</div>`;
-  const handle = `<div class="handle"><span class="star">✦</span>@MENNATULLAH</div>`;
+  const handle = `<div class="handle"><span class="star">✦</span>@mennatullah.mo</div>`;
   if (s.kind === 'cover') return `<section class="cover">${img(s)}<div class="txt"><div class="kick">${fmt(s.kicker)}</div>
     <h1>${fmt(s.title)}</h1><div class="sub">${fmt(s.body)}</div></div><div class="swipe">Swipe <span>→</span></div>${handle}</section>`;
   if (s.kind === 'end') return `<section class="end">${img(s)}<div class="quote">${fmt(s.title)}</div><div class="sub">${fmt(s.body)}</div>

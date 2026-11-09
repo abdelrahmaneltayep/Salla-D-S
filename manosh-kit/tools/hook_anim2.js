@@ -48,7 +48,7 @@ switch (variant) {
     break; }
   case '5': {
     const txt = 'Free to wear anything… except hijab?';
-    body = `<div class="bub"><div class="av">M</div><div class="tx"><div class="nm">@mennatullah</div>
+    body = `<div class="bub"><div class="av">M</div><div class="tx"><div class="nm">@mennatullah.mo</div>
       <div class="ty"><span>${txt}</span></div></div><div class="ht">♡</div></div>`;
     style = `.bub{position:absolute;top:250px;left:70px;right:70px;display:flex;align-items:center;gap:22px;background:#fff;border-radius:44px;padding:26px 32px;
         box-shadow:0 10px 30px rgba(30,15,20,.18);animation:pop .42s ${bounce} .15s both;transform-origin:left center;}

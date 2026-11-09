@@ -84,7 +84,7 @@ const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="styles
 </style></head><body>
 ${V.band ? '<div class="band"></div>' : ''}
 <div class="hook">${rows}
-<div class="strip"><span class="rule"></span><span class="brand">@MENNATULLAH</span></div></div></body></html>`;
+<div class="strip"><span class="rule"></span><span class="brand">@mennatullah.mo</span></div></div></body></html>`;
 
 (async () => {
   fs.mkdirSync(outDir, { recursive: true });

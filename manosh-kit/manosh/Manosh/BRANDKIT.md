@@ -44,11 +44,11 @@ Defined in `build_css.js` `:root` and compiled into `brand.css`.
 | `chips_html.js`     | top:1170px, centered | **Locked caption + hook style (2026-10-26).** Word chips; see **Captions — Word chips**. Usage: `node chips_html.js <words.json> <out_dir> [scale] [fps] [dur]` |
 | `story_panels.js`   | top centre (y=36) | **Storyboard scrolls (2026-10-28).** See **Storyboard scrolls**. Usage: `node story_panels.js <scenes.json> <img_dir> <out_dir> <windows.json> [scale] [fps] rollL` |
 | `paper_scene.py`    | —                 | Puts a drawing on the paper (tritone colour, paper recolour, torn edges). Usage: `python3 paper_scene.py <paper> <drawing.png|blank> <out.png> [flip] kit 0.97 C2AE98` |
-| `hook_html.js`      | top:1040px, left  | **Primary hook.** Staggered burgundy pills, cream Nunito Sans 800, sentence case, `{{gold}}` word → gold. Aged-gold rule + `@MENNATULLAH` strip. No shadow. Usage: `node hook_html.js <out> "<line1>|<line2>|<line3>" ["<handle>"]` |
+| `hook_html.js`      | top:1040px, left  | **Primary hook.** Staggered burgundy pills, cream Nunito Sans 800, sentence case, `{{gold}}` word → gold. Aged-gold rule + `@mennatullah.mo` strip. No shadow. Usage: `node hook_html.js <out> "<line1>|<line2>|<line3>" ["<handle>"]` |
 | `subtitle_html.js`  | top:1300px, centered | **Primary subtitle.** One spoken chunk on a solid cream pill, burgundy Nunito Sans 700, `{{gold}}` word → terracotta. No shadow. Usage: `node subtitle_html.js <out> "<text>"` |
 | `verse_html.js`     | bottom (bottom:300)| Verse card: Amiri Arabic + Nunito English + ref     |
 | `endcard.html`      | full frame        | Closing card: accent-square wordmark + zellige strip |
-| `watermark.html`    | y=1645, centered  | @MENNATULLAH gold-star handle overlay               |
+| `watermark.html`    | y=1645, centered  | @mennatullah.mo gold-star handle overlay               |
 | `badge.html`        | top, centered     | "آية للقلب · A VERSE FOR THE HEART" badge (optional) |
 | `title_html.js`     | (legacy)          | Original hook/title card generator                  |
 | `v11_title_html.js` | (legacy)          | Deliverable-#11 hook card, teal-star kicker         |
@@ -126,7 +126,7 @@ the same pencil-and-watercolour storyboard look. First made for Safiyya bint Abd
 ## Instagram carousel (2026-10-29)
 `node carousel/carousel.js <slides.json> <img_dir> <out_dir>` → 1080×1350 (4:5) PNGs, one per slide.
 - 7 slides: **cover** (kicker + name + one-line role, "Swipe →") · **5 story slides** (numbered burgundy tag, kicker, Cormorant title with one terracotta key word, 1–2 sentence Nunito body) · **end** (her closing line as a quote + "Follow for more stories of the Sahabiyat").
-- Each slide = a **full-bleed storyboard illustration** (same images as the storyboard video), text on a soft cream fade at the bottom, burgundy text, @MENNATULLAH + page dots.
+- Each slide = a **full-bleed storyboard illustration** (same images as the storyboard video), text on a soft cream fade at the bottom, burgundy text, @mennatullah.mo + page dots.
 - Arabic honorifics (رضي الله عنها / ﷺ) in Amiri, kept on one line. Example: `examples/storyboard_video/slides_ashshifa.json`, `carousel_cover.jpg`.
 
 ## Storyboard scrolls (optional — story videos, LOCKED 2026-10-28)
@@ -227,7 +227,7 @@ Never add music under the voice.
 Templates link `brand.css` relatively and render via `scripts/render.js` (Playwright, 1080×1920, transparent).
 
 ## Wordmark / handle
-Wordmark: منّة الله · Latin: MENNATULLAH · Handle: @MENNATULLAH
+Wordmark: منّة الله · Latin: MENNATULLAH · Handle: @mennatullah.mo (Instagram username; changed from @MENNATULLAH on 2026-11-09)
 
 ## Restore log (2026-11-05)
 The cloud workspace was reset and the kit was rebuilt from this session's history. What differs from the 2026-10-29 zip:

@@ -4,7 +4,7 @@
 // Mennatullah shorts — Manosh identity, Mannon layout.
 // Structure borrowed from the Mannon brand (#فنجان-style staggered solid
 // highlight blocks) but recolored to Manosh: warm-GOLD pills with bold BURGUNDY
-// text (Nunito Sans 700), an aged-gold hairline strip + @MENNATULLAH beneath.
+// text (Nunito Sans 700), an aged-gold hairline strip + @mennatullah.mo beneath.
 // Lower-middle. Rendered to PNG via render.js (alpha).
 // Usage: node hook_html.js <out.html> "<line1>|<line2>|<line3>" ["<handle>"]
 const fs = require('fs');
@@ -20,7 +20,7 @@ const fmt = s => esc(s)
   .replace(/\{\{\/gold\}\}/g, '</span>');
 
 const lines = String(rawLines || '').split('|').map(s => s.trim()).filter(Boolean);
-const handle = esc(handleArg || '@MENNATULLAH');
+const handle = esc(handleArg || '@mennatullah.mo');
 const stagger = ['one', 'two', 'three', 'four'];
 const rows = lines.map((ln, i) =>
   `<div class="row ${stagger[i] || ''}"><span class="blk">${fmt(ln)}</span></div>`

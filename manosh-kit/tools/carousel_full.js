@@ -13,7 +13,7 @@ const fmt = s => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
   .replace(AR, '<bdi class="ar" dir="rtl">$1</bdi>');
 const page = (s, i) => {
   const dots = `<div class="dots">${slides.map((_, j) => `<i class="${j === i ? 'on' : ''}"></i>`).join('')}</div>`;
-  const handle = `<div class="handle"><span>✦</span> @MENNATULLAH</div>`;
+  const handle = `<div class="handle"><span>✦</span> @mennatullah.mo</div>`;
   const inner = s.kind === 'cover'
     ? `<div class="txt cov"><div class="kick">${fmt(s.kicker)}</div><h1>${fmt(s.title)}</h1><div class="sub">${fmt(s.body)}</div></div><div class="swipe">Swipe →</div>`
     : s.kind === 'end'
