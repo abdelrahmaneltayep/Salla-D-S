@@ -62,6 +62,7 @@ Only when asked ("add Arabic subtitle too"). Each spoken chunk shows two cream p
 | English pill | Same as `subtitle_html.js`: Nunito Sans 700, 50px, burgundy, `{{gold}}` → terracotta |
 | Arabic pill | IBM Plex Sans Arabic 600 (Amiri fallback), 46px, burgundy, RTL, `{{gold}}` on the Arabic equivalent of the English gold word |
 | Translation | Natural, simple Arabic, line-by-line with the English chunk (same index, same timing). Keep ﷺ and رضي الله عنه/عنها. Respectful wording ("Oh my God" → «يا إلهي») |
+| Typing hook | The opening word chips stay English; add `"ar"` to each entry in `pages` and an Arabic pill (same style) shows under the chips for that page (`chips_html.js`) |
 | Build | Add `"subs_ar": [...]` (one Arabic line per entry in `subs`) to the build_v8 config. The build asserts the counts match and warns if a pair is taller than 240px (wrapped) |
 | Delivery | Separate files with an `_EN_AR` suffix; the English-only versions stay as they are |
 
