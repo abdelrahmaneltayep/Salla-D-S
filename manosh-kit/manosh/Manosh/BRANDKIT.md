@@ -53,6 +53,18 @@ Defined in `build_css.js` `:root` and compiled into `brand.css`.
 | `title_html.js`     | (legacy)          | Original hook/title card generator                  |
 | `v11_title_html.js` | (legacy)          | Deliverable-#11 hook card, teal-star kicker         |
 
+## Bilingual subtitles — English + Arabic (on request, 2026-11-11)
+Only when asked ("add Arabic subtitle too"). Each spoken chunk shows two cream pills stacked: **English on top, Arabic directly below**.
+
+| Item | Spec |
+|---|---|
+| Template | `subtitle_bi_html.js`: `node subtitle_bi_html.js <out> "<english>" "<arabic>"`. Top 1270px, centered, 10px gap between pills |
+| English pill | Same as `subtitle_html.js`: Nunito Sans 700, 50px, burgundy, `{{gold}}` → terracotta |
+| Arabic pill | IBM Plex Sans Arabic 600 (Amiri fallback), 46px, burgundy, RTL, `{{gold}}` on the Arabic equivalent of the English gold word |
+| Translation | Natural, simple Arabic, line-by-line with the English chunk (same index, same timing). Keep ﷺ and رضي الله عنه/عنها. Respectful wording ("Oh my God" → «يا إلهي») |
+| Build | Add `"subs_ar": [...]` (one Arabic line per entry in `subs`) to the build_v8 config. The build asserts the counts match and warns if a pair is taller than 240px (wrapped) |
+| Delivery | Separate files with an `_EN_AR` suffix; the English-only versions stay as they are |
+
 ## Captions — Word chips (LOCKED 2026-10-26)
 The approved hook: chips over the opening spoken lines (option #4 of the reference-inspired set), with the typing sound.
 Each spoken word appears **at the moment it is said** as its own chip; a page (one short line-group)

@@ -67,8 +67,14 @@ def main():
 
     # ---- cards ---------------------------------------------------------------------------------------
     pairs = []
+    subs_ar = cfg.get("subs_ar")    # optional: Arabic line per sub, shown in a second pill below the English
+    if subs_ar:
+        assert len(subs_ar) == len(subs), f"subs_ar has {len(subs_ar)} lines, subs has {len(subs)}"
     for i, (_, _, txt) in enumerate(subs):
-        sh(["node", f"{T}/subtitle_html.js", f"{B}/sub_{i:02d}.html", txt], stdout=subprocess.DEVNULL)
+        if subs_ar:
+            sh(["node", f"{T}/subtitle_bi_html.js", f"{B}/sub_{i:02d}.html", txt, subs_ar[i]], stdout=subprocess.DEVNULL)
+        else:
+            sh(["node", f"{T}/subtitle_html.js", f"{B}/sub_{i:02d}.html", txt], stdout=subprocess.DEVNULL)
         pairs += [f"{B}/sub_{i:02d}.html", f"{B}/sub_{i:02d}.png"]
     wm = "watermark_dark.html" if cfg.get("light_bg") else "watermark.html"   # light_bg: storyboard videos
     pairs += [f"{T}/{wm}", f"{B}/watermark.png", f"{T}/endcard.html", f"{B}/endcard.png"]
@@ -79,7 +85,7 @@ def main():
     pos = {"watermark": trim(f"{B}/watermark.png")}
     for i in range(len(subs)):
         pos[f"sub_{i:02d}"] = trim(f"{B}/sub_{i:02d}.png")
-        if pos[f"sub_{i:02d}"][3] > 120 * S:    # one line ~95 px; more = wrapped
+        if pos[f"sub_{i:02d}"][3] > (240 if subs_ar else 120) * S:    # one line ~95 px (two pills ~200); more = wrapped
             print(f"WARNING sub {i} wraps to two lines: {subs[i][2]}")
     json.dump(pages, open(f"{B}/words.json", "w"), ensure_ascii=False)
     chip_dur = pages[-1]["end"] + 0.1
