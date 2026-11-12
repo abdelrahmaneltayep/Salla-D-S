@@ -1,0 +1,90 @@
+{
+ "_note": "Bilingual additions to a normal build_v8 config (trimmed to 3 entries). Full lists: subs_ar_safiyya.json, hook_ar_safiyya.json.",
+ "out_name": "Manosh_Safiyya_EN_AR",
+ "pages": [
+  {
+   "start": 0.94,
+   "end": 1.72,
+   "words": [
+    [
+     "The",
+     0.94
+    ],
+    [
+     "aunt",
+     1.18,
+     true
+    ],
+    [
+     "of",
+     1.6
+    ]
+   ],
+   "ar": "{{gold}}عمّة{{/gold}}"
+  },
+  {
+   "start": 1.74,
+   "end": 4.52,
+   "words": [
+    [
+     "Prophet",
+     1.74
+    ],
+    [
+     "Muhammad",
+     2.18
+    ],
+    [
+     "ﷺ",
+     2.92
+    ]
+   ],
+   "ar": "النبي محمد ﷺ"
+  },
+  {
+   "start": 4.54,
+   "end": 5.9,
+   "words": [
+    [
+     "not",
+     4.54
+    ],
+    [
+     "just",
+     4.76
+    ],
+    [
+     "his",
+     4.98
+    ],
+    [
+     "aunt,",
+     5.32
+    ]
+   ],
+   "ar": "ليست عمّته فقط،"
+  }
+ ],
+ "subs": [
+  [
+   15.36,
+   17.52,
+   "Safiyya bint Abdul Muttalib,"
+  ],
+  [
+   17.52,
+   19.16,
+   "actually she was too close"
+  ],
+  [
+   19.16,
+   21.64,
+   "to the Prophet ﷺ."
+  ]
+ ],
+ "subs_ar": [
+  "صفية بنت عبد المطلب،",
+  "كانت في الحقيقة قريبة جدًا",
+  "من النبي ﷺ."
+ ]
+}

@@ -2,7 +2,7 @@
 
 Snapshot of the Mennatullah (منّة الله) visual identity as shipped in the
 "Duaa When Suffering Pain Or Hardship" video (Mannon-layout Manosh look).
-Updated 2026-11-06 (NEW: cinematic storyboard video — hybrid Kling 2.5 animation, see **Cinematic storyboard video**; hijab rule added to the storyboard art). 2026-11-05: scrolls now show the storyboard art in its ORIGINAL colours, same look as the storyboard video; kit restored after a workspace reset). Earlier, 2026-10-29: storyboard art style locked; storyboard video + carousel added; Drive delivery step; storyboard scrolls added; word-chip hook with typing sound, no bounce; no zoom cuts). The card generators in `templates/` are the source of truth
+Updated 2026-11-12 (NEW: bilingual English + Arabic subtitles and hook, on request, see **Bilingual subtitles**; handle is now @mennatullah.mo). 2026-11-06 (cinematic storyboard video — hybrid Kling 2.5 animation, see **Cinematic storyboard video**; hijab rule added to the storyboard art). 2026-11-05: scrolls now show the storyboard art in its ORIGINAL colours, same look as the storyboard video; kit restored after a workspace reset). Earlier, 2026-10-29: storyboard art style locked; storyboard video + carousel added; Drive delivery step; storyboard scrolls added; word-chip hook with typing sound, no bounce; no zoom cuts). The card generators in `templates/` are the source of truth
 for this look; the older Deliverable-#15 generators still live under `scripts/`.
 
 **Applying the kit** = brand cards/subtitles/motion (below) **plus** the
@@ -41,10 +41,11 @@ Defined in `build_css.js` `:root` and compiled into `brand.css`.
 ## Templates (in `templates/`)
 | File                | Anchor            | Purpose                                             |
 |---------------------|-------------------|-----------------------------------------------------|
-| `chips_html.js`     | top:1170px, centered | **Locked caption + hook style (2026-10-26).** Word chips; see **Captions — Word chips**. Usage: `node chips_html.js <words.json> <out_dir> [scale] [fps] [dur]` |
+| `chips_html.js`     | top:1170px, centered | **Locked caption + hook style (2026-10-26).** Word chips; see **Captions — Word chips**. Usage: `node chips_html.js <words.json> <out_dir> [scale] [fps] [dur]`. A page with `"ar"` gets an Arabic pill under its chips (bilingual videos) |
 | `story_panels.js`   | top centre (y=36) | **Storyboard scrolls (2026-10-28).** See **Storyboard scrolls**. Usage: `node story_panels.js <scenes.json> <img_dir> <out_dir> <windows.json> [scale] [fps] rollL` |
 | `paper_scene.py`    | —                 | Puts a drawing on the paper (tritone colour, paper recolour, torn edges). Usage: `python3 paper_scene.py <paper> <drawing.png|blank> <out.png> [flip] kit 0.97 C2AE98` |
 | `hook_html.js`      | top:1040px, left  | **Primary hook.** Staggered burgundy pills, cream Nunito Sans 800, sentence case, `{{gold}}` word → gold. Aged-gold rule + `@mennatullah.mo` strip. No shadow. Usage: `node hook_html.js <out> "<line1>|<line2>|<line3>" ["<handle>"]` |
+| `subtitle_bi_html.js` | top:1270px, centered | **Bilingual subtitle (on request, 2026-11-12).** English pill on top, Arabic pill below. See **Bilingual subtitles**. Usage: `node subtitle_bi_html.js <out> "<english>" "<arabic>"` |
 | `subtitle_html.js`  | top:1300px, centered | **Primary subtitle.** One spoken chunk on a solid cream pill, burgundy Nunito Sans 700, `{{gold}}` word → terracotta. No shadow. Usage: `node subtitle_html.js <out> "<text>"` |
 | `verse_html.js`     | bottom (bottom:300)| Verse card: Amiri Arabic + Nunito English + ref     |
 | `endcard.html`      | full frame        | Closing card: accent-square wordmark + zellige strip |
@@ -53,18 +54,20 @@ Defined in `build_css.js` `:root` and compiled into `brand.css`.
 | `title_html.js`     | (legacy)          | Original hook/title card generator                  |
 | `v11_title_html.js` | (legacy)          | Deliverable-#11 hook card, teal-star kicker         |
 
-## Bilingual subtitles — English + Arabic (on request, 2026-11-11)
+## Bilingual subtitles — English + Arabic (on request, LOCKED 2026-11-12)
 Only when asked ("add Arabic subtitle too"). Each spoken chunk shows two cream pills stacked: **English on top, Arabic directly below**.
 
 | Item | Spec |
 |---|---|
 | Template | `subtitle_bi_html.js`: `node subtitle_bi_html.js <out> "<english>" "<arabic>"`. Top 1270px, centered, 10px gap between pills |
 | English pill | Same as `subtitle_html.js`: Nunito Sans 700, 50px, burgundy, `{{gold}}` → terracotta |
-| Arabic pill | IBM Plex Sans Arabic 600 (Amiri fallback), 46px, burgundy, RTL, `{{gold}}` on the Arabic equivalent of the English gold word |
+| Arabic pill | Same cream pill as the English one; IBM Plex Sans Arabic 700 (Amiri fallback), 46px, burgundy, RTL, `{{gold}}` on the Arabic equivalent of the English gold word |
 | Translation | Natural, simple Arabic, line-by-line with the English chunk (same index, same timing). Keep ﷺ and رضي الله عنه/عنها. Respectful wording ("Oh my God" → «يا إلهي») |
 | Typing hook | The opening word chips stay English; add `"ar"` to each entry in `pages` and an Arabic pill (same style) shows under the chips for that page (`chips_html.js`) |
 | Build | Add `"subs_ar": [...]` (one Arabic line per entry in `subs`) to the build_v8 config. The build asserts the counts match and warns if a pair is taller than 240px (wrapped) |
-| Delivery | Separate files with an `_EN_AR` suffix; the English-only versions stay as they are |
+| Delivery | Separate files with an `_EN_AR` suffix; the English-only versions stay as they are. Applies to the main video and the cinematic storyboard (and the regular storyboard if one was made) |
+| QC | Every pair on one line (each pill one line); Arabic reads right-to-left with quotes «…»; gold word highlighted in both; pills clear the watermark |
+| Example | `examples/bilingual/` (Safiyya, the first bilingual delivery): `config_bilingual_example.json`, the full `subs_ar_safiyya.json` (110 lines) and `hook_ar_safiyya.json` (7 hook pages) |
 
 ## Captions — Word chips (LOCKED 2026-10-26)
 The approved hook: chips over the opening spoken lines (option #4 of the reference-inspired set), with the typing sound.

@@ -30,7 +30,7 @@ const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="styles
  .wrap{position:absolute;left:70px;right:70px;top:1170px;display:flex;flex-direction:column;align-items:center;gap:18px;}
  .chips{align-self:stretch;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;}
  .arp{max-width:880px;background:var(--cream);padding:12px 30px 14px;border-radius:14px;border:1.5px solid rgba(76,33,48,.14);
-   font:600 46px/1.35 'IBM Plex Sans Arabic','Amiri';color:var(--burgundy);text-align:center;}
+   font:700 46px/1.35 'IBM Plex Sans Arabic','Amiri';color:var(--burgundy);text-align:center;}
  .arp .hl{color:var(--terracotta);}
  .chip{font:800 62px/1 'Nunito Sans';color:var(--burgundy);background:var(--cream);padding:9px 18px 12px;border-radius:16px;
    box-shadow:0 4px 14px rgba(76,33,48,.22);}

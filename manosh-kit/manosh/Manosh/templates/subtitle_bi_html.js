@@ -22,7 +22,7 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
     padding:12px 30px 14px;border-radius:14px;border:1.5px solid rgba(76,33,48,.14);}
   .en{font-family:'Nunito Sans';font-weight:700;color:var(--burgundy);font-size:50px;line-height:1.16;letter-spacing:.2px;}
   .en .ar{font-family:'Amiri';font-weight:700;font-size:.95em;}
-  .arl{font-family:'IBM Plex Sans Arabic','Amiri';font-weight:600;color:var(--burgundy);font-size:46px;line-height:1.35;}
+  .arl{font-family:'IBM Plex Sans Arabic','Amiri';font-weight:700;color:var(--burgundy);font-size:46px;line-height:1.35;}
   .hl{color:var(--terracotta);}
 </style></head>
 <body>
